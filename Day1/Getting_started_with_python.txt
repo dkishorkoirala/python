@@ -1,0 +1,57 @@
+we will cover:
+what is python?
+installing python
+Running Python code
+Variables and data types
+simple input/output
+practice exercises
+
+1. What is Python?
+-high-level, easy-to-learn programming language.
+-used in AI, web dev, data science, automation, etc
+-supports oop, scripting, functional programming.
+
+2. Installing Python
+if not installed:
+goto python.org
+download and install the latest version
+use IDLE, vs code, or any online editor like Replit or Jupyter Notebook
+
+3. Running Python code
+print("Hello, Python")
+
+output 
+Hello, Python
+
+try this in your editor this is your first python program!
+
+4. Variables and Data types
+ex.
+name = "John"       #string
+age = 23            #integer
+height = 5.6        #float
+is_student = True   #boolean
+
+print(name, age, height, is_student)
+
+output
+John 23 5.6 True
+
+5. Inpt from user
+name = input("Enter your name: ")
+print("Hello, ", name)
+
+output:
+Enter your name: John
+Hello, John
+
+practice time!
+1. write a program to take two numbers from the user and print their sum
+2. create  variables of different types and print them.
+3. ask the user their age and print: You will be [age+1] next Year!
+
+Challenge of the day!
+Build a simple Greeting App
+-ask name and age from the user
+-print a custom Greeting
+Hello [name]! You are [age] years old.

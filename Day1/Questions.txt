@@ -1,0 +1,45 @@
+Beginner- level mini prohect ideas for day 1
+
+1. Personalized Greeting App
+- ask the user's name and age
+- print : hello [name], your are [age ] years old!
+
+2. simple calculator
+-take two numbers and print:
+-their sum, difference, product and quotient
+
+3. Future Age predictor
+-ask the user's current age.
+-print their age after 5, 10 and 20 years.
+
+4. Area of Rectangle
+- input length and width of rectangle
+- output area = length * width
+
+5. Temperature converter
+-input temperature in celsius.
+-convert to Fahrenheit using: F = C * 9/5 + 32
+
+6. Name reverse
+- ask for the user's name.
+-print the name in reverse.
+
+7. simple interest calculator
+- ask for principal, rate, and time
+- calculate and print simple interest: SI = (P * R * T) / 100
+
+8. Shopping Cart Total
+- input price of 3 items.
+- print total cost.
+
+9. word repeater
+- ask for a word and a number.
+- print the word repeated that many times.
+
+10. Bio card generator
+- ask for: name , age, hobby, favourite color.
+- print a simple "Bio card" like:
+Name: [name]
+Age: [age]
+Hobby: [hobby]
+Favourite colour: [colour]
