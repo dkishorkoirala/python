@@ -1,0 +1,94 @@
+Day 2 : Python operators and expressions
+
+we will cover:
+-arithmetic operators
+-comparison (relational) operators
+-assignment operators
+-logical operators
+-practice exercises
+-Mini project and day 2 challenges
+
+1. Arithmetic Operators
+
+operators -> Descriptions -> example -> output
++         -> addition      -> 5 + 1  -> 6
+-         -> subtraction   -> 5 - 1  -> 4
+*         -> Multiplication-> 5 * 2  -> 10
+/         -> Division(float)-> 5/2 ->2.5
+//        ->Floor Division -> 5 // 2 -> 2
+%         ->Modulus(Remainder)-> 5 % 2 ->1
+**        -> Exponentiation  -> 5 ** 2 -> 25
+
+2. Comparison Operators
+
+operator-> Description -> Example -> output
+==      -> Equal to    -> 5 == 5 -> True
+!=      -> not equal to-> 5 != 5 -> False
+>       -> Greater than -> 5 > 2 -> True
+<       -> Less than    -> 5 > 2 -> False
+>=      -> Greater or equal -> 5 >= 5 ->True
+<=      -> Less or equal  -> 5 <= 3   -> False
+
+3. Assignment Operators
+
+x = 10   #assign
+x += 5   #add and assign x = x + 5 -> 15
+x -= 2   #subtract and assign x = x - 2 -> 13
+x *= 5   #multiply and assign x = x * 5 -> 65
+x /= 5   #divide and assign x = x / 5 -> 13.0
+x %= 4   #Modulus and assign x = x % 4 -> 1
+x **= 2  #Exponentiation and assign x = x ** 2 -> 1
+
+4. Logical Operators
+
+a = True
+b = False
+
+print(a and b) #False
+print(a or b)  #True
+print(not a)   #False
+
+practice exercises
+Task 1: Arithmetic practice
+Input 2 numbers and show:
+-sum
+-difference
+-product
+-Remainder
+- power
+
+Task 2: Comparison tester
+Input 2 numbers and show:
+-is first grater than second ?
+- are they equal?
+- is first less than or equal to second?
+
+Task 3: Logic tester
+Input:
+- a user's age 
+- is the user above 18 and below 60? (Eligible adult?)
+- is the user a minor or a Senior?
+
+Mini projects for day 2
+1. Even or odd checker
+-input a number and chek if it's even or odd using Modulus %.
+
+2. Grading System
+-input marks and print Grade:
+- 90 + -> A 
+- 80 - 89 -> B 
+- 70 - 79 -> C 
+- below 70 -> D 
+
+3. Salary Bonus calculator
+- input basic Salary
+- add 10 % bonus if salary < 50,000.
+- else , add 5 % bonus .
+- print updated salary
+
+Challenge of the day: Simple logic Gate simulator
+- input two binary values ( 0 or 1)
+-print:
+    and 
+    or
+    not (first value only)

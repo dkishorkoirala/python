@@ -1,0 +1,53 @@
+Day 2: 10 mini project ideas(beginner level)
+
+1. Even or odd checker
+- input a number and print whether it is even or odd.
+
+2. Max of two numbers.
+- Ask for two numbers and print which one is larger, or if they are equal.
+
+3. Simple Grading System.
+- ask for a student's marks and print:
+A (90+), B(80-89), C(70-79), D(Below 70)
+
+4. Simple calculator
+-Takes two numbers as input and print:
+- sum, difference, product, quotient, remainder, power
+
+5. Eligibility checker
+-ask for the user's age and print:
+    - "Eligible to vote" if age >= 18
+    - "Not Eligible" if under 18
+
+6. Salary Bonus calculator
+- input salary:
+    - if less than $50,000, add 10% bonus
+    - else, add 5% bonus
+    -print total salary
+
+7. Age Group Classifier
+- input age and classify as:
+    -child(age < 13)
+    - Teen(13 - 19)
+    - Adult(20-59)
+    - Senior(60+)
+
+8. Bill Split calculator
+- Input :
+    - total bill amount
+    - number of people
+-output: Amount each person pays (total / number)
+
+9. Temperature Judge
+- ask temperature in Celsius:
+    - if < 0 : "freezing"
+    - 0 - 20 : "cold"
+    - 21 - 30 : "Moderate"
+    - 30+ : "Hot"
+
+10 Logic Gate simulator:
+-input two binary values ( 0 or 1).
+- print the result of :
+- And
+- OR 
+- NOT (only first input)
