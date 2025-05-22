@@ -1,0 +1,46 @@
+1. Username Generator 
+input: first name and last name
+output: Generate a username like firstname.lastname in lowercase
+
+2. initials extractor
+-input: Full name ("Dibash Kishor Koirala")
+-output: Extract the initials of the full name (DKK)
+
+3. Age in Days converter
+-input: Age in years
+-output: Age in Days( roughly age * 365)
+
+4. reverse my name
+-input: enter name
+-output: print your name reversed
+
+5. Word counter
+-input: a sentence from the user
+-output: count and display how many words are in the sentence
+
+6. Simple chatbot Greeting
+-input: ask for user's name and feeling
+-output: Print a personalized response
+
+#input: name = john, feeling = great
+#output: "Hi John! I'm glad you're feeling great today"
+
+7. Vowel counter
+input: a string
+output: count how many vowels (a, e, i, o, u) are in it
+
+8. title casing
+input: a full sentence
+output: convert the sentence to title case (first letter of each word captilized)
+
+9. Temperature conversion
+input: temperature in celsius
+output: convert and print in Fahrenheit
+
+formula: F = (c * 9/5) + 32
+
+10. Funny string formatter
+input: user's name , favorite color, and animal
+output: create a funny sentence like:
+"Once upon a time, John saw a blue elephant dancing in the rain."
+

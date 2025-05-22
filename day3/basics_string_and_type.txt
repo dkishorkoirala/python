@@ -1,0 +1,89 @@
+Day 3 : Python basics - Strings & Type Conversion
+we'll cover:
+-strings basics : declaring, printing, and manipulating strings
+-common string operations(length, indexing, slicing)
+-Type conversion: between int, float, str, and bool
+-input handling and formatting
+
+1. Strings in Python
+
+#string declaration
+name ="John"
+quote= 'Pytohn is fun!'
+
+print(name)
+print(quote)
+
+2. String Operations
+text = "Python"
+
+print("Length: ", len(text))  #output Length: 6
+print("first letter: ", text[0])  #output first letter: P
+print("Last letter: ", text[-1])  #output Last letter: n
+print("Slice: ", text[1:4])  #output Slice: yth
+
+3. string methods.
+
+greet = "Hello World"
+
+print(greet.upper())  #output HELLO WORLD
+print(greet.title())  #output Hello World
+print(greet.replace("World", "Python")) #output Hello Python
+print(greet.find("o"))  #output 4 "first occuring"
+print("Python" in greet)    #output False
+
+4. type conversion
+
+a = "123" #string
+b = int(a) #str -> int
+c = float(a) #str -> float
+d = str(45) #int -> str
+e = bool(1) #int -> bool
+
+print(type(b), b) #output <class 'int'> 123
+print(type(c), c) #output <class 'float'> 123.0
+print(type(d), d) #output <class 'str'> 45
+print(type(e), e) #output <class 'bool'> True
+
+practice exercise:
+1. string length & first character
+-take input from user and print first character and length
+
+2. reverse a string
+-take input from user and print its reverse 
+
+3. captilize and replace
+-take input from user and print it in captilize and replace a word with another word
+
+4. Age to string
+-take input age and turn it to string format
+
+mini project:
+1. username Generator
+-input: firstname + lastname
+-output: lowercase username = firstname.lastname
+
+2. initials extractor
+-input: full name
+-output initials(eg. "John Doe"-> JD)
+
+3. Simple string analyzer
+-input: a string
+-output: number of characters, and if it contains "Python"
+
+4. Age in days
+-input : age in years
+output: age in days( approx )
+
+5. Number to words.
+-input: a number (eg. 123)
+-output: one two three
+
+Challenge of a day
+-build a simple string formatter
+    ask the user for:
+    - name
+    - city
+    - profession
+    output a sentence like:
+Hello John! You are a Data scientist from New York.
