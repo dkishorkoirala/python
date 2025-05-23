@@ -1,0 +1,17 @@
+practice Exercises:
+1. create a list of your 5 favorite movies and print it.
+2. Access and print the third item from your movie list.
+3. changing the first movie name to your favourite actor's name and print the list.
+4. add a new movie to the end of your list.
+5. insert a movie at the second position.
+6. remove a movie by name from the list.
+7. remove the last movie using .pop() and print the removed movie.
+8. print the length of your movie list.
+9. print the first three movies using slicing
+10. loop through the list and print each movie in uppercase.
+
+challege of the Day
+wap that:
+-takes input from the user for 5 grocery items and stores them in a list.
+-lets the user remove one item by name.
+-prints the final grocery list.

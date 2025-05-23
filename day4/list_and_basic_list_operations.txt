@@ -1,0 +1,74 @@
+Day 4 : Lists and Basic list operations in Pyton
+
+we'll cover:
+-what is a list in python?
+-how to create Lists
+-accessing list elements by index
+-Modifying list elements
+-adding and removing items
+-Basic list operations: length, slicing, concatenation
+-looping through lists(intro)
+
+1. What is list?
+-a list is a collection of items in python. Items can be numbers, strings, or mixed types
+list are ordered and chanagable(mutable).
+ex. 
+
+fruits = ["Apple", "Banana", "Cherry"]
+print(fruits) # prints: ['Apple', 'Banana', 'Cherry']
+
+2. creating a list
+we can create list using square brackets[] and separate items by commas.
+
+numbers = [1,2,3,4,5]
+names = ["hari", "krishna", "Rama"]
+mixed = [1, "hari", 3.14, True]
+
+3. Accessing list elements
+use indexing to get an item by position. Index starts at 0.
+
+fruits =["apple", "ball", "cat"]
+print (fruits[0]) # prints: apple
+print (fruits[2])   #prints: cat
+
+Negative indexing counts from the end:
+print(fruits[-1]) # prints: cat(last item)
+
+4. Modifying list elements
+change items by assigning to an index:
+fruit[1] = "banana"
+print(fruits) # prints: ['apple', 'banana', 'cat']
+
+5. adding items
+.append() adds to the end
+.insert(index, item) adds at a specific position
+
+fruits.append("dog")
+fruits.insert(1, "mango")
+print(fruits) # prints: ['apple', 'mango', 'banana', 'cat', 'dog']
+
+6. removing items 
+.remove(item) removes first matching item
+.pop(index) removes item at index (default last)
+del list[index] deletes item by index
+
+ex.
+fruits.remove("cat")
+fruits.pop(4)
+del fruits[1]
+print(fruits) # prints: ['apple', 'banana']
+
+7. other useful list functions
+-len(list) returns number of items
+-slicing:list[start:end] returns part of the list
+
+numbers = [1,2,3,4,5]
+print(numbers[1:3]) # prints: [2, 3]
+print(len(list))    #prints: 5
+
+8.looping through a list(intro)
+
+for fruit in fruits:
+    print(fruit)
+
+pratcised q/a in another file with challanges
