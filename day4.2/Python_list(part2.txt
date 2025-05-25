@@ -1,0 +1,95 @@
+we will cover:
+-how to use lists with logic(if, loops)
+-sorting and reversing lists
+-checking membership
+-copying lists
+-working with nested lists(intro)
+
+Practice exercises(10 Tasks)
+1. check if item exists
+ask the user to enter a fruit and check if it's in your perdefined fruit list.
+
+fruits = ["apple", "banana", "Orange", "grape", "mango"]
+user_fruit = input("Enter a fruit name: ")
+if user_fruit.lower() in fruits:
+    print("Yes, it's in the list")
+else:
+    print("No, It's not in the list.")
+
+2. sort the list
+-sort a list of numbers and print it in ascending order.
+numbers = [4, 2, 9, 6, 5, 1,]
+numbers.sort()
+print("Sorted list: ", numbers)
+
+3. reverse the list
+-reverse a list and print it.
+
+colors = ["red", "green", "Blue", "Yellow"]
+colors.reverse()
+print("Reversed list: ", colors)
+
+4. copy a list
+-make a copy of your movie list and modify the copy without affecting the original
+movies = ["The Shawshank Redemption", "The Godfather", "The Dark Knight"]
+movies_copy = movies.copy()
+print("Original: ", movies)
+print("Copy: ", movies_copy)
+
+5. Nested lists
+create a list of 3 students, where each student is represented as a list with a name and age.
+students = [["John", 20], ["Mary", 22], ["David", 21]]
+print("Student 1 name:", students[0][0])
+print("Student 2 age:", students[1][1])
+
+6. Even number extractor
+take a list of numbers and create a new list with only the even numbers.
+
+nums = [1, 2,3 ,4 ,5 ,6]
+even_nums = []
+for num in nums:
+    if nums % 2 == 0:
+        even_nums.append(num)
+
+print ("Even numbers:", even_nums)
+
+7. Count specific item
+count how many times "apple" appears in the list.
+
+fruit_basket = ["apple", "banana", "apple", "orange","apple"]
+print("Apple count:", fruit_basket.count("apple"))
+
+8. List from user
+take 3 inputs form the user and create a list.
+
+items = []
+for i in range(3):
+    val = input(f"Enter tiem {i+1}: ")
+    item.append(val)
+print("your list:", items)
+
+9. Remove Duplicates
+given a list with Duplicates, create a new list without Duplicates
+
+nums = [1,2,3,2,3,5,3,54]
+nums.sort()
+unique_nums = []
+
+for num in nums:
+    if num not in unique_nums:
+        unique_nums.append(num)
+print("WIthout Duplicates:", unique_nums)
+
+10. Merge two lists
+merge two lists into one
+
+a = [1,2,3]
+b = [4,5,6]
+merge = a + b
+print("Merged list:", merge)
+
+challenge of the day: student grades
+task:
+ask the user for names and scores of 3 students.
+store them in a nested list.
+then print all students with their scores, and the average score.

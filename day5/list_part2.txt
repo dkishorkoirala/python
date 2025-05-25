@@ -1,0 +1,63 @@
+Day 5: lists (part2)= Advanced operations 
+what will we learn:
+-sorting and reversing lists
+-copying lists  properly
+-using min() , max(), sum() on number lists
+-nesting lists
+-List comprehension( intro)
+
+1. sorting and reversing lists
+
+fruits =[ "banana", "apple", "cherry", "date", "elderberry"]
+fruits. sort() #sorts alphabetically
+print (fruits) #prints the sorted list
+
+fruits. reverse() #reverses the list
+print (fruits) #prints the reversed list
+
+2. Copuing lists correctly
+a = [1,2,3]
+b = a.copy()
+b. append(4)
+
+print ("original:", a) #prints [1,2,3]
+print("copied:",b ) #prints [1,2,3,4]
+
+3. Working with number lists
+
+numbers=[4, 8, 2, 7]
+print("Min:", min(numbers))
+print("Max:", max(numbers))
+print("Sum:", sum(numbers))
+
+4. Nested lists(2d lists)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+print(matrix[1][2]) #prints 6
+
+5.List comprehension (intro)
+
+squares = [ x ** 2 for x in range (5)]
+print(squares) #prints [0,1,4,9,16]
+
+Practice exercises:
+1. create a list of 5 numbers, print the max, min, and sum.
+2. create a 2d list for student scores(2 students, 3 scores each). print second 
+student's scores
+3. sort a list of fruits alphabetically and reverse it.
+4. copy a list of colors and show that the copy is different from the original.
+5. use list comprehension to create a list of even numbers form 0 to 10
+6. take 3 input from the  user and store each in a list: name , age , and city.
+7. given a list of numbers, create a new list with only the squares of odd numbers.
+8. Create a grocery list and sort it in reverse alphabetical order.
+9. Create a list of temperatures and print the average.
+10. Create a list of strings and make a new list of all strings longer than 3 characters.
+
+challenge of the Day
+Grocery Billing system
+1. Ask the user for 5 items and their prices( use two separate lists).
+2. Display each item with its price.
+3. Print the total bill amount.
