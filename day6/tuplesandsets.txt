@@ -1,0 +1,66 @@
+Day6: Tuples and sets,
+we will cover:
+-waht are tuples and how to use them
+-what are sets and why they're useful
+-common operations with tuples and sets
+-real life examples
+-10 practice exercises
+1mini challenge
+
+Part1 : Tuples in python
+-A tuple is like a list, but immutable(you can't change it after creation.)
+-tuples are defined with parentheses () instead of square brackets.
+
+my_tuples = ("apple", "banana", "cherry")
+print(my_tuples[0]) # prints: apple
+
+-why use tuples?
+-more secure than lists(can't be accidentally changed).
+-often used for fixed collections like coordinates, dates, etc
+
+part2: Sets in python
+-what is a set?
+-a set is a collection of unique items, defined with curly braces{}
+-sets are unordered and don't allow duplicates.
+
+my_set = {"apple", "apple" , "banana", "cherry"} # duplicates are ignored
+print(my_set)   #output: {'apple', 'banana', 'cherry'}
+
+-why use sets?
+-super useful for checkign membership, removing duplicates and doing set operations
+like union, intersection, etc
+
+common tuple methods
+>>> t = (10, 20, 30, 40)
+>>> print(len(t))
+4
+>>> print(t.count(20))
+1
+>>> print(t.index(30))
+2
+
+Common set methods
+s1 = {1, 2, 3}
+s2 = {3, 4, 5, 6}
+
+print(s1.union(s2)) #{1, 2, 3, 4, 5, 6}
+print(s1.intersection(s2))     #{3}
+print(s1.difference(s2))    #{1, 2}
+
+Practice exercises(do these after learning)
+1. create a tuple of 5 fruits and print the second fruit
+2. try changing one value in a tuple and see what error you get
+3. count how many times a value apperars in a tuple
+4. create a set of 5 colors.
+5. add a new color to your set
+6. try adding a duplicate and print the set
+7. remove one color to your set
+8. create two sets and print their union
+9. Find the intersection of two sets.
+10. Print the difference between two sets.
+
+mini challenge of the day:
+student attendance checker.
+-take input from user for 5 student names and store in a set.
+-then ask the user to input a name to check attendance
+-print whether the student is present or not.
