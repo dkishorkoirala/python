@@ -1,0 +1,81 @@
+Final Quiz Round – Level: Mix of Easy & Tricky:
+
+1. What is the output of `print(type({}))`?
+a) `<class 'list'>`
+b) `<class 'tuple'>`
+c) `<class 'dict'>`
+d) `<class 'set'>`
+
+1:c 
+
+2. Which method adds a new element to a set?
+a) `add()`
+b) `append()`
+c) `insert()`
+d) `extend()`
+
+2:a 
+
+3. Which of these is not a valid dictionary method?
+a) `get()`
+b) `keys()`
+c) `values()`
+d) `sort()`
+
+3:d 
+
+4. What is the correct way to declare a tuple with a single item?
+a) `t = ("apple")`
+b) `t = ("apple",)`
+c) `t = ["apple"]`
+d) `t = {"apple"}`
+
+4:b 
+
+5. What does `list(range(2, 10, 2))` return?
+a) `[2, 3, 4, 5, 6, 7, 8, 9]`
+b) `[2, 4, 6, 8]`
+c) `[2, 5, 8]`
+d) `[2, 10]`
+
+5:b
+
+6. Which line would cause a TypeError?
+a) `fruits = ("apple", "banana"); fruits[1] = "mango"`
+b) `colors = ["red"]; colors[0] = "blue"`
+c) `data = {"name": "Sam"}; data["name"] = "Tom"`
+d) `nums = [1, 2, 3]; nums.append(4)`
+
+6: a 
+
+7. What is the output of `len({1, 2, 3, 2, 1})`?
+a) 5
+b) 3
+c) 4
+d) 2
+
+7: b 
+
+8. How can you safely get a value from a dictionary without a KeyError?
+a) `dict.key("age")`
+b) `dict.age`
+c) `dict["age"]`
+d) `dict.get("age")`
+
+8:d 
+
+9. Which data structure preserves insertion order in Python 3.7+?
+a) set
+b) list
+c) tuple
+d) dict
+
+9:d 
+
+10. What will `fruits = ["apple", "banana"]; print(fruits[-1])` print?
+a) apple
+b) error
+c) banana
+d) \["banana"]
+
+10:c 

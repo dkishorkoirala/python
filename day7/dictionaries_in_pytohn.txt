@@ -1,0 +1,78 @@
+Day 7: Dictionaries in Python
+
+we will cover:
+-What is Dictionary in python?
+-how to create, access, and update dictionary values
+-adding and removing items
+-looping through a dictionary
+-nesting Dictionaries
+-real-life use cases
+    -10 exercises 
+    -1 mini challenge
+
+What is dictionary?
+a dictionary is a collection of key-value pairs.
+It's like a real dictionary: you loop up a word(key) and get a meaning(value).
+
+student = {
+    "name": "John",
+    "age": 20,
+    "grade": "A"
+}
+
+Basic Operations
+1. create and access
+person = {
+    "name": "John",
+    "age": 20
+}
+print(person["name"])
+#output : John
+
+2. Add or update value
+
+person["city"] = "kathmandu"
+perosn["age"] = 26
+
+3. remove a key
+
+del person["city"]
+
+4. Looping through Dictionary
+for key, value in perosn.items():
+    print(key, ":" , ,value)
+
+#output: name: John, age: 26
+
+Practice exercises
+Task1: create a dictionary of a student with name, age, and grade. print it.
+task2: access and print the student's grade.
+task3: update the student's grade to "A+"
+task4: add a new key "school" with value "XYZ school".
+task5: remove the key "Age" from the dictionary.
+task6: print all key using a loop.
+task7: print all values using a loop.
+task 8: create a dictionary of 3 friends and their favourite colors.
+        loop through and print each one.
+task9: use .get() to safely access a key that may not exist.
+print(person.get("hobby", "not found"))
+
+task10: nesting - create a dictionary with 2 students and their subject scores as a nested dictionary.
+
+Mini- challenge:
+student management system:
+wap that:
+    - takes input for 3 students: name, age, and score
+    - store them in a dictionary where the name is the key and the value is another dictionary with age and score.
+    - prints the complete dictionary
+    - prints each student's name and their score
+Mini Project: Simple Billing System
+Goal:
+-Create a billing system for a small store.
+The program will:
+
+Let the user add 3 items (name and price).
+
+Store them in a dictionary.
+
+Display the full bill with total amount and average price.

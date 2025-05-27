@@ -1,0 +1,113 @@
+Python Quick Quiz (10 Questions)
+
+Q1.What is the difference between a list and a tuple?
+
+a) Lists are immutable, tuples are mutable
+b) Tuples are immutable, lists are mutable
+c) Both are mutable
+d) Both are immutable
+
+1:b
+
+Q2. What does this list comprehension return?
+
+[x for x in range(5) if x % 2 == 0]
+
+
+a) [0, 1, 2, 3, 4]
+b) [1, 3, 5]
+c) [0, 2, 4]
+d) Syntax Error
+
+2:c
+
+Q3. Which method adds an item to the end of a list?
+
+a) insert()
+b) append()
+c) extend()
+d) add()
+
+3:b 
+
+Q4. What will this code print?
+
+
+colors = {"red", "blue", "green"}
+colors.add("red")
+print(colors)
+
+
+a) {'red', 'blue', 'green'}
+b) {'red', 'blue', 'green', 'red'}
+c) Error
+d) ['red', 'blue', 'green']
+
+4:a 
+
+
+Q5. How do you access the value associated with a key in a dictionary?
+
+a) dict.get(key)
+b) dict[key]
+c) dict.key
+d) Both a and b
+
+5:d
+
+Q6. What will this output?
+
+my_tuple = (1, 2, 3)
+my_tuple[1] = 5
+
+a) (1, 5, 3)
+b) Error
+c) [1, 5, 3]
+d) None
+
+6:b 
+
+Q7. What will this print?
+
+student = {"name": "Avi", "age": 20}
+print(student.get("grade", "N/A"))
+
+
+a) `None`
+b) `grade`
+c) `N/A`
+d) `Error`
+
+7:c 
+
+Q8. What will this code do?
+
+
+my_list = [1, 2, 3]
+my_list.pop()
+
+
+a) Removes 1
+b) Removes 2
+c) Removes 3
+d) Does nothing
+
+8:c 
+
+Q9. What does `set1.intersection(set2)` return?
+
+a) All unique values
+b) Common values between sets
+c) Only values from set1
+d) Values only in set1 and not in set2
+
+9:b
+
+Q10. Which of the following is **not a valid dictionary key**?
+
+a) `"name"`
+b) `42`
+c) `[1, 2, 3]`
+d) `(1, 2, 3)`
+
+10:c

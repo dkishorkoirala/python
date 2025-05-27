@@ -1,0 +1,92 @@
+Python Quiz — Round 2
+
+1. What will my_list = [1, 2, 3]; print(my_list[-1]) output?
+
+a) 1
+b) 2
+c) 3
+d) Error
+
+1:c 
+
+
+2. Which of the following is immutable in Python?
+
+a) List
+b) Dictionary
+c) Set
+d) Tuple
+
+2:d
+
+3. What does the add() method do in a set?
+
+a) Adds duplicate values
+b) Adds a new item
+c) Sorts the set
+d) Removes an item
+
+3:b 
+
+4. What will be the output of len({"a":1, "b":2, "c":3})?
+
+a) 0
+b) 2
+c) 3
+d) Error
+
+4:c 
+
+5. Which data type does not allow duplicate elements?
+
+a) List
+b) Tuple
+c) Dictionary
+d) Set
+
+5:d 
+
+6. Which of these will raise a KeyError?
+
+a) `my_dict["name"]` (if key doesn’t exist)
+b) `my_dict.get("name")`
+c) `my_dict.keys()`
+d) `my_dict.values()`
+
+6:a 
+
+7. What will ("apple", "banana", "cherry").count("banana") return?
+
+a) 0
+b) 1
+c) 2
+d) Error
+
+7:b 
+
+8. How do you update a value in a dictionary?
+
+a) `dict.updateValue()`
+b) `dict.replace()`
+c) `dict["key"] = value`
+d) `dict.add("key", value)`
+
+8:c 
+
+9. What is the result of: my_set = {"a", "b"}; my_set.add("a"); print(my_set)
+
+a) `{"a", "b", "a"}`
+b) `{"a", "a", "b"}`
+c) `{"a", "b"}`
+d) Error
+
+9: c 
+
+10. Which method is used to find a common item in two sets?
+
+a) `union()`
+b) `common()`
+c) `intersect()`
+d) `intersection()`
+
+10:d
