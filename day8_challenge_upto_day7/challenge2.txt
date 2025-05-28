@@ -1,0 +1,15 @@
+challenge: Student score analyzer
+wap:
+1. Takes input for 5 students- each with:
+    -name
+    -three subject scores
+2. Stores each student in a dictionary like this:
+{
+    "alice": {"math": 90, "science": 85, "english": 95},
+    ...
+}
+
+3. after collecting all data, the program should
+-print the entire dictionary
+-print each student's average score
+-find and print the topper (student with the highest average score)

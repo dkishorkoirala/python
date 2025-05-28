@@ -1,0 +1,32 @@
+challenge 1:student filter(list of dictionaries)
+
+wap :
+-takes input for 3 students(name and score)
+-stores them in a list of dictionaries.
+-print the name of students who scored more than 80
+
+challenge2: Unique words (using set)
+-take a sentence as input from the user.
+-split it into words
+-store the words in a set to remove duplicates.
+-print the number of unique words and the set
+
+Challenge 3: product billing system(using dictionary)
+-takes input of 3 product(name and price)
+-stores them in a dictionary like:
+    {"apple": 50, "banana": 100, "cherry": 200}
+-calculate and print the total and average price.
+
+challenge 4: Tulple slicing
+given tuple:
+numbers= (10,20,30,40,50,60)
+-print
+    -first 3 elements
+    -last 2 elements
+    -middle 2 elements
+
+challenge 5: Dictionary search
+-create a student database:
+    -use a dictionary to store names and grades of 3 students.
+    -ask the user to enter a name.
+    -Display the grade if found, otherwise print"student not found"
