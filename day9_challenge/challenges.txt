@@ -1,0 +1,45 @@
+Day 7 consolidated practice projects:
+
+project 1: library book Tracker
+-Goal: Track books in a library using a list of dictionaries.
+instructions:
+    -take input of 3 books: title, author, and status (available/borrowed).
+    -store each book in a dictionary and add it to a list.
+    -then:
+        -print the full list.
+        -print only books that are available.
+
+project 2: Classroom Attendance System.
+Goal - Track Attendance using sets.
+
+instructions: 
+    -ask for names of 5 students who attended the class.
+    -store their names in a set.
+    -ask user for any name and check if that student was present.
+
+project 3: simple shopping cart
+Goal: Build a shopping cart using dictionary and list.
+instructions: 
+    -let user add 3 items: name and price.
+    -store them in a list of dictionaries like:
+        [{"name": "apple", "price": 30}, {"name": "banana", "price": 45}, ...]
+    then:
+        -print all items.
+        -calculate and display the total cost.
+
+Project 4: student search tool
+goal: build a simple student search engine.
+
+instructions:
+    -take input for 3 students (name and grade).
+    -store as list of dictionaries.
+    -ask the user to input a name and display the grade if found, else print "Not Found".
+
+Project 5: Unique Character counter
+goal: practice using sets with strings.
+
+instructions:
+    -ask user to enter a sentence
+    -convert it to a set of Characters.
+    -print how many unique characters are there.
+    
