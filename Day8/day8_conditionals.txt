@@ -1,0 +1,92 @@
+Day 8: Control Flow: if,elif, else in python
+
+we will cover:
+-what conditional statements are
+-how to use if, elif, and else
+-comparision and logical operators
+-real-life examples using conditions
+
+concept 1: the if Statement
+
+age = 18
+if age >= 18:
+    print("You are eligible to vote.")
+
+if the condition is true, it executes the indented block below it
+
+Concept 2 : The if...else statement
+age = 16
+if age >=18:
+    print("You can vote.")
+else:
+    print("You are too young to vote.")
+
+else is executed only when the if condition is False.
+
+Concept 3: the if...elif....else chain
+
+marks = 75
+
+if marks >= 90:
+    print("Grade A")
+elif marks >=80:
+    print("Grade B")
+elif marks >= 70:
+    print("Grade C")
+else:
+    print("Grade F")
+
+Python checks conditions top to bottom until one is true. Then it stops checking.
+
+Comparison Operators
+operator                operation           example
+==                      equal to            a == b
+!=                      not equal to        a != b
+>                       grater than         a > b
+<                       less than           a < b
+>=                      grater or equal     a >= b
+<=                      less or equal       a <= b
+
+Logical operators
+operator                Description                     example
+and             all condtionons must be true            a > 0 and a <100
+or              at least one condition must be true     a > 0 or a > 100
+not             Inverts the condition                   not (a == b)
+
+Practice examples
+1 example 1: odd or even
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")
+
+example 2 : simple login system
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == "admin" and password == "1234":
+    print("Login Successfull!")
+else:
+    print("Invalid Credentials")
+
+Task:
+1. Age group classifier
+    input age from user
+    print "child" if < 13, "teenager" if < 20, else "adult"
+2. Voter eligiblity checker
+    input age and citizenship
+    must be 18+ and citizen = "yes" to vote
+3. Simple calculator using conditions
+    Ask user to input two numbers and an operator (+, -, *, /).
+    perform calculation based on the operator
+
+Challenge: student Grader
+wap that takes a student's name and score as input.
+-print:
+    A for 90+
+    B for 80-89
+    C for 70-79
+    F below 70
+        also print "Topper" if the score is exact 100.
