@@ -1,0 +1,100 @@
+What we'll cover:
+break: stop a loop early
+continue: skip the current iteration
+else with loops
+nested loops
+practice exercises and challenge
+
+1. break- Exit the loop immediately
+for i in range (1, 10):
+    if i == 5:
+        break
+    print(i)
+
+output
+1
+2
+3
+4
+
+as soon as i == 5 the loop breaks and stops.
+
+2. continue - skip the round , go to the next
+python;
+for i in range (1,6):
+    if i == 3:
+        continue
+    print(i)
+output
+1
+2
+4
+5
+It skips 3 but keeps running the rest.
+
+3. else with loops
+for i in range(5):
+    print(i)
+else: 
+    print("Loop completed")
+
+output
+0
+1
+2
+3
+4
+Loop completed
+
+Runs the else only if loop didn't break early.
+
+for i in range(5):
+    if i ==2 :
+        break
+    print(i)
+else:
+    print("Loop completed")
+
+output
+0
+1
+
+Nested loops (loop inside loop)
+for i in range(1,4):
+    for j in range(1,4):
+        print(i,j)
+
+output
+1 1
+1 2
+1 3
+2 1
+2 2
+2 3
+3 1
+3 2
+3 3
+
+Great for working with grids, matrices or combinations.
+
+practice tasks
+1. Break task:
+Keep taking input until user types "stop", then exit.
+2. Continue Task:
+Print numbers 1 to 10, skip even numbers.
+
+3. Else with loop:
+Loop 5 times and print "Loop ended properly" using else.
+
+4. Nested loop:
+Print a multiplication table (1–5):
+
+1x1=1 1x2=2 ...
+2x1=2 2x2=4 ...
+
+Challenge: Password Checker
+Ask the user for password up to 3 times:
+
+If correct → print “Access granted”
+
+If 3 wrong tries → print “Access denied”
