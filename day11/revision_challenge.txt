@@ -1,0 +1,36 @@
+challenge 1: smart atm
+create a loop-based atm with options:
+1. check balance
+2. Deposit
+3. withdraw
+4. Exit
+
+challenge 2: unique word Counter
+Ask the user for a sentence
+-split in a set
+-store in a set
+-print number of unique words and the words
+
+challenge3: Multiplication table generator
+-ask the user to enter a number
+
+-print multiplication table from 1 to 10
+use a for loop
+
+challenge 4: Top grade students
+-collect name and grade for 3 students
+-use a list of Dictionaries
+-Print only students with Grade A or B
+
+challenge 5: Secret login attempts
+-ask for a password
+
+-allow max 3 tries
+- if correct, print("welcome!")
+-else after 3 wrong tries, print "Access Blocked"
+
+challenge 6: Number Guessing game
+set a fixed number like 7
+-Let the user keep Guessing
+-say "Too high" or "too low"
+-until correct , then print"Correct!"

@@ -1,0 +1,119 @@
+Revision Day1 to loops
+
+1. Basic Syntax and variables
+-printing, comments
+print("Hello world")
+#this is comment for print statements
+
+-variables (int, float, str, bool)
+a = 10 #integer
+a = 10.5 #float
+b = "Hello" #string or str
+c = True #boolean or bool
+
+-input/output using input() and print()
+x = input("enter any string: ") #for string variables
+y = int(input("Enter any number: "))# for integer variables
+z = float(input("Enter any float or decimal value: "))# for float variables
+
+print(f"{x} is string\n{y} is integer\n{z} is float")
+
+2. Data Types
+numbers(int , float)
+strings
+    slicing, indexing
+    Methods like .lower(), .upper(), replace(), find(), count()
+type casting: str(), int(), float()
+
+slicing refers to breaking and indexing means counting here in python we use from 0 to n-1
+
+methods .lower(), and .upper() changes the case of the string
+.replace() replaces the string with the new string
+.find() returns the index of the first occurrence of the specified value
+.count() returns the number of occurrences of the specified value
+
+type casting refers to changing its data type from one to another 
+simply we can say converting from one data type to another
+number = 10
+decimal = float(number)
+now the number contains float value i.e 10.0
+
+and vice versa
+
+3. Lists
+-list are mutuable(value can be changes per requirement), ordered
+-methods: append()-> used to add element at the end of the list
+        insert() -> used to add element at the specified position
+        pop()-> used to remove and return the element at the specified position
+        remove()-> used to remove the element from the list
+        count()-> used to count the number of occurrence of the element in the list
+        sort()-> used to sort the list in ascending order
+        reverse()-> used to reverse the list
+nested Lists: list inside list ex. my_list= [[1,2,3],[4,5,6]]
+List comprehensions: list = [x for x in range(10) if x%2==0]
+
+4. Tuples
+-tuples are immutable, ordered
+-methods: count()-> used to count the number of occurrence of the element in the tuple
+          index()-> used to get the index of the element in the tuple
+
+5. Sets:
+-sets are unordered, no duplicate , mutuable 
+methods: add()-> used to add element to the set
+        remove()-> used to remove element from the set
+        discard() -> used to remove element from the set if it exists
+        union() -> used to return a new set with all elements from the both sets
+        intersection() -> used to return a new set with elements common to both sets
+        difference()-> used to return a new set with elements in the first set but not in the second set
+
+6. Dictionaries:
+-key-value pairs
+-accessing, updating, deleting entries
+methods: keys()-> returns a view object that displays a list of all keys available in the dictionary
+        values()-> returns a view object that displays a list of all values available in the dictionary
+        items()-> returns a view object that displays a list of a tuple containing a key-value pair
+        get()-> returns the value for the given key if it exists in the dictionary
+        pop()-> removes the item with the specified key and returns the value of the item
+        update()-> updates the dictionary with the items from another dictionary or from an iterable of key-value pairs
+
+7. Conditional statements:
+-if, elif, else.
+-Logical operators: and, or, not
+-Comparison operators: ==, !=, >, <, >=, <=, 
+
+8. loops
+-for loop: with range(), over strings, lists, etc.
+-while loop
+-break, continue, else with loops
+-nested loops
+
+challenge quiz:
+1. what data structure would you use to store a list of students with their scores?
+-> Dictionary
+2. How do you remove the last item from a list?
+-> list.pop()
+3. what is the difference between remove() and discard() in sets?
+-> remove() will raise an error if the element is not in the set, discard() will not raise an error 
+4. how do you safely access a dictionary value without causing a keyError?
+-> get() method
+5. which loop is best when you don't know how many times it will run?
+-> while loop
+6. how do you check if a number is even using a loop?
+-> using for loop and checking the remainder of the number 
+
+🔧 Mini Practice Projects Recap:
+✅ Library Book Tracker (dict in list)
+
+✅ Classroom Attendance System (list with .lower())
+
+✅ Shopping Cart (dict, float, total)
+
+✅ Student Search Tool (loop search)
+
+✅ Unique Character Counter (set)
+
+✅ Student Score Analyzer (nested dicts, averages)
+
+✅ Age classification, voting eligibility (conditionals)
+
+✅ Loop-based tasks: countdowns, sum, multiplication tables, break/continue use

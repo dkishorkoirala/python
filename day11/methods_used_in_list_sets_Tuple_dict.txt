@@ -1,0 +1,54 @@
+Methods used in Python: Lists, Sets, Tuple, Dictionary
+
+my_list = [1, 2, 3, 4, 5]
+
+Method             Description
+append(x)          Adds x to the end of the List
+extend(iter)       adds elements from an iterable
+insert(i, x)       Inserts x at Position i
+remove(x)          Removes the first occurrence of x 
+pop(i)             Removes and returns items at index i 
+index(x)           returns the index of first x
+count(x)           Counts how many times x occurs
+sort()             Sorts the list in-place
+reverse()          Reverses the list in-place
+copy()             Returns a shallow copy
+clear()            Removes all elements
+
+2. Set Methods
+my_set={1, 2, 3, 4, 5}
+Method               Description
+add(x)               Adds x to the set
+update(iter)        Adds multiple items from iterable
+remove(x)           removes x; error if not found
+discard(x)          removes x if it exists
+pop()               removes and returns a random item 
+clear()             Empties the set
+union(set2)         combines sets without duplication
+intersection(set2)  Common elements of sets
+defference(Set2)    elements in set1 but not in set2
+issubset(set2)      checks if current set is subset of set2
+issuperset(set2)   checks if current set is superset
+
+
+Tuple Method
+my_tuple = (1, 2, 3, 4, 5)
+Method               Description
+count(x)            Returns how many times x appears
+index(x)           Returns the index of the first occurrence of x
+
+Tuples are immutable, so no methods like append() or remove().
+
+Dictionary methods
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+Method               Description
+get(key)            Returns value for key, else none
+keys()              Returns all keys
+values()            Returns all values
+items()             Returns (key, value) pairs
+update(dict2)       Updates with another dictionary 
+pop(key)            Removes and returns key's value
+popitem()           Removes and returns last(key, value)
+setdefault(k, v)    Returns key's value or sets it if not found
+clear()             Removes all items
+copy()              Returns a shallow copy
