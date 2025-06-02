@@ -1,0 +1,15 @@
+Quick recap: we now know functions that...
+1. can be called without or with arguments
+2. return values
+3. handle any number of positional args with *args
+4. handle any number of keyword args with **kwargs
+
+final project or challenge:
+create a function student_report that :
+accepts student name and marks in 3 subjects using **kwargs
+calculates average score
+classifies result as:
+    excellent if avg >= 90
+    good if avg > 75
+    needs improovement otherwise
+print a summary report

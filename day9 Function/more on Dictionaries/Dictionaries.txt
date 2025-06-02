@@ -1,0 +1,45 @@
+what is dictionary?
+- a dictionary is like a real-life dictionary: it maps a word(key) to its definition(value).
+python
+student = {
+    "name": "John",
+    "age": 20,
+    "grade": "A"
+}
+
+in this example
+"name", "age", "grade" are keys
+"John", 20, "A" are values 
+
+accessing values
+direct access:
+print(student["name"]) #output = John
+
+safe access:
+print(student.get("name")) #output = John
+print(student.get("Address", "Not found")) #output = not found
+safer than
+print(student["Address"])
+
+
+looping over a dictionary
+-loop over keys only: student is key here
+for student in students:
+    print(student, students[student])
+
+loop over key-value pairs: student is key and info is value
+for student, info in students.items():
+    print(f"{student} = {info}")
+
+try yourself
+
+task: loop through this dictionary and print in the format "key": "value"
+book ={
+    "title": "ai for beginners",
+    "author": "Dibash",
+    "pages": 300
+}
+expected output
+title: ai for beginners
+author: Dibash
+pages: 300

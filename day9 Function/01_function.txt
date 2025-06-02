@@ -1,0 +1,37 @@
+day 9: functions masterclass
+
+we will cover
+-what functions are
+-Defining and calling functions
+-parameters and arguments
+-return values
+-*args and **kwargs basics
+-mini task and a final challenge
+
+Part1: what is function?
+A function is a reusable block of code that performs a specific task.
+
+def greet():
+    print("Hello, World!")
+greet()
+
+Part2: Parametes and arguments
+you can pass data into functions using parameters
+
+ex:
+def greet(name):
+    print(f"Hello, {name}!")
+greet("Dibash")
+
+part 3:
+Function can return a value using return.
+ex
+def add(a, b):
+    return a + b
+result = add (3,4)
+print("Sum: ", result)
+
+mini practice tasks
+1. write a function that prints your name
+2. write a function that adds 2 numbers.
+3. write a function that takes a number and returns whether it is even or odd.

@@ -1,0 +1,66 @@
+challenge 1: student info card
+create  a dictionary with name, age, and subject print each detail on A
+new line like a student profile
+expected output:
+Name: John
+Age: 20
+Subject: Math
+
+challenge 2: Inventory tracker
+you have an inventory dictionary. Print each item and its quantity.
+inventory={
+    "pen" : 10,
+    "notebook": 5,
+    "pencil": 7
+}
+
+expected output:
+pen: 10
+notebook: 5
+pencil: 7
+
+challenge 3: Dictionary with list(nested values)
+student = {
+    "name": "Dibash",
+    "marks" : [80, 90, 85]
+}
+print each marks:
+80
+90
+85
+
+challenge 4: Count word frequency
+give a sentence, count how many times each word appear using a dictionary.
+
+sentence = "AI is  the future and AI is powerful"
+
+expected output:
+AI: 2
+is: 2
+the : 1
+future: 1
+and: 1
+powerful: 1
+
+hint: split the sentence into words using .split()
+loop and update counts in a dictionary
+
+challenge 5: nested dictionary summary
+students={
+    "arya": {"math": 90, "science": 85},
+    "jon": {"math": 75,"science": 95},
+}
+expected output
+arya -> average: 87.5
+jon-> average: 85.0
+
+Create a Restaurant Menu using a dictionary:
+
+python
+menu = {
+    "Burger": 120,
+    "Pizza": 250,
+    "Fries": 90
+}
+Let the user enter a food item, and display the price. 
+If the item is not found, print "Item not available".

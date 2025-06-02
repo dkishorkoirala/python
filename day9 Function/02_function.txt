@@ -1,0 +1,30 @@
+part 4: 
+*args - variable number of arguments
+
+*args allows us to pass a variable number of positioal arguments to a function
+
+def add_all(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+print(add_all(1,2,3,4))
+#output : 10
+
+*args becomes a tuple of all passed values.
+
+Part 5: **kwargs- keyword arguments
+**kwargs lets us pass a variable number of keyword arguments
+
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+print_info(name = "Dibash", age = 21, country ="Nepal")
+
+**kwargs becomes a dictionary.
+
+mini task time:
+1. create a function mulitply_all that multiplies any number of values using *args
+
+2. create a function profile that takes **kwargs and prints all key-value pairs.
+
