@@ -1,0 +1,37 @@
+Build a system where:
+
+You can enter multiple student records.
+
+Each student has a name and marks for multiple subjects.
+
+System should:
+- Store all data properly
+- Show report card per student
+- Calculate average and grade
+
+example: 
+How many students? 2
+
+--- Enter details for Student 1 ---
+Enter student name: Arya
+Enter marks for Math: 95
+Enter marks for Science: 90
+Enter marks for English: 85
+
+--- Enter details for Student 2 ---
+Enter student name: Jon
+Enter marks for Math: 70
+Enter marks for Science: 75
+Enter marks for English: 65
+
+--- Generating Report Cards ---
+
+Student: Arya
+Math: 95, Science: 90, English: 85
+Average: 90.00
+Grade: Excellent
+
+Student: Jon
+Math: 70, Science: 75, English: 65
+Average: 70.00
+Grade: Needs Improvement

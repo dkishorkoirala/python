@@ -1,0 +1,113 @@
+Plan for today(gentle + powerful review and progress)
+
+we'll cover:
+1. Review: function + dictionary basics
+2. redo a couple challenges
+3. advance: learn default arguments and lambda function
+4. mini project problems
+5. a final challenge
+
+1. Review: function + dictionary 
+function refresher
+
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Dibash")
+
+A function is like a machine. it takes input(name) and gives output.
+
+dictionary refresher
+student={
+    "name": "Dibash",
+    "age": 20,
+    "grade": "A"
+    "subject": "Python"
+}
+#accessing values
+print(student["name"])
+#output: Dibash
+
+#looping
+for key, value in student.items():
+    print(f"{key}: {value}")
+
+2. re-do challenge(fixed + easy)
+challenge 3 fix: printing student marks correctly
+
+student={
+    "name": "Dibash",
+    "marks": [80,90,85]
+}
+
+for mark in student["marks"]:
+    print(f"Mark: {mark}")
+
+#output 
+Mark: 80
+Mark: 90
+Mark: 85
+
+see we directly accessed the list using student["marks"]
+
+challenge 5 fix: average marks of students
+student={
+    "arya" = {"math":90,"science":85},
+    "bharat" = {"math":80,"science":90}
+}
+
+for name, subject in student.items():
+    total = sum(subject.values())
+    average = total / len(subject)
+    print(f"{name}'s average is {average}")
+
+-use .values() to get all marks
+
+3. Advance: default arguments + lambda
+default arguments
+
+def greet (name="Guest", age=20):
+    print(f"Hello, {name}!")
+    print(f"You are {age} years old")
+greet()
+greet("Dibash", 23)
+
+if no name is passed, it uses "Guest" as default
+
+lambda function(short anonymous function)
+add = lambda a,b: a+b
+print(add(1,2))
+#3
+lambda is like one-line function no def needed
+
+4.Practice time
+
+q1: write a function multiply_all(*args) that multiplies all numbers.
+q2: write a funciton describe_person(**kwargs) that prints all key_value pairs
+q3: using dictionary :
+menu={
+    "burger": 120,
+    "pizza": 150,
+    "salad": 100
+}
+
+ask uset to input an item name and print its price (if found)
+
+5. final challenge
+student report card function
+def report_card(name, **marks):
+    #calculate avg and print grade
+
+grade system:
+avg >= 90-> excellent
+avg >= 75-> Good
+else -> Needs improvement
+
+report_card("Arya", math=95, science=90, english=85)
+
+# Output:
+# Student: Arya
+# Average: 90.0
+# Grade: Excellent
+
+
