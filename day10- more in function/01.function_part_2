@@ -1,0 +1,72 @@
+we will cover:
+1. return values- send data back from a function
+2. scope- where variables live (local vs global)
+3. lambda function- short, one-line function
+4. Practice and challenge problems
+
+1. return keyword
+let's revise a basic concept. return sends a return back to the caller.
+unlike print(), return keeps the value
+
+def square():
+    return x * x
+
+result = square(5)
+print(result) #output : 25
+
+try this:
+def greet(name):
+    return f"Hello, {name}"
+print(greet("Dibash"))
+
+#output: Hello, Dibash
+
+2. Scope: global vs local
+x = 10 #global
+def modify():
+    x = 5 #local
+    print("inside:",x)
+modify()
+print("outside:",x)
+
+#output: inside: 5 outside: 10
+what happens?
+the inner x is local and doesnot affect the global x.
+
+use global if you want to change a global variables:
+
+count = 0
+def increment():
+    global count
+    count += 1
+increment()
+print(count) #output: 1
+
+3. lambda functions
+lambda = anonymous one-line function
+
+square = lambda x:x * x
+print(square(5)) #output: 25
+
+try these:
+add = lambda a, b : a + b 
+print(add(3,4))
+
+is_even = lambda a: a %2 ==0
+print(is_even(5)) #output: False
+
+#practice time
+1. write a function mutiply (a,b) that returns the product
+2. create a lambda to check if a number is divisible by 3
+3. write a function to calculate total marks and average from a list of scores.
+
+Final challenge: smart calculator
+create a function that accepts:
+
+an operation: "add", "sub", "mul", "div"
+two numbers
+
+and returns that result using the correct math operation.
+
+smart_calc("add", 5, 3) # 8
+
