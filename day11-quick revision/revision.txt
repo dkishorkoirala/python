@@ -1,0 +1,76 @@
+Day 1-3 python basics:
+variables- x = 5
+data types - int, float, str, bool
+user input 7 output- input(), print()
+string methods- .lower(), .upper(), .strip(), slicing
+
+practiced till date:
+age calculator
+name formatter
+word length counter
+
+day 4-5 tuples, lists & sets
+list- my_list =[1, 2,3 ], append, remove, sort
+nested lists- [[name, marks], ... ]
+tuples- immutable: my_tuples= (1, 2)
+sets- unique items: my_set = set([1, 2, 2])
+
+we practiced:
+Gradebook tracker
+unique letter counter
+shopping cart 
+
+day 6-7 Dictionaries & Data handling
+my_dict= {"name": "alex", "age": 21}
+.get(), .items(), .values(), .keys()
+Nested dictionaries
+
+we built:
+student score analyzer
+book library
+login system
+
+Day 8: conditionals + loops
+conditionals
+if, elif, else
+logical operators: and, or, not
+
+loops
+for i in range()
+while condition
+break, continue
+
+we did:
+age eligibility checker
+number guesser
+loop-based search
+atm system with loops
+
+Day 9-10: Function + lambda + scope
+function:
+def func_name(parameters):
+return vs print
+default params: def greet(name ="Guest")
+
+lambda:
+lambda x: x*2
+used in calculator, greater than check
+
+scope:
+local vs global variables 
+used global keyword in counter example
+
+we built:
+smart calculator( with lambdas)
+reusable math functions
+scope checker
+challenge: smart_calc(op, a, b) with lambdas and return
+
+final project/practice covered
+-ATM system
+-login system
+-Gradebook
+-smart calculator (lambda- based)
+function projects
+loop and condition exercises
+
