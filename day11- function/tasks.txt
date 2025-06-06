@@ -1,0 +1,76 @@
+Task 1: Return vs Print Practice
+
+Write a function called `double_number(n)` that:
+
+Returns double the value of n
+Print the result outside the function.
+
+test it with 5, 10, and 21.
+
+
+
+Task 2: Lambda Function Practice
+
+Convert the following into lambda functions:
+
+1. `add10(x)` → adds 10 to `x`
+2. `multiply(a, b)` → returns product of a and b
+3. `greater_than_50(n)` → returns True if `n > 50`
+
+Test each lambda on values of your choice
+
+Task 3: Smart Lambda Calculator
+
+Create a lambda-based calculator:
+
+* Accepts:
+
+    Operation: `"add"`, `"sub"`, `"mul"`, `"div"`
+    Two numbers: `a` and `b`
+ Returns the correct result using lambda expressions.
+
+> Example input/output:
+
+
+Enter operation: add
+Enter first number: 5
+Enter second number: 3
+Result: 8
+
+
+Use `if-else` and `dict` for clean code.
+
+
+Task 4: Scope Checker
+
+Create a program that:
+
+1. Defines a global variable `count = 0`
+2. Has a function `increment()` that:
+
+   * Increments `count` by 1
+   * Prints it inside the function
+3. Calls `increment()` three times
+4. Prints `count` **outside** the function at the end
+
+> Try it with and without `global` keyword and compare behavior.
+
+
+
+Challenge Task: Reusable Calculator Function with Return + Lambda
+
+Write a **reusable function** `smart_calc(op, a, b)` that:
+
+* Accepts:
+
+  * `op`: operation as a string (`"add"`, `"sub"`, etc.)
+  * `a`, `b`: numbers
+* Uses **lambda** internally via dictionary
+* Returns result using `return`, not print
+* Handles divide by zero error safely
+
+> Example call:
+
+
+result = smart_calc("mul", 4, 6)
+print("Final Answer:", result)

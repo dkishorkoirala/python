@@ -1,0 +1,79 @@
+Day 11: Advanced function Mastery
+
+we'll cover
+-lambda function
+-return vs print
+local vs global scope
+nested functions(optional preview)
+
+1. Return vs print(refresher)
+
+def add_print(a, b):
+    print(a + b)
+
+def ad_retur(a, b):
+    return a + b
+
+result = ad_retur(10, 3)
+print("result is:", result)
+
+why return is better: you can store, reuse or modify the returned value,
+print() just displays it.
+
+
+2. lambda functions
+a lambda is a one-line anonymous function:
+#refular function
+def square(x):
+    return x*x
+
+#lambda function
+square = lambda x: x*x
+print(square(5))
+
+try:
+#lambdato check even
+is_even = lambda x: x % 2 == 0
+print(is_even(5))
+
+3. practice task: convert these to lambda
+#task1 : function that adds 10
+#task2: function that multiplies two numbers
+#task3: function that checks if number > 50
+
+4. scope: local vs global
+
+x = 5 #global
+def change_x():
+    x = 10 #local
+    print("inside:", x)
+
+change_x()
+print("outside:", x)
+
+want to modify global from inside?
+x = 5
+def change_x():
+    global x 
+    x = 10
+change_x()
+print(x)
+
+5. challenge of the day: Smart calculator with lambda
+build a calculator using lambda function:
+operation= {
+    'add' : lambda a, b: a+b,
+    'sub' : lambda a, b: a-b,
+    'mul' : lambda a,b : a*b,
+    'div' : lambda a, b: a/b if b != 0 else "Error"
+}
+op = input("Enter operation (add/sub/mul/div)": ).lower()
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+if op in operation:
+    print("result: ", operation[op](a, b))
+else:
+    print("Invalid operation")
+
+    
