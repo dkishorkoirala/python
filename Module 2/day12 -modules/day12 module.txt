@@ -1,0 +1,78 @@
+Day 12 modules:
+we 'll cover:
+
+1. understand modules and why they matter
+2. learn to use python built-in modules: math and random
+3. create your own custom module and reuse its code
+4. learn different import styles (import, from ... import, aliasing)
+
+detailed explanation:
+what is module?
+- a Python module is simply a file (.py) that contains reusable code- functions
+variables, or classes
+
+-modules keep code clean, organized, and reusable.
+
+types of modules:
+1. Built-in : comes with python( math, random, datetime)
+2. THird-party: installed with pip (numpy, pandas)
+3. custom: you create your own (like mytools.py)
+
+using built-in modules
+math module
+
+import math
+print(math.sqrt(36)) #6.0
+print(factorial(5)) #120
+print(math.floor(7,9)) #7
+print(math.ceil(7, 1)) #8
+print(math.pow(2,3)) #8.0
+print(math.pi)      #3.14159...
+
+random module
+
+import random
+print (random.randint(1, 10)) #random number between 1 and 10
+print(random.choice(["a", "b"])) #random
+print(random.random()) #float between 0 and 1
+print(random.sample(range(1, 20), 3))   # 3 unique random numbers
+
+creating a custom module
+1.create a file mytools.py
+# mytools.py
+def greet(name):
+    return f"hello, {name}!"
+
+def cube(x):
+    return x **3
+
+2. use in math.py
+import mytools
+
+print(mytools.greet("john")) #hello, john!
+print(mytools.cube(3))      #27
+
+mini task
+create a python file practice.py that:
+1. Generates 3 random integer between 10 and 50
+2. for each number:
+    print its square root
+    print floor and ceil
+    if number <= 10 print its factorial
+3. use function from math and random
+
+daily challenge - DIce battle game(with custom module)
+goal: simulate a 2-player dice game (5 rounds)
+
+structure:
+dice_game.py: custom module with game logic
+main.py: game runner
+
+game flow:
+each player rolls using random.randint(1,6)
+display both rolls and who wins the rounds
+keep and display score after 5 rounds
+declare the winner at the end
+
+bonus:
+add a custom funtion in mytools.py to print a winner banner (eg. player 2 wins!)
