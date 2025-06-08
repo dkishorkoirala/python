@@ -1,0 +1,80 @@
+Revision form function to modules
+1. why function?
+Reuse logic without rewriting code
+make code readable and organized
+allow inputs (parameters) and output(return)
+
+def greet(name):
+    return f"Hello, {name}!"
+
+2. how are modules Different?
+a module is a file that can hold many functions, variables, and even classes.
+lets us split our program into multiple files.
+promotes clean architecture (like in real apps).
+
+tools.py
+def greet(name):
+    return f"Hello {name}!"
+
+def square(num):
+    return num *num
+
+main.py
+import tools
+
+print(tools.greet(Dibash))
+print(tools.square(int(input("enter any number"))))
+
+3. Types of import
+style           syntax              example
+normal          import module       import tools
+Direct          from module import  form tools import greet
+                func
+alias           import module as m  import tools as t
+
+Best Practice: Use import tools unless you have a good reason to 
+alias or import directly.
+
+4. Bilt-in module usage
+import math
+
+print(math.sqrt(4))
+print(math.factorial(5))
+
+random 
+improt random
+
+print(random.randint(1, 20))
+Quick hands on: create and use a module
+step 1
+calc.py
+
+def add(a, b):
+    return a+b
+
+def mul(a, b):
+    return a * b 
+
+step 2
+main.py
+import calc
+print(calc.add(5, 7))
+print(calc.mul(5, 7))
+
+Challenge revision: Dice game modularized
+you've already done this
+
+file                        contains
+dice_game.py                all game logic inside function
+main.py                     game controller using those functions
+
+summary table:
+concept             function                module
+purpose             reusable logic          reusable collection of functions
+location            inside one file         separate .py file
+used by             calling directly        import form another file
+ex.                 def greet()             tools.py-> import tools
+
+create:
+tools.py    -> with 2, 3 functions
+main.py->       imports and use them
