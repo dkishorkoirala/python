@@ -1,0 +1,45 @@
+day 1: intro to function:
+we'll cover:
+what a function is
+why function are useful
+how to define and call a basic function in python
+
+funtion is like  a mini-program inside our program. It helps us:
+-avoid repeating code
+-break big tasks into smaller, manageable parts
+-make your code look clean and smart( like a code ninja)
+
+imagine a blender: you just press the button and it makes a smoothie.
+you don't care how it works inside. That's what a function is in code!
+
+how to write a function in python
+def greet():
+    print("Hello, welcome to python")
+
+breakdown:
+def- tells python you're defining a function
+greet- name of your function(like naming a pet)
+()- holds input(we'll do that later)
+: means "now the function starts"
+print()- this is what the function does
+
+how to call (use ) the function
+once defined, you must call it to make it run:
+
+greet()
+
+if you don't call it python won't run it!
+
+mini task:
+create a function called hello_friend that prints:
+
+hello friend, have a good day!
+
+and call it
+
+Daily challenge
+1. say _hello()-> print "Hello!"
+2. say_goodbye()-> prints "See you!"
+daily_motivation()-> prints"Keep going, you're doing great!"
+
+then call them all, one after another

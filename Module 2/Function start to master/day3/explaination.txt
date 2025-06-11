@@ -1,0 +1,77 @@
+TOpic Day 3: multiple parameters, Default values, keyword arguments
+
+this is final day in function chapter we'll master flexibility in function calls!
+
+what you'll learn today
+1. functions with multiple parameters
+2. default values for arguments
+3. using keywords arguments to make calls more clear
+4. Mixing positional and keyword arguments
+5. Return vs print (quick recap)
+
+1. Function with multiple parameters
+you can define a function with two or more inputs:
+
+def greet(name, time_of_day):
+    print(f"Good {time_of_day}, {name}!")
+
+greet("Dibash", "morning")
+order matters when you use positional arguments.
+
+2. Default values:
+you can set a default value for parameters.
+this makes the function word even if no value is passed:
+
+def greet(name, time_of_day="day"):
+    print(f"Good {time_of_day}, {name}!")
+
+greet("Dibash")    # uses default -> good day, Dibash!
+greet("Dibash", "evening")  #overrides default-> Good evening, Dibash!
+
+3. keyword arguments
+you can use keywords to make function calls clearer, and order doesn't matter:
+
+def greet(name, time_of_day):
+    print(f"Good {time_of_day}, {name}!")
+
+greet(name = "Dibash", time_of_day="night")
+greet(time_of_day="afternoon", name = "Dibash")
+
+same results either way
+
+4. Mixing Positional + keywords
+
+def greet(name, time_of_day="morning"):
+    print(f"Good {time_of_day}, {name}!")
+
+greet("Dibash")     #positional only
+greet("Dibash", time_of_day="evening")  #mix: positional + keyword
+but you cannot do keyword first and positional later
+
+mini task (your turn)
+creat a function:
+
+def favourite_book(name, book):
+# it should return a message like:
+#"Dibash's favourite book is the Alchemist."
+
+Challenge Project
+Create a function meal_plan() that:
+
+def meal_plan(name, breakfast="toast", lunch="rice", dinner="pasta"):
+    # returns a message like:
+    # "Dibash's meal plan: Breakfast - toast, Lunch - rice, Dinner - pasta"
+Try these:
+
+Just meal_plan("Dibash")
+
+Override lunch only: meal_plan("Dibash", lunch="burger")
+
+Override all meals
+
+##End of Day Reflection
+You’ve now mastered:
+
+Function inputs (basic, multiple, default)
+Return vs print
+Clean and readable code

@@ -1,0 +1,47 @@
+Day 2: return Vs Print + function Inputs:
+what you'll learn today:
+the difference between print() and return
+how to pass inputs into function (parameters)
+why return makes dunctions reusable in AI and logic
+
+print() vs return- what's the difference?
+
+def greet():
+    return "Hello, My student!"
+
+message = greet()
+print(message)  # prints: Hello, My student!
+
+return sends a value back to the caller, which can be stored, modified, or passed again
+
+print() only shows the output- it doesn't return anything you can reuse 
+
+saying:
+print() is for display, return is for power and reuse
+
+function inputs (parameters)
+you can send data into a function like this:
+def greet(name):
+    return f"Namaste, {name}!"
+
+print(greet("Dibash")) # prints: Namaste, Dibash!
+
+you can give one, two or many inputs:
+def add(a, b):
+    return a + b 
+
+result = add (10 , 5)
+print(result) # prints: 15
+
+your mini task:
+Define a function square (num) that returns the square of a number.
+
+print(square(3))
+
+daily challenge:
+build a motivation generator that:
+takes your name as input( like motivate ("Dibash"))
+return a personalized message like:
+    keep going, kishor! you are doing great!
+
+use return, not print() inside the function

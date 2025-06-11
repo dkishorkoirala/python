@@ -1,0 +1,69 @@
+We will cover:
+try-except->  handle runtime errors gracefully
+else/finally-> code that runs only if no error/always runs
+specific exceptions-> handle zeroDivisionError, ValueError, etc 
+raise-> Manually trigger an error when a condition isn't met
+custom exceptions-> Create your own exception class(oop prep!)
+
+1. try/except
+used to catch and handle exceptions(errors).
+
+try:
+    x = 5/0
+except ZeroDivisionError:
+    print: ("You can't divide by zero!")
+
+2. else/finally
+else: runs only if no exception occurs
+finally: runs no matter what (often used for cleanup)
+
+try: 
+    num = int(input("Enter any number: "))
+except ValueError:
+    print("Invalid Input! Must be a number.")
+else:
+    print(f"Square is {num *num}")
+finally:
+    print("Thanks for using the app")
+
+3. Handle specific errors
+try:
+    name = input("Enter name: ")
+    age = int(input("Enter age: "))
+    print(f"{name} is {age} years old")
+except ValueError:
+    print("Age must be a number.")
+
+4. using raise
+you can manually trigger errors.
+def set_age(age):
+    if age<0:
+        raise ValueError("Age cannot be negative")
+    print("Age is valid")
+
+
+5. Custom error classes (preview of oop)
+class InvalidAgeError(Exception):
+    pass
+
+def vote(age):
+    if age < 18:
+        raise InvalidAgeError("You are not eligible to vote.")
+    print("You can vote.")
+
+practice handling errors
+write a script:
+takes 2 numbers from the user.
+tries to divide them.
+catches:
+    zeroDivisionError
+    ValueError if input isn,t numeric
+
+Daily challenge: ATM Error Handler
+atm_safe.py
+-ask user to withdraw amount.
+raise error if:
+    user enters non-numeric input.
+    withdraw exceeds balance
+    withdraw is negative
+    
