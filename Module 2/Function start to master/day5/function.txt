@@ -1,0 +1,107 @@
+Day 3: Return vs print, nested function and functon as object
+
+we'll cover
+1. Return vs print: Understand the difference between returning
+a value from a function and printing it
+
+2. Nested function learn how to define one function inside 
+another(also called inner funciton)
+
+3. Function as objects: use function as arguments, return them from
+other funciton, and store them in variables.
+
+1. return v/s print:
+ex
+def printer_function():
+    print ("This prints a message")
+def return_function():
+    return "THis return a message"
+
+printer_function()
+result = return_function()
+print(result)
+
+key difference:
+print()                                 return
+displays the value in the terminal      sends the value back to the caller
+doesnot save or return anything         can be saved and reused
+good for debugging/output               good for logic and building systems
+
+def add_print(a, b):
+    print(a + b)
+
+def add_return(a, b):
+    return a + b
+
+x = add_print(3, 4)
+y = add_return(3, 4)
+
+print("x =", x)  # What will this be?
+print("y =", y)
+
+2. Nested Function(function inside function)
+def outer():
+    print ("I'm the outer function")
+
+    def inner():
+        print("i' m inner function")
+    
+    inner()
+outer()
+
+the inner function only works inside the outer one
+
+practice
+def calculator (a,b):
+    def add(): return a+b
+    def mul(): return a*b
+
+    return f"add: {add()},  multiply: {mul()}"
+
+print(calculator(4,5))
+
+3. function as objects(functions as variables, arguments, return values)
+we can pass function as values:
+
+def greet(name):
+    return f"Hello {name}"
+
+def run_func(func, value):
+    return func(value)
+
+print(run_func(greet, "Dibash))
+
+practice:
+def power_function(power):
+    def inner(num):
+        return num ** power
+    return inner
+
+square = power_function(2)
+cube = power_function(3)
+
+print(square(5))
+print(cube(2))
+
+mini task:
+create a funciton choose_operation(op) that returns as inner function to :
+-add if op == "add"
+-multiply if op == "mul"
+
+then do :
+operation = choose_operation('add')
+print(operation(4, 5))
+
+Daily challenge project
+build: personal math assistant
+1. Outer function: math_assistant(name)
+2. inner function:
+    add (a, b)
+    subtract( a,b)
+    multiply(a, b)
+
+3. returns a dictionary of these operations
+4. greet user and use one of the returned functions
+
+assistant = math_assistant("Dibash")
+print(assistant['add'](4, 5))   # Output: 9
