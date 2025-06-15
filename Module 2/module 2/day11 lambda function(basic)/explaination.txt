@@ -1,0 +1,46 @@
+Day 11: Lambda function(basic level)
+
+we'll cover:
+what is lambda function in python?
+how to write and use lambda fucntions.
+differences between lambda fucntions and regular fucntions
+simple practical examples
+
+Quick intro:
+a lambda function is a small anonumous function- meaning it doesn't 
+need a name. It's useful when we need a quick function for a short task,
+usually in one line.
+
+syntax:
+lambda arguments: expression
+
+ex:
+add = lambda x, y : x + y
+print(add(3, 4))
+
+why use lambda?
+handy for short, simple functions
+often used in function like map(), filter(), and sorted() where we need a small function as an argument.
+keeps our code concise.
+
+mini Task(practice):
+create a lambda function that:
+1. takes a number and returns its square
+2. takes two numbers and returns their products
+
+more:
+
+Check Even or Odd
+Write a lambda function that takes a number and returns "Even" if the number is even, else "Odd".
+
+Sort List of Tuples by Second Element
+Given a list of tuples like [(1, 3), (2, 1), (4, 2)], use a lambda function to sort the list based on the second element of each tuple.
+
+Bonus Challenge 1: Maximum of Three Numbers
+Write a lambda function that takes three numbers and returns the largest.
+
+Bonus Challenge 2: Check if Year is Leap Year
+Use a lambda function to check if a year is a leap year.
+A leap year is:
+Divisible by 4 and
+Not divisible by 100 unless also divisible by 400
