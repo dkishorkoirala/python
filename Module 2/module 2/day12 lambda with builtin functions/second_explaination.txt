@@ -1,0 +1,60 @@
+Topic 2: using lambda with max() and min()
+just like sorted(), both max() and min() also accept
+the key parameter.
+
+basic syntax:
+max (iterable, key = lambda item: some_rule)
+min (iterable, key = lambda item: some_rule)
+
+ex.1: find the student with the highest score
+students:[
+    {"name": "alice", "Score" : 88},
+    {"name": "bob", "Score" : 75},
+    {"name": "charlie", "Score" : 95}
+]
+
+top_student = max (student, key = lambda x: x["Score"])
+print(top_student)
+
+ex.2: find the longest name in a list
+names = ["Sam", "Elizabeth", "jo", "charlie"]
+
+longest_name = max(names, key = lambda x: len(x))
+print(longest_name)
+
+ex. 3: find the tuple with the smallest second value
+pair = [(3,4), (1,2), (5,0)]
+
+min_pair = min(pair, key = lambda x:x[1])
+print(min_pair)
+
+practice tasks
+1. find the name with the smallest length in the list below:
+names = ["Sam", "Elizabeth", "Jo", "Charles"]
+
+2. from the list of students, find the one with the lowest average score:
+student=[
+    {"name": "Alice", "scores": [85, 90, 78]},
+    {"name": "Bob", "scores": [70, 88, 95]},
+    {"name": "Charlie", "scores": [90, 92, 85]}
+
+]
+
+3. Find the dictionary with the highest age from this list:
+people = [
+    {"name": "Tom", "age": 32},
+    {"name": "Jerry", "age": 25},
+    {"name": "Spike", "age": 40}
+]
+
+4. Find the tuple where the product of elements is the highest:
+
+tuples = [(2, 5), (1, 10), (4, 3)]
+
+5. Find the student with the highest lowest individual score:
+
+students = [
+    {"name": "Alice", "scores": [85, 90, 78]},
+    {"name": "Bob", "scores": [70, 88, 95]},
+    {"name": "Charlie", "scores": [90, 92, 85]},
+]

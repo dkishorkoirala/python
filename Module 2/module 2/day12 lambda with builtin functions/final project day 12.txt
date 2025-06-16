@@ -1,0 +1,55 @@
+Day 12 - Final Challenge Project: Student Report Generator
+What you’ll build:
+A program that takes a list of students (with their names and scores), and:
+Calculates each student’s average score.
+
+Finds:
+Topper (highest average)
+Student with the lowest average
+Student with the highest minimum score
+
+Sorts the students:
+By average score
+By highest individual score
+Formats and displays everything cleanly.
+
+Starter Data:
+students = [
+    {"name": "Alice", "scores": [85, 90, 78]},
+    {"name": "Bob", "scores": [70, 88, 95]},
+    {"name": "Charlie", "scores": [90, 92, 85]},
+    {"name": "David", "scores": [80, 82, 84]}
+]
+Your Tasks:
+Step 1: Add average score to each student
+Use map() and lambda.
+
+Step 2: Find:
+Topper (highest average score)
+Student with lowest average
+Student with highest minimum score (safest performer)
+Use max() / min() with key= and lambda.
+
+Step 3: Sort students
+By average score (ascending)
+By highest individual score (descending)
+Use sorted() and lambda.
+
+Step 4: Print nicely
+Display results like:
+
+Topper: Charlie with average 89.0
+Lowest Scorer: Bob with average 84.33
+Most consistent performer (best lowest score): Charlie with min score 85
+
+Sorted by average score:
+Alice - 84.33
+Bob - 84.33
+David - 82.0
+Charlie - 89.0
+
+Sorted by highest score:
+Bob - 95
+Charlie - 92
+Alice - 90
+David - 84

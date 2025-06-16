@@ -1,0 +1,80 @@
+day 12 : continues - more intermediate lambda use-cases
+
+topic 3: using lambda with filter() and map()
+
+Both filter() and map() are built-in python functions that often pair
+perfectly with lambdas to process data in list or other iterables.
+
+what are they?
+filter (function, iterable)
+filters(keeps) only those items from the iterable where the 
+function (item) return True.
+
+map(function, iterable)
+applies the function to each item of the iterable and return a new
+iterable with the results.
+
+syntax with lambda
+
+filter(lambda x: some_condition, iterable)
+map(lambda x: some_transformation, iterable)
+
+ex: 
+1. filter even numbers from a list
+numbers = [1, 2 ,3 ,4 ,5, 6]
+evens = list(filter(lambda x:x % 2 == 0, numbers))
+print(even)
+
+2. map to square every number in a list
+numbers = [ 1, 2,3 ,4 ]
+squares = list(map(lambda x: x **2 , numbers))
+print(squares)
+
+3. filter dictionaries with age > 30 
+people = [
+    {"name" : "Tom" , "age" : 32},
+    {"name" : "Jerry", "age" : 25},
+    {"name" : "Spike", "age": 40}
+]
+over_30 = list(filter(lambda person: person['age'] > 30 , people))
+print(over_30)
+
+task and challenges
+
+1. Given a list of numbers, filter out only the odd numbers.
+
+numbers = [10, 15, 20, 25, 30, 35]
+
+2. Given a list of strings, use map and lambda to convert all strings to uppercase.
+
+words = ["apple", "banana", "cherry"]
+
+3. From the list of students below, filter only those who have an average score above 85.
+
+students = [
+    {"name": "Alice", "scores": [85, 90, 78]},
+    {"name": "Bob", "scores": [70, 88, 95]},
+    {"name": "Charlie", "scores": [90, 92, 85]},
+]
+
+bonus
+Challenge 1:
+You have a list of tuples with names and scores:
+
+data = [("Alice", 85), ("Bob", 90), ("Charlie", 82)]
+Use map() and a lambda to convert this list into:
+
+["Alice: 85", "Bob: 90", "Charlie: 82"]
+
+Challenge 2:
+From this list of students, use map() to add a new key "average" to each dictionary:
+
+students = [
+    {"name": "Alice", "scores": [85, 90, 78]},
+    {"name": "Bob", "scores": [70, 88, 95]},
+    {"name": "Charlie", "scores": [90, 92, 85]},
+]
+
+Each dictionary should now look like:
+
+{'name': 'Alice', 'scores': [...], 'average': 84.33}

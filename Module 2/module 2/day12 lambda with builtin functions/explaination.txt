@@ -1,0 +1,80 @@
+Day 12: lambda with built-in functions (level intermediate)
+we 'll cover 
+1. using lambda with:
+sorted()- custom sorting (like sorting tuples or dictionaries)
+max() and min() - with key functions
+
+2. common use-cases:
+    sorting by second item in a tuple
+    sorting dictionary values
+    finding longest string or highest value from a list of dicts/tuples
+3. Practice tasks and 5 new challenges
+
+Topic 1: Using lambda with sorted()
+what is sorted()?
+sorted() is a built-in functions that returns a new sorted list from the
+elements of any iterable (like list, tuple, etc)
+
+it takes an optional argument called key - which can be a lambda function
+- to decide how to sort
+
+Basic syntax:
+sorted(iterable, key = lambda item:some-rule)
+
+ex1: sort a list of tuples by the second item
+pair = [(1,3) , (2,1), (4,2)]
+
+#sort by second item in each tuple
+sorted_pairs = sorted(pairs, key = lambda x:x[1])
+print(sorted_pairs)
+
+lambda x:x[1] means : for each tuple x, use the second item (x[1])
+to sort
+
+ex.2: sort a list of dictionaries by a specific key
+
+students = [
+    {"name":"alice", "score":88 },
+    {"name":"bob", "score": 75},
+    {"name": "charlie", "score":95}
+]
+
+sorted_students = sorted(students, key = lambda student: student['score'])
+print(sorted_students)
+
+mini Practice tasks
+1. sort this list of tuples by first item:
+pairs = [(3,4),(1,2),(5,0)]
+
+2. sort this list of names by their length:
+names=["sam", "Elizabeth", "Jo", "Charles"]
+
+3. sort a list of dictionaries by age:
+people = [
+    {"name" :"Tom", "age" : 32},
+    {"name": "jerry","age": 25},
+    {"name": "spike","age": 40}
+]
+
+bonus:
+You have a list of students, where each student is represented as a dictionary
+ with a name and a list of their scores.
+
+students = [
+    {"name": "Alice", "scores": [85, 90, 78]},
+    {"name": "Bob", "scores": [70, 88, 95]},
+    {"name": "Charlie", "scores": [90, 92, 85]},
+]
+Task:
+Use sorted() with a lambda to sort the students by their average score 
+(ascending order).
+
+bonus 2:
+Sort the students by their highest individual score, not the average.
+students = [
+    {"name": "Alice", "scores": [85, 90, 78]},
+    {"name": "Bob", "scores": [70, 88, 95]},
+    {"name": "Charlie", "scores": [90, 92, 85]},
+]
+Use sorted() and a lambda function to sort this list by the maximum score in 
+each student's scores list.
