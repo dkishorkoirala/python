@@ -1,0 +1,92 @@
+Day 13: Mastering List comprehensions
+
+we'll learn:
+-convert loops into one-liner list comprehensions
+-use conditions inside comprehensions
+-nest them when needed
+-practice deeply with multiple tasks and challenges
+
+what is a list comprehension?
+list comprehensions are a clean, pythonic way to create new lists by
+applying logic to existing iterables (like lists or ranges).
+
+instead of this:
+square= []
+for i in range(5):
+    squares.append(i ** 2)
+
+we can write:
+squares = [i ** 2 for i in range (5)]
+
+core syntax:
+new_list = [expression for item in iterable if condition]
+
+expression: what to do with each item
+iterable: where you're looping over (like a list)
+condition(optional): filter items
+
+mini task : convert loop -> list comprehension
+
+number = [ 1, 2, 3, 4, 5]
+convert this to list comprehension:
+
+square = []
+for num in numbers:
+    square.append(num * num)
+
+mini task 2: filter with condition
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+use list comprehension to get only the even numbers 
+
+task 1 : square only the even numbers
+given a list of numbers, create a new list containing only the squares of 
+even numbers.
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+tasks 2 : extract first letters from words
+from a list of words, create a new list of just the first letter of each words
+words = ['apple', 'banana', 'cherry']
+
+task 3: get lengths of words grater than 4 characters
+from a list of strings, create a list of their lengths only if the word is 
+longer than 4 characters
+
+words = ["hi", "hello", "python", "is", "fun"]
+
+challenge 1: Reverse odd-length words
+given a list of words, reverse only those words which have odd length.
+
+words = ["sun", "moon", "sky", "space"]
+
+challenge 2: custom filter 
+create a list of numbers between 1 and 50 (inclusive) that are:
+divisible by 3
+but not divisible by 5
+
+challenge round 2
+
+task 4: 
+square the numbers and keep only those greater than 20
+nums = [1, 3, 5, 7, 9]
+
+task 5: remove vowels from a word
+word = 'beautiful'
+
+challenge 3: Flatten nested list (1-level deep)
+nested = [[1, 2], [3, 4], [5]]
+
+challenge round 3
+
+task 6: create all pairs (i,j) from two lists if i < j
+a = [1,2,3]
+b = [2,3,4]
+
+challenge 4: word -> Remove vowels and reverse it
+using list comprehension
+
+word = "chocolate"
+
+challenge 5: Extract digits from a sentence
+sentence = "My phone number is 9841234567 and PIN is 1234"
