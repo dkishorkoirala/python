@@ -1,0 +1,61 @@
+day 13 part 2: mastery of list comprehensions( nested, conditionals, practice)
+
+what we'll master today
+1. nested list comprehensions(2D lists)
+2. list comprehension with if .... else
+3. Real-world practice tasks
+4. 3 challenge projects to seal our skills
+
+step 1: if .... else inside list comprehensions
+basic form:
+[<value_if_true> if <condition> else <value_if_false> for item in iterable]
+
+ex: 
+numbers = [1, 2, 3, 4, 5]
+result = ["even" if num % 2 == 0 else "odd" for num in numbers]
+print(result)
+
+mini task 1
+from the list [5, 10, 15, 20] create a list where:
+if the number is divisible by 10, put "yes",
+else, put "no".
+
+step 2: Nested list comprehensions (2D lists)
+when working with lists of lists, you can flatten them or transform them
+using nested comprehensions.
+
+ex1.: flatten a 2D list
+matrix = [[1, 2], [3,4],[5,6]]
+flat = [num for row in matrix for num in row]
+print(flat)
+
+ex. 2: square each number in a 2D list
+matrix = [[1,2], [3,4]]
+squared = [[num ** 2 for num in row] for row in matrix]
+print(squared)
+
+mini task 2:
+matrix = [[2, 4], [6, 8 ], [10,12]]
+create a new list where each even number is divided by 2 and keep the structure same 2D
+
+challenge 1: filter and flatten
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+task: create a flat list of only odd numbers squared
+
+next challenge: reverse vowels only
+given a list of words, reverse only the vowels in each word using list
+comprehension
+
+words = ["hello", "world", "python", "guru"]
+
+task: create a list with each word reversed, but only incluide the 
+word if it starts with a consonant
+
+words = ["apple", "sky", "orange", "banana", "grape"]
+
+challenge final:
+multiply odd numbers in nested list
+from a nested list of numbers, extract and double all odd numbers into one flat list.
+
+nested = [[1, 2, 3], [4, 5, 6], [7]]
