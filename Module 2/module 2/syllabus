@@ -1,0 +1,24 @@
+
+| **Day(s)** | **Topic**                            | **Level**    |
+| ---------- | ------------------------------------ | ------------ |
+| 11         | Lambda Functions                     | Basic        |
+| 12         | `return` vs `print`                  | Basic        |
+| 13         | Using Lambdas with Return Values     | Intermediate |
+| 14         | Variable Scope in Python             | Intermediate |
+| 15         | Nested Functions                     | Intermediate |
+| 16         | Closures and Function Objects        | Advanced     |
+| 17         | Modules: `import` basics             | Basic        |
+| 18         | Advanced Module Usage                | Intermediate |
+| 19         | Practical Module Projects            | Intermediate |
+| 20         | Custom Modules & `main.py` Structure | Intermediate |
+| 21         | Module Reusability & Organization    | Intermediate |
+| 22         | Review and Mini Project              | Intermediate |
+| 23         | Error Handling Basics: `try-except`  | Basic        |
+| 24         | Advanced Error Handling              | Intermediate |
+| 25         | Designing Custom Errors              | Advanced     |
+| 26         | File Handling Basics                 | Basic        |
+| 27         | Advanced File Handling               | Intermediate |
+| 28         | Using `with` for File Management     | Intermediate |
+| 29         | Working with CSV Files               | Intermediate |
+| 30         | Working with JSON Files              | Intermediate |
+| 31         | Mini Project: Data File Handling     | Intermediate |

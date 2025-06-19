@@ -1,0 +1,110 @@
+Day 14: Variable scope in Python (intermediate)
+we'll go deep into understanding:
+
+#    concept            meaning
+1. Local Scope          Variables declared inside a function
+2. Global Scope         variables declared outside any function
+3. Function Scope       How the python chooses which variable to use
+    behavior            (LEGB Rule)
+4. Modifying global     Using global keyword
+   variables
+5. Best Practices       when to use which and avoid errors/confusion
+
+mini task 1: observe local vs global
+x = 10 
+def my_fun():
+    x = 5
+    print("Inside function:", x)
+my_fun()
+print("outside function: ", x)
+
+try running it and notice: Does the value of x change outside the function?
+
+Mini task 2: Modify GLobal Variable
+
+count = 0
+
+def increment():
+    global count
+    count += 1
+    print("Inside:", count)
+increment()
+print("outside: ",count)
+
+try this too and observe how using global changes the outer value.
+
+Challenge for Practices
+challenge 1: 
+write a function that modifies a global list by adding an item.
+
+challenge 2: 
+create a function that reads a global variable, multiplies it by 2, and prints it
+show that the original global value stays unchanged.
+
+challenge 3:
+wrie two functions:
+
+-one defines a local variable x = 5
+-another uses the global x = 10
+compare both outputs
+
+now : Deep Dive into the LEGB Rule
+- the LEGB Acronym
+Python resolves name in this order:
+1. Local- Names defined inside the current function.
+2. Encosing- Names in any outer (Encosing) function, if you're in a 
+   nested function.
+3. Global- Names defined at the top level of a module.
+4. Built-in -Names preassigned in the built-in namespace (e.g. ,Len, print).
+
+ex.1: Local vs enclosing
+def outer():
+    x = "outer x"
+    def inner():
+        x = "Inner x"
+        print("Inner sees:", x)
+    inner()
+    print("Outer sees:", x)
+
+outer()
+
+Inner sees : inner x
+outer sees: outer x
+
+example 2: Nonlocal (Enclosing scope Modification)
+def outer():
+    x = "outer"
+    def inner():
+        nonlocal x
+        x = "Modified by inner"
+    inner()
+    print("After inner():", x)
+
+outer()
+
+After inner(): Modified by inner
+
+mini task 3
+write a nested function where:
+-the outer defines  count = 0
+-the inner increments count by 1 using nonlocal
+-call the inner twice and then print count from the outer.
+
+challenge 4:
+create a function that:
+-has a parameter msg.
+-defines a nested function that prints msg.
+-reassigns msg inside inner using nonlocal.
+-shows both before and after values of msg.
+
+bonus challenge 1: nonlocal counter
+create a function make_counter() that returns a function.
+each time you call the returned function, it increases the internal counter
+by 1 and prints it.
+
+bonus challenge 2: Track message edits
+create a function that:
+takes a message,
+has an inner function that edits the message using nonlocal,
+after calling inner multiple times, print the final message.
+
