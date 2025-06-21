@@ -1,0 +1,135 @@
+Day 15: Nested functions in python
+
+what Nested function are
+why we use them
+scope of nested function
+closure: returning inner function
+real-world examples and use-cases
+
+mini- task for practice
+challenges 2 or 3 advanced ones
+a bonus task
+
+what are nested function
+a nested function is simply:
+a function defined inside another function.
+
+The outer function is like a container.
+the inner function is hidden and can only be used inside the outer function.
+
+ex. 
+def outer():
+    print("Outer function called!")
+    def inner():
+        print("Inner function")
+    inner()
+outer()
+
+
+why use nested functions?
+1. encapsulation: keep helper function private to the outer one.
+2. scoping - inner functions can access variables from the outer function (nonlocal variables)
+3. closure: we can return inner functions and retain their state.
+
+mini task 1:
+write  a function called greet_user() that:
+-defines an inner function ask_name() which returns a username
+- uses that username to print a greeting inside a greet_user().
+
+think:
+-greet_user() will call ask_name().
+-ask_name() can simply return "Alice" for now.
+
+mini challenge: Nested calculator!
+what we'll do
+-create an outer function calculator() that:
+    asks the user to enter two numbers.
+    defines an inner function add() to add two numbers.
+    defines an inner function multiply() to multiply two numbers
+    prints the results.
+
+more on day 15
+we'll cover:
+1. nested helper functions that work together to solve one larger problem
+2. practice nonlocal again, but with more practical examples
+3. combine everything in mini-challenge that feel like  small utility program
+
+what is nested funcitons?
+a nested function is a function defined inside another function.
+i.e 
+def outer_fun():
+    #outer scope
+    def inner_function(): #defined inside outer
+        #inner scope
+        pass
+
+key points: The inner function can access variables in the outer
+function
+the inner function is not accessible outside the outer.
+nested functions help us:
+-break down a complex task into smaller logical chunks.
+-encapsulate helper logic that only outer funciton needs.
+
+why nested functions?
+think of them like private helper functions.
+for ex.
+-input validation inside a calculator
+-data processing steps inside a report generator
+
+what is nonlocal?
+when you want to modify a variable that's in the outer (Enclosing)
+function's scope (not global), we use nonlocal
+
+ex.
+def outer():
+    counter = 0
+    def inner():
+        nonlocal counter
+        counter += 1
+        print("Updated counter: ", counter)
+    inner()
+    inner()
+    return counter
+
+-without nonlocal, counter inside inner() would be a new local 
+variable and wouldn't change the one outside.
+
+why not global?
+global jumps all the way up to the global namespace.
+nonlocal stays one level up- this is perfect for nested helper functions.
+
+when to use nonlocal?
+whenever:
+you want an inner helper to remember/update some state between calls 
+you want to implement counters, accumulators, or trackers.
+
+ex. 
+def outer():
+    x = 10
+    def inner():
+        nonlocal x
+        x += 5
+        print("Updated x inside inner():",x)
+    inner()
+    inner()
+    print("x after inner() calls: ", x)
+outer()
+
+task 1: counter with nested function
+write a function make_counter() that:
+-has a variable count initialized to 0.
+-inside it, define a nested function increment() that:
+    -uses nonlocal to increase count by 1
+    prints the current value of count.
+-call increment() three times inside make_counter().
+finally, call make_counter() to see the output
+
+task 2: nested functions with parameters
+Write a function greet(name) that has an inner function get_message() 
+which returns a greeting message using the name passed to the outer 
+function.
+
+What you need to do:
+    Outer function: greet(name)
+    Inner function: get_message() uses name from the outer function’s parameter (use closure)
+    greet() calls get_message() and prints the greeting message.

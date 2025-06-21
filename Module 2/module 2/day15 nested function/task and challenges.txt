@@ -1,0 +1,71 @@
+# Day 15: Nested Functions — Tasks & Challenges
+Mini Tasks (smaller focused exercises)
+
+Task 1:
+Write a nested function that prints "Hello, \<name>!" where the name is 
+passed to the outer function.
+Example:
+
+greet("Ram")  
+# Output: Hello, Ram!
+
+
+Task 2:
+Create a function make_multiplier(n) which returns a nested function 
+that multiplies its input by n.
+Example:
+
+times3 = make_multiplier(3)  
+print(times3(5))  # Output: 15
+
+
+Task 3:
+Write a nested function that modifies a nonlocal variable counter by 
+incrementing it each time the inner function is called.
+The outer function should call the inner function 3 times and print the 
+final counter value.
+
+Task 4:
+Create a nested function that asks for user input (a message), then the 
+outer function prints the message twice (once from inner, once from 
+outer).
+
+Task 5:
+Write a nested function that converts a given string to uppercase inside 
+the inner function and returns it to the outer function, which then prints it.
+
+
+Challenges (bigger, multi-step problems)
+
+Challenge 1:
+Write a nested function power(base, exp) where the outer function takes 
+the base, the inner function takes the exponent, and returns the result 
+base ** exp`.
+
+Example:
+
+power_of_2 = power(2)  
+print(power_of_2(3))  # Output: 8
+
+Challenge 2:
+Create a function counter_maker() that returns a function. Each time the 
+returned function is called, it should increment and return an internal 
+counter value starting from 0.
+
+Example:
+count = counter_maker()  
+print(count())  # 1  
+print(count())  # 2  
+print(count())  # 3
+
+
+Challenge 3:
+Write a function nested_calculator() that has nested functions for 
+addition, subtraction, multiplication, and division. The outer function 
+takes two numbers and prints the results of all four operations using the 
+inner functions.
+
+Challenge 4 (Bonus):
+Write a nested function that uses nonlocal to keep track of the number of 
+times it has been called. The outer function should return this count after 
+several calls.
