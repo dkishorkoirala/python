@@ -1,0 +1,85 @@
+Challenge 1: Counter Factory
+# Create a make_counter function that returns a function.
+# Each time you call it, it increases and returns a count.
+
+counter1 = make_counter()
+print(counter1())  # 1
+print(counter1())  # 2
+
+counter2 = make_counter()
+print(counter2())  # 1 (separate counter)
+
+Challenge 2: Power Generator
+# Create a function make_power(base) that returns a function
+# which raises any number to that base.
+
+square = make_power(2)
+print(square(5))  # 25
+
+cube = make_power(3)
+print(cube(2))    # 8
+
+Challenge 3: Secret Keeper
+# Write a closure that stores a secret message.
+# The outer function takes the message.
+# The inner function returns it only if you provide the correct password.
+
+my_secret = secret_keeper("the cake is a lie", password="open123")
+print(my_secret("wrong"))     # Access Denied
+print(my_secret("open123"))   # the cake is a lie
+
+Mini Task 4: Tag Generator
+Create a function make_tag(tag) that returns a function which wraps text 
+in that HTML tag.
+
+Example:
+
+bold = make_tag("b")
+print(bold("Hello"))  # <b>Hello</b>
+
+Mini Task 5: Temperature Converter Factory
+Create make_converter(to_celsius=True) that returns a function which 
+converts Fahrenheit to Celsius if to_celsius is True, or Celsius to 
+Fahrenheit if False.
+
+Example:
+
+to_c = make_converter(True)
+print(to_c(100))  # Output: 37.78
+
+to_f = make_converter(False)
+print(to_f(0))  # Output: 32.0
+
+Extra Challenge Tasks — Day 16 (Bonus Closures)
+Challenge 4: Running Total
+Write a function running_total() that returns a closure. Each time the 
+closure is called with a number, it adds it to the running total and returns 
+it.
+
+total = running_total()
+print(total(5))  # 5
+print(total(3))  # 8
+print(total(10)) # 18
+
+
+Challenge 5: Logger Factory
+Make a function make_logger(level) that returns a logging function.
+The returned function should print messages prefixed with [level].
+
+info = make_logger("INFO")
+error = make_logger("ERROR")
+
+info("All systems normal")  # [INFO] All systems normal
+error("Something went wrong")  # [ERROR] Something went wrong
+
+Challenge 6: Access Locker (Lockable State)
+Write a function locker(password) that returns a function.
+Each time the returned function is called, it asks for the password.
+Only if correct, it toggles a "lock state" (locked → unlocked and vice 
+versa) and prints it.
+
+door = locker("admin")
+
+print(door("wrong"))     # Access denied
+print(door("admin"))     # Unlocked
+print(door("admin"))     # Locked

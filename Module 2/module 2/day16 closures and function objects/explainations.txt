@@ -1,0 +1,120 @@
+Day 16: Closures and Function objects
+
+Closures are a foundation for advanced concepts like decorators, Function factories, and custom behavior- 
+and they're deeply tied to how python treats functions as first-class objects.
+
+#What we'll cover:
+1. What are Closures in python(in simple words?)
+2. What makes a function a Closure?
+3. what are function objects?
+4. How to create and use Closures
+5. Real-world examples(function factories, logging, privacy)
+6. mini tasks to reinforce learning
+7. Challenges to test your understanding
+
+Part1: First-class functions in python
+in python, functions are treated as values, which means:
+
+-you can assign them to variables
+-you can pass them to other functions
+-you can return them from functions
+-you can store them in data structures (lists, dicts...)
+
+ex.
+def greet():
+    return "Hello"
+
+say_hi = greet          #assign function to variables
+print(say_hi())         #call the function through that variable
+
+Part 2: what is a Closure?
+a closure is :
+nested function that "remembers" and uses variables from the 
+enclosing scope, even the outer function has finished executing.
+
+structure:
+ex.
+def outer():
+    x = 10
+    def inner():
+        print(x)    #inner "remembers" x
+    return inner
+
+closure_fn = outer()        #oter() returns inner()
+closure_fn()                #prints 10, even though outer() is finished!
+
+this is what makes it a closure:
+-function inside a function
+-inner function refers to a non-global variable
+-outer function returns the inner function
+
+mini task: Basic closure
+def make_printer(msg):
+    def printer():
+        print("Message:", msg)
+    return printer
+
+hello = make_printer("Hello world")
+hello()         #should print: Message: Hello world
+
+mini task 2: closure with math
+
+def make_adder(x):
+    def adder(y):
+        return x + y
+    return adder
+
+add5 = make_adder(5)
+print(add5(10))         #output 15
+
+why are Closures useful?
+1. Function factories (cstomized behaviors)
+2. Encapsulation (hide variables)
+3. maintaining state across calls 
+4. foundation for decorators
+
+Part 3: Function objects
+Every function in python is an object and has:
+
+-a __name__
+-a __doc__
+-can have attributes assigned
+-can be passed, returned, stored...
+
+ex.
+def shout(text):
+    return text.upper()
+
+print(shout.__name__)       # shout 
+print(callable(shout))      #True
+
+Mini task 3: Return multiple closures from outer
+
+def operations(num):
+    def add(x):
+        return num + x
+    def sub(x):
+        return num - x 
+    return add , sub 
+
+add5, sub5 = operations(5)
+print(add5(3))          #8
+print(sub5(3))          #2
+
+Real life closure examples: Logging wrapper
+def logger(prefix):
+    def log(msg):
+        print(f"[{prefix}] {msg}")
+    return log
+
+error_log = logger("error")
+info_log = logger("INFO")
+
+error_log("File Not Found")
+info_log("User logged in")
+
+summary:
+concept             meaning
+closure             function = Enclosed environment(variables remembered)
+first-class Fn      You can pass/return functions like values
+Function object     Every function is an object in python
