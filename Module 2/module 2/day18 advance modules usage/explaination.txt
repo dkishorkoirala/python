@@ -1,0 +1,91 @@
+Day 18: Advanced module Usage
+
+what we eill learn today:
+Today we'll go deeper into using python modules- Beyond just import.
+we'll cover:
+1. import as aliasing
+2. from module import * vs specific imports
+3. __name__ == "__main__" explained
+4. Module execution flow
+5. relative vs absolute import (overview only)
+6. Practice with multiple python files
+
+1. What is module?
+-In python a module is just a .py file that contains functions, variables,
+or classes you can reuse in other programs.
+
+ex: #mytools.py
+def greet(name):
+    print("Hello,", name)
+
+you can import it in another file:
+import mytools 
+mytools.greet("ram")
+
+2. aliasing modules with as
+sometimes module names are long. we can rename them when
+Importing
+import math as m 
+print(m.sqrt(25))
+
+this saves typing and makes code cleaner.
+3. importing specific items
+instead of importing everything, you can import only what you need:
+from math import sqrt, pi
+print (sqrt(36))
+print(pi)
+
+This avoids loading unused parts and makes your code more readable.
+
+4. Behind the scenes: __pycache__
+when you import a module, python compiles it into .pyc files and stores
+them in a __pycache__ folder. this makes future imports faster.
+
+no need to touch this -just know it exists.
+
+5. The role of __name__ == "__main__"
+let's say you have a file:
+#greetings.py
+def say_hello():
+    print("Hello")
+
+if __name__ == "__main__":
+    say_hello()
+
+if you run this file directly, the say_hello() line will execute.
+if you import this file from another script it won't run.
+
+this is how python knows whether the file is the main program or just a module
+being used somewhere else.
+
+useful in larger projects and testing.
+
+
+6. Exploring python standard library:
+python comes with a massive library of useful modules- no need to 
+install anything.
+
+here is some useful ones:
+module                          purpose
+math                        advanced math functions
+random                      random numbers and choices
+datetime                    date and time handling
+os                          interact with the operating system
+sys                         access command line args, paths etc.
+time                        sleep, delay, timestamps.
+
+
+7. accessing module documentation
+use help() in the python shell:
+import math
+help(math)
+
+this shows you all functions and docs inside the module. Great for learning
+
+8. Summary cheatsheet
+techniques                  ex
+full import                 import math
+aliased import              import math as m 
+specific functions          from math import sqrt, pi
+module docs                 help(math)
+conditionally running code  if __name__ == "__main__":

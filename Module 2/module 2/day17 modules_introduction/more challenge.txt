@@ -1,0 +1,26 @@
+Bonus Challenge 1: Time & Date Module
+Use the datetime module:
+
+from datetime import datetime
+
+now = datetime.now()
+print("Current date and time:", now)
+
+Try printing just the current year, month, and day.
+
+Bonus Challenge 2: Create Your Own math_tools.py Module
+Inside math_tools.py, write:
+def square(n):
+    return n ** 2
+
+def cube(n):
+    return n ** 3
+
+def is_even(n):
+    return n % 2 == 0
+
+Then import and test in main.py:
+from math_tools import square, cube, is_even
+print(square(4))    # 16
+print(cube(2))      # 8
+print(is_even(5))   # False

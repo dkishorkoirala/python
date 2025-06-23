@@ -1,0 +1,75 @@
+
+mini task 1: Importing with aliases
+
+import math as m
+
+print(m.sqrt(25))       #square root
+print(m.factorial(5))   #foctorial
+
+try this now and see how aliasing shortens your code
+
+mini task 2: Importing  specific items
+from math import pi, ceil
+print(pi)       #just value of pi
+print(ceil(3.2))    #round up
+
+compare this to regular import- no need for math . prefix
+
+mini task 3: from module import * (not recommended)
+
+from math import *
+
+print(sin(0))
+print(log(10))
+
+this works but pollutes the namespace. use with caution
+
+mini task 4: testing __name__ == "__main__"
+create a file greet.py:
+
+def say_hello():
+    print("Hello from greet module")
+
+if __name__ == "__main__":
+    print("This runs only when greet.py is executed directly")
+
+now create main.py:
+import greet
+
+greet.say_hello()
+
+run both files. observe:
+-when greet.py runs directly -> both messages show.
+-when imported -> only function runs, not the if __name__ block.
+
+mini task 5: custom calculator module
+create calculator.py
+
+def add(a, b):
+    return a + b 
+
+def multiply(a, b):
+    return a * b 
+
+now create main.py:
+from calculator import add, multiply
+
+print(add(3, 5))
+print(multiply(2, 3))
+
+you're now separating logic from the main program!
+
+challenge 1: multiple modules
+1. create math_tools.py: with square(), cube(), is_even()
+2. create string_tools.py: with reverse(), is_palindrome()
+3. create main.py that uses both modules to:
+    square a number
+    reverse a word
+    check if a number is even and if a word is palindrome 
+
+challenge 2: personal toolkit
+create a folder named toolkit/
+inside it:
+-tem_comverter.py: to_celsius(), to_fahrenheit()
+-math_utils.py: power(), divide(), is_prime()
+-main.py: uses both modules

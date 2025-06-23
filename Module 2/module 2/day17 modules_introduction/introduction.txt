@@ -1,0 +1,71 @@
+Day 17 : Introduction to modules in Python
+
+what will we cover today?
+1. Understand what modules are and why we use them
+2. Use import, form, as to bring in external features
+3. Use standard modules like math, random, datetime
+4. write your own custom module (your .py file!)
+5. Practice importing and organizing code into multiple files
+
+why learn modules?
+- In real-world programming:
+you don't write everything in one file
+you reuse code by organizing it into modules.
+python already has hunderds of built-in modules - we just import them
+
+so modules = toolbox of python
+
+Part1: what is a module?
+A module is just a .py file with reusable code.
+
+ex.
+#mytools.py
+def greet(name):
+    return f"Hello {name}"
+
+you can now import this .py file in another script and use greet()!
+
+Part2: Using Built-in modules
+python already gives you many modules:
+
+Importing math
+import math
+
+print (math.sqrt(25))       #5.0
+print (math.pi)             #3.1415....
+print(math.ceil(4.2))       #5
+
+Importing with form
+
+from math import sqrt , pi
+
+print (sqrt(49))        #7.0
+print(pi)               #3.1415.....
+
+using as to Rename
+import math as m 
+
+print(m.factorial(5))       #120
+
+mini task: (Do now)
+task 1: Import Math and print:
+-square root of 144
+-value of pi
+-cosine of 0
+
+task 2: Import random and :
+Generate a random number between 1 and 100
+pick a random element from ['apple', 'banana', 'mango']
+
+challenge time:
+challenge 1: Temperature tools module
+1. create a file called temperature_tools.py
+2. inside it write 2 functions:
+    -to_celsius(fahrenheit)
+    -to_fahrenheit(celsius)
+3. Then in a main file, import it and try:
+
+from temperature_tools import to_celsius, to_fahrenheit
+
+print(to_celsius)           #should return 37.78
+print(to_fahrenheit)        #should return 32.0
