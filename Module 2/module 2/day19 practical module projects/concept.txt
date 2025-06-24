@@ -1,0 +1,102 @@
+Day 19: practical module projects
+
+what will we cover:
+-Building simple but powerful multi-file python programs using your own module
+-learn how to organize your code like a professional developer.
+-Practice how modules make your code cleaner, reusable, and scalable.
+
+Deep explaination: Why practical module projects
+matter
+
+modules aren't just about splitting code- they help us:
+-Avoid duplication by resuing the same logic across multiple programs.
+-organize large codebases into meaningful units (math tools, string tools, etc)
+-make testing easier- you can test small pieces of logic independently.
+-collaborate easily in team projects.
+
+mini task 1: build your utility toolkit
+you're going to create a folder mytools/ with two reusable modules:
+string_tools.py 
+
+def reverse(text):
+    return text[::-1]
+
+def capitalize_all(words):
+    return [word.capitalize() for word in words]
+
+math_tools.py
+def square(n):
+    return n**2
+derf double(n):
+    return n*2
+
+main.py 
+from mytools.string_tools import reverse, capitalize_all
+form mytools.math_tools import square, double
+
+print(reverse("Python"))
+print(capitalize_all(["Apple","mango", "banana","kiwi"]))
+print(square(5))
+print(double(8))
+
+mini task 2: custom greeting module
+#greeter.py
+
+def greet(name):
+    return f"Hello, {name}"
+
+main.py
+from greeter import greet
+print(greet("kishor"))
+
+challenge project1: personal assistant cli 
+
+calculator.py
+
+def add(x, y):
+    return x + y
+
+def multiply(x, y):
+    return x * y
+
+converter.py
+
+def to_celsius(f):
+    return (f - 32) * 5/9
+
+def to_fahrenheit(c):
+    return (c * 9/5) + 32
+
+main.py
+
+from tools.calculator import add, multiply
+from tools.converter import to_celsius, to_fahrenheit
+
+print("Addition:", add(10, 5))
+print("Multiplication:", multiply(3, 4))
+print("To Celsius:", to_celsius(100))
+print("To Fahrenheit:", to_fahrenheit(0))
+
+Test: Run main.py — it should call functions from both modules.
+
+Challenge Project 2: Mini Game Helper Pack
+
+Build two modules:
+
+random_tools.py
+
+import random
+
+def roll_dice():
+    return random.randint(1, 6)
+
+def pick_card():
+    cards = ['Ace', 'King', 'Queen', 'Jack', '10', '9']
+    return random.choice(cards)
+
+main.py
+
+from random_tools import roll_dice, pick_card
+
+print("Rolling dice:", roll_dice())
+print("Drawing card:", pick_card())

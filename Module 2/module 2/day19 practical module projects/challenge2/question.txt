@@ -1,0 +1,33 @@
+Challenge 2: Text analyzer
+You will create two files:
+
+text_tools.py – A custom module with useful text functions.
+main.py – The main script that uses the functions from text_tools.
+
+Step-by-Step Instructions:
+File 1: text_tools.py
+Define the following functions:
+def count_words(text):
+    pass
+
+def count_vowels(text):
+    pass
+
+def reverse_text(text):
+    pass
+
+File 2: main.py
+
+This script will:
+Ask the user to enter a sentence.
+Use the functions from text_tools.py to:
+Count words
+Count vowels
+Reverse the text
+
+Sample Output:
+Enter a sentence: Python is fun
+
+Word count: 3  
+Vowel count: 3  
+Reversed: nuf si nohtyP

@@ -1,0 +1,18 @@
+Challenge 1: Expense Tracker (Modular Style)
+
+Create a simple expense tracker using two files:
+
+tracker.py — (your module)
+Function: add_expense(amount, category)
+Function: show_expenses()
+Internally store expenses in a list of dictionaries like:
+[{"amount": 500, "category": "Food"}, {"amount": 200, "category": "Transport"}]
+
+main.py
+Import the module
+Ask the user:
+a. To add expenses (amount + category)
+b. To view all expenses
+Loop until user exits
+
+Bonus: Let the user see the total amount spent so far.

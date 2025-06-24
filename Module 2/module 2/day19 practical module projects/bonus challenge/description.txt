@@ -1,0 +1,29 @@
+Bonus Challenge: word frequency counter
+
+objective:
+we'll create a module to analyze word frequency from a given sentence
+
+Step1: create a file called word_status.py
+inside it :
+def word_count(text):
+    #accept a string
+    #returns a dictionary where keys are words and values are their frequency
+
+ex:
+input: "apple banana apple orange banana apple"
+output:{"apple": 3, "banana": 2, "orange": 1}
+
+step 2: create main.py
+it should :
+1. ask user to enter a sentence
+2. use word_count() to compute the frequencies
+3. print them in a readable way
+
+expected output
+enter text: Python is great and python is easy
+word frequencies:
+python- 2
+is - 2
+great -1
+and - 1
+easy - 1
