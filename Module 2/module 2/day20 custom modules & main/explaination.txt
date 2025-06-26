@@ -1,0 +1,89 @@
+Day 20: Custom modules and main.py structure
+A powerful step toward organizing your code like a professional.
+
+what will we cover:
+1. Understanding main.py role
+2. how to create custom modules for reuse
+3. best practices for project structure
+4. mini task : hands-on-project
+5. Challenge project: A complete modular mini-app
+
+1. What is main.py?
+the file named main.py is typically the entry point of a python project.
+This is where your app starts running.
+
+it usually:
+-import logic from other modules
+-calls functions to start execution
+-manages flow of your program
+
+#main.py
+form tools import greet_user
+
+greet_user("guruji")
+
+2. what is a custom module?
+Any .py file you create can be imported as a module.
+
+ex:
+tools.py
+def greet_user(name):
+    print(f"Namaste, {name.capitalize()}!")
+
+main.py
+from tools import greet_user
+greet_user("guruji")
+
+3. how to organize files in a project?
+basic structure:
+
+my_project/
+|
+|--main.py
+|--tools.py
+|-- utils/
+|   |-math_tools.py
+|   |-string_tools.py
+
+put reusable code into modules like tools.py
+keep main.py focused on flow
+use folders(utils/) to organize modules if many
+
+mini task:
+-Task 1: create your first custom module
+create tools.py with
+greeting function and
+then, in main.py import and call this function with your name.
+
+Task 2: create a math_plus.py module
+-add two functions:
+    -square(n)
+    -cube(n)
+then use main.py to import and use both
+
+task3: organize with a folder
+1. create folder helpers/
+2. inside it, create:
+    -string_utils.py -> with reverse() and capitalize_all()
+3. use these function form main.py
+
+challenge project:
+-build a modular simple note app
+create 3 files:
+-main.py
+-note.py
+-display.py
+
+note.py:
+-add_note(note_text)
+-save note into a list
+
+display.py
+-show notes()
+-print all saved notes
+
+main.py:
+-menu :
+a. add note
+b. view notes
+c. Exit 
