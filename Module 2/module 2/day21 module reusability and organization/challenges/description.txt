@@ -1,0 +1,65 @@
+challenge 1: multi-module Quiz app!!
+Create a mini quiz app with these files:
+1. questions.py
+# returns list of (question, correct_answer) tuples
+def get_questions():
+    return [
+        ("What is the capital of France?", "paris"),
+        ("What is 2 + 2?", "4"),
+        ("Python is dynamically typed. (yes/no)?", "yes")
+    ]
+
+2. logic.py
+def ask_question(question, correct_answer):
+    user_input = input(f"{question} ").strip().lower()
+    return user_input == correct_answer.lower()
+
+
+3. main.py (outside the folder)
+
+from quiz_app.questions import get_questions
+from quiz_app.logic import ask_question
+
+score = 0
+questions = get_questions()
+
+for q, ans in questions:
+    if ask_question(q, ans):
+        print("✅ Correct!")
+        score += 1
+    else:
+        print("❌ Wrong!")
+
+print(f"\nYour final score is: {score}/{len(questions)}")
+
+You’ll test importing, logic separation, and interaction.
+
+
+Challenge 2: Your Own Toolkit CLI
+
+Create a command-line tool main.py that uses your my_toolkit to:
+
+* Convert temperatures
+* Check palindromes
+* Multiply/divide numbers
+* Count letters in a sentence
+
+Make it like a menu system:
+
+1. Temperature Converter
+2. Word Checker
+3. Math Ops
+4. Exit
+
+Let the user choose an option, enter values, and run the toolkit functions.
+
+You’ll reinforce user interaction + function calling across modules.
+
+
+Challenge 3 (Bonus): Create a Toolkit Package on GitHub
+
+Not coding—but structure.
+
+* Push your `my_toolkit` to GitHub.
+* Include a `README.md`
+* Add an example `main.py` using it.

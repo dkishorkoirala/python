@@ -1,0 +1,89 @@
+Day 21: Module Reusability and organization
+
+what we will learn:
+1. what is pyton package?
+2. How to organize code using folders and modules
+3. the role of __init__.py 
+4. how to import modules from package
+5. Build a reusable toolkit folder(real-world structure)
+
+1. what is a package?
+in python, a package is just a folder containing a __init__.py file and 
+other .py modules. it tells python:
+hey! this folder is important
+
+toolkit/
+|
+|--- __init__.py                 -> marks this floder as a package
+|-- math_tools.py                -> math-related functions
+|-- string_tools.py              -> string utilities
+|-- convert_tools.py             -> unit coverters
+
+then in main.py you can do:
+from toolkit.math_tools import square
+from toolkit.string_tools import reverse
+
+mini task 1: Make a python package
+step-by-step
+
+create a folder: toolkit
+inside, create:
+__init__ .py leave this empty for now
+math_tools.py with
+square(n) to return square
+
+in your main.py 
+call square function and find square of 4
+
+mini_task2: add more modules
+inside toolkit:
+-string_tools.py:
+reverse(text) and return reverse
+
+then in main.py:
+call reverse 
+and print "python"
+
+mini task 3: use __init__.py to re-export functions
+instead of importing from each module, you can simplify access:
+in toolkit/__init__.py , add:
+form .math_tools import square
+from .string_tools import reverse
+
+then in main.py just do
+from toolkit import square, reverse
+
+print(square(9))
+print(reverse("Guruji"))
+
+this makes your package act like one unified module(package)
+
+mini task 4: organize by category
+
+helpers/
+--__init__.py
+--string_utils.py
+--math_utils.py
+
+add some functions inside each:
+string_utils shout(word) into capitalize all
+
+math_utils.py 
+double(n)
+
+then test it in main.py 
+form helpers.string_utils import shout
+form helpers.math_utils import double
+
+print(Shout("guruji"))
+print(double(10))
+
+challenge time: organize a real toolkit
+challenge: create a reusable project folder with this structure:
+my_toolkit/
+-- __init__.py
+-- temp_converter.py        ->to_celsius(), to fahrenheit()
+-- text_tools.py            -> count_words(), is_palindrome()
+-- math_ops.py              -> multiply(), divide()
+-- main.py                  -> use everything 
+
