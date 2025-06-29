@@ -1,0 +1,29 @@
+Day 22: Review and mini project challenge(Day 11-21)
+
+Day Concept                     Core Idea
+11  Lambda function             anonymous inline funcitons
+12  Return v/s print            Difference between outputting and returning
+13  Lambdas with buit-ins       Used with sorted(), filter(), map()
+14  variable Scope              Global, local, nonlocal
+15  Nested functions            Functions inside Functions
+16  Closures                    inner function that remembers state
+17  Importing Basics            import, from ... 
+                                import, aliasing
+18  Advanced Imports             __name__ == "__main__", wildcard *, as 
+19  Practical module project    Tracker, word counter, etc.
+20  Custom modules & structure  Creating your own modules
+21  Resuability & Toolkit       creating reusable toolkits with __init__.py
+    Packages    
+
+mini project: smart personal assistant CLI
+we will build a menu-driven app that can do the following:
+1. math tools: Square, Cube, Prime check
+2. Temperature Tools: Fahrenheit to celsius and vice-versa
+3. String tools: Word Count, palindrome checker, word reverser
+4. Notes tools: add and view notes (stored in memory for now)
+
+your challenge:Task
+Build this entire project based on the file structure, 
+-you use modules and Imports
+-separate logic from main interface
+-code is clean and organized
