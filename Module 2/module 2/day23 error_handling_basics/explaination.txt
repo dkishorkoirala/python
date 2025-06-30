@@ -1,0 +1,113 @@
+Day 23: Error Handling Basics: try - except:
+
+what will we cover today?
+what are errors and exceptions in python
+why we need error handling
+using try, except and finally blocks
+common built-in exceptions(ZeroDivisionError, ValueError, etc.)
+writing your own basic error- handled code.
+
+part 1: Understanding Error:
+what is an error?
+an error is something that stops your program from running.
+There are 2 main types:
+Syntax Error: (Mistakes in grammer, like forgetting : or ) )
+Runtime Error:(Error that occur during execution, like dividing by 0)
+
+what is an exception?
+an exception is a Runtime error that we can catch and handle using code.
+
+Why error handling?
+withour error handling:
+print(5/0)      -> #boom ZeroDivisionError and program crashes.
+
+with error handling:
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print("you can't divide by zero.")
+
+syntax: try-except block
+try:
+    #risky code here
+except SomeError:
+    #handle the error
+
+we can also catch multiple errors:
+try:
+    num = int(input("Enter a number: "))
+    result = 10/num
+except ValueError:
+    print("You must enter a number.")
+except ZeroDivisionError:
+    print("Number cannot be zero")
+
+Mini task (Do these one by one)
+Task 1: Handle division by zero
+write a code that asks user for a number and divides 100 by the number.
+handle ZeroDivisionError.
+
+task2: Handle invalid input
+Ask the user to enter a number. Handle ValueError if they type a word instead.
+
+task 3: combine multiple exceptions
+ask the user for a number and divide 50 by it. 
+handle: Divide by zero, non-numeric input
+
+challenge time:
+challenge Basic calculator with error handling
+ask the user to :
+-enter two numbers
+-choose operation: +,- , * ,/
+-perform the operation
+-handle: 
+    -ValueError for wrong input
+    -ZeroDivisionError if they divide by 0
+    -any other unexpected errors using except exception.
+
+challenge 2: Input validator with Retry
+Write a function get_number(prompt) that:
+-Asks the user for input using the provided prompt
+-Keeps retrying until the user enters a valid number (integer or float)
+-Returns the valid number as soon as it’s entered
+
+ex:
+age = get_number("Enter your age: ")
+height = get_number("Enter your height in cm: ")
+
+print(f"You are {age} years old and {height} cm tall.")
+
+Rules:
+Use a while True loop
+Use try-except to catch input errors
+Only accept numeric input (not words or symbols)
+
+
+final challenge
+Challenge: Robust Division Tool
+Create a program that:
+Asks the user to enter two numbers.
+Performs a division of the first by the second.
+It should keep retrying until the user gives valid numbers and the second number is not zero.
+
+Requirements:
+Use a function called safe_divide() to:
+Take two numbers
+Return the result or an appropriate message
+Use a loop to keep asking until success
+
+Handle:
+ValueError (non-numeric input)
+ZeroDivisionError
+Any other unknown error
+
+ex: 
+Enter first number: ten
+Please enter valid numbers.
+
+Enter first number: 50
+Enter second number: 0
+You cannot divide by zero. Try again.
+
+Enter second number: 10
+Result: 5.0
