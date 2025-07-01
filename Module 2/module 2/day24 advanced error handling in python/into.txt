@@ -1,0 +1,77 @@
+Day 24: Advanced Error handling in python
+
+what will we learn:
+-use else with try-except
+-use finally for gauranteed cleanup
+-Handle multiple exception types properly
+-Nest Try-except blocks
+-Structure Clean error handling logic
+
+Deep explanation
+1. else clause in try-except
+the else block runs only if no exceptions were raised in try:
+try: 
+    num = int(input("Enter a number: "))
+except VlaueError:
+    print("Invalid input")
+else:
+    print(f"You entered{num}")
+
+2.finally block
+runs no matter what- whether exception occurs or not.
+often used to release resources, close files, clean up.
+
+try:
+    file = open("sample.txt", "r")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found")
+finally:
+    file.close()
+    print("File closed")
+
+3. handling multiple specific exceptions
+use tuple or multiple except blocks for clarity:
+try:
+    a = int(input("Enter number: "))
+    b = int(input("Enter another number: "))
+    print(a/b)
+except VlaueError:
+    print("Please enter numbers only")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+4. Nested try blocks(Advanced python)
+you can nest try-except to handle different phases:
+
+try:
+    x = int(input("Enter first number: "))
+    try:
+        y = int(input("Enter second number: "))
+        print(x/y)
+    except ZeroDivisionError:
+        print("cannot be divided with zero")
+except VlaueError:
+    print("Not a valid number")
+
+task 1: else Clause Practice
+
+ask the user for a number and print "even" or "odd" only if no error occured
+
+task 2: finally clause
+open a file(doesn't matter if exists), try to read, and ensure it closes in finally
+
+task 3: specific exception blocks
+Ask two numbers from user, divide them, and handle:
+-non-numeric input
+-Division by zero
+-Unexpected error
+
+challenge: Login validator
+create a simple login simulation:
+1. ask user for username and password
+2. if either field is empty, raise and handle VlaueError
+3. if username or password is incorrect, ,raise and catch a custom error or show message
+4. if successful, print "login successful!"
+5. Use finally to print "End of attempt" every time.
+
