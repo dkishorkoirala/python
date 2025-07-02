@@ -1,0 +1,67 @@
+Day 26: file handling basics
+
+what we will cover:
+1. what is file handling in python
+2. How to open, read, write, ,and close files
+3. using "r", "w", "a" modes for reading, writing, and appending
+4. file path usage (relative vs absolute)
+5. A few mini tasks and one challenge project
+
+1. What is file handling?
+Python can work with files on your computer(like .txt, .csv, etc). you can
+read from, write to, or even append new content to files using simple
+commands
+
+2. opening and closing files
+syntax:
+file = open ("filename.txt", "mode")
+#do stuff
+file.close()
+
+common modes:
+"r" - read (default), file must exist
+"w" - write (create new file or overwrites)
+"a" - append (adds at the end of file)
+
+ex:
+file = open("notes.txt", "w") #write mode
+file.write("Today i learned file handling!\n")
+file.close()
+
+this will create a file named notes.txt (or overwrite if it exists), and adds
+the given sentence.
+
+mini task 1: write a line to a file
+create a file called message.txt and write:
+Hello from Python!
+
+mini task2: read and print contents
+now open message.txt in read mode and print what's inside:
+
+print(file.read())
+
+mini task 3: append new line
+now add this line to the same file:
+
+Appended line using python!
+
+use mode "a" and run your script again. You should see both lines in the file
+
+mini task 4: file path practice
+
+try: 
+file = open("foldername/test.txt","w")
+file.write("This is a test in a subfolder.")
+file.close()
+
+-> make sure foldername exists, or python will throw an error.
+
+challenge: simple diary app 
+create a script diary.py that:
+-asks the user to enter a daily message
+-saves that message in a file called diary.txt appending it
+-after writing, it shows all previous diary entries
+
+hints:
+-use "a" to write then "r" to read
+-use \n to ensure each entry foes to a new line
