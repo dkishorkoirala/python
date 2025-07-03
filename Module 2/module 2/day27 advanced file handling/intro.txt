@@ -1,0 +1,70 @@
+Day 27: Advanced file handling
+
+what we will cover:
+1. checking if a file exists (using os.path.exists)
+2. reading files line by line (readline(), readlines())
+3. writing multiple lines (writelines())
+4. working with file paths using the os module
+5. Multiple mini tasks and a final challenge
+
+1. checking if a file exists
+sometimes, opening a file that doesn't exist crashes your program. Use this:
+import os
+
+if os.path.exist("diary.txt"):
+    print("file exists!!")
+else: 
+    print("File doesn't exists")
+
+2. Reading line by line
+using readline():
+
+file = open("diary.txt", "r")
+print(file.readline())      #reads one line at a time
+file.close()
+
+using readlines()
+
+file = open("diary.txt", "r")
+lines = file.readline()      #returns a list of all lines
+for line in lines:
+    print(line.strip())
+file.close()
+
+3. Writing multiple lines
+you can write a list of lines at once using writelines():
+
+lines = ["first line\n","second line\n", "third line\n"]
+file = open("log.txt","w")
+file.writelines(lines)
+file.close()
+
+#be careful: writinglines() won't add \n automatically
+
+4. File paths with os module
+
+import os
+
+#get current working directory
+print(os.getcwd())
+
+#join paths correctly (cross-platform safe)
+filepath = os.path.join("data", "log.txt")
+print(filepath)
+
+Mini Task 1: Check File
+Write a program to check if "notes.txt" exists or not.
+
+Mini Task 2: Show All Lines
+Read all lines of "diary.txt" using readlines() and print each line with line number.
+
+Mini Task 3: Save a List
+Ask the user to enter 3 favorite movies, store them in a list, and save them to "movies.txt" using writelines().
+
+Challenge Project: Daily Logger
+Build a program to:
+Check if daily_log.txt exists.
+If not, create it.
+-Ask user to input a message.
+-Save the message with today’s date (hint: use datetime.now()).
+-Append it to the file.
