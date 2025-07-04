@@ -1,0 +1,8 @@
+file = open("big_sample.txt", "r")
+print("Pointer is at:",file.tell())
+print("First 5 chars:",file.read(5))
+print("Pointer is at:",file.tell())
+print("Resetting...")
+file.seek(0)
+print("Reading again:",file.read(11))
+file.close()

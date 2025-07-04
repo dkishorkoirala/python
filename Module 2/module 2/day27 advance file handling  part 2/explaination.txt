@@ -1,0 +1,94 @@
+Day 27 : Advanced file handling
+
+what will we cover:
+how to 
+    - read/write large files efficiently (line by line)
+    - using with to manage files safely (intro to tomorrow's topic)
+    -use file pointers (seek(), and tell())
+    - working with binary files
+will also understand:
+    - when to use "r", "w", "a", "rb", "wb", etc.
+    - how to avoid file corruption or loss of data
+
+Explaination:
+1. Modes Recap (plus new ones)
+mode     Description
+"r"     read text(Default)
+"w"     write (overwrite) text
+"a"     append to text
+"rb"    read binary(images, audio, etc.)
+"wb"    write binary
+"r+"    read + write(file must exist)
+"w+"    write + read (overwrites if exists)
+
+2. Reading Large files (line-by-line)
+
+instead of reading entire file with .read() (which loads all into memory):
+
+with open("bigfile.txt","r") as file:
+    for line in file:
+        print(line.strip())
+
+this is memory-efficient
+
+3. seek() and tell()
+
+file = open("example.txt","r")
+print(file.tell())   #shows current pointer (eg. o)
+file.read(5)
+print(file.tell())   #pointer moved
+file.seek(0)        # reset pointer to begining
+file.close()
+
+tell()    tells current position
+seek(pos) moves to pos (0 = beg)
+
+4. Binary files
+when reading images, PDFs , or anything not plain text:
+
+with open("photo.jpg","rb") as img:
+    content = img.read()
+
+same for writing:
+
+with open("copy.jpg", "wb") as new_img:
+    new_img.write(content)
+
+5. why use "with" block?
+with open("file.txt","r") as f:
+    data = f.read()
+
+-automatically closes the file
+-prevents corruption and errors
+-cleaner syntax
+
+#common pitfalls
+forgetting .close() -> can corrupt or lock files.
+using .read() on big files: may crash your program
+appending "a" mode: won't let you read or overwrite existing content.
+
+#mini task 1: line-by-line reader
+create a text file big_sample.txt and add at least 5 lines of text manually
+
+then write a python script that reads this file line by line and prints each line 
+using a loop
+
+mini task 2: use .tell() and .seek()
+open any file and:
+1. read a few characters
+2. print the file pointer using .tell()
+3. reset pointer to the begining using seek(0)
+4. read again from the start
+
+mini task 3: copy an image file(binary mode)
+copy a .jpg or .png image using binary read/write.
+
+mini task 4: writing using "w+" and "a+"
+use "w+" to write and then read from a file in one go.
+
+now try "a+" mode to append, then read all content.
+
+challenge : logbook with timestamps
+create a file logbook.txt
+every time the script runs, ask the user to write a message and save it 
+with timestamps
