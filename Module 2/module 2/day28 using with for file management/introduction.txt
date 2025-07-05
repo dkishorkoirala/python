@@ -1,0 +1,78 @@
+Day 28: Using with for file management
+
+what will we cover:
+1. why we use with for file handling
+2. the syntax and structure of with open()
+3. benefits over manual .open() and .close()
+4. Reading and writing files using with
+5. Today's mini tasks and a final challenge
+
+part 1: why with is better for files
+we've already used this before:
+
+file = open("data.txt", "r")
+data = file.read()
+file.close()
+
+but here's problem:
+if an error happens before .close() runs, the file might stay open,
+leading to memory issues, file locks, or data loss.
+
+enter with open(...) as file : - python's context manager for safe and automatic resource handling!
+
+part 2: the with statement
+
+with open("data.txt" , "r" ) as file:
+    data = file.read()
+    print(data)
+
+what happens here :
+-the file is opened and assigned to file
+-the code indented under with runs
+-when the block is done, python automatically closes the file
+
+even if an error occurs, with ensures cleanup. no need for .close() manually
+
+part 3: Writing and appending with with
+
+#writing to a file
+with open("note.txt","w") as file:
+    file.write("Hello world\n")
+
+#appending to the file
+with open("note.txt", "a") as f:
+    f.write("another line!\n")
+
+just change the mode:
+"r" - read
+"w" - write(overwrites)
+"a" - append
+"w+" - write and read
+"a+"- append and read
+"rb" / "wb" - binary modes
+
+part 4: Reading with with
+with open("note.txt", "r") as f:
+    lines = f.readlines()
+    for line in lines:
+        print(line.strip())
+
+you can use .read(), .readline(), or .readlines() - just like usual-
+inside the with block.
+
+summary:
+feature                 Traditional open()          with statement
+auto close file             no                         yes
+safer if error              risky                      safe
+cleaner syntax              manual                     elegant
+recommended                 less                        best practice
+
+mini task 1: writing to a file with with
+wap :
+-ask the user for their name
+-saves the name to a file called user.txt using with and mode "w"
+
+mini task 2: Reading that file back
+now read the saved name from user.txt and display:
+
+welcome, <name>!
