@@ -1,0 +1,76 @@
+Day 29: Working with CSV files.
+-reading and writing CSV(Comma Seperated Values) files using python built-in CSV module
+
+what is CSV file?
+A CSV file is like a simple spreadsheet- it stores tabular data (rows and 
+columns), where each row is a list, and columns are Seperated by commas.
+
+ex content of a students.csv :
+Name,Age,Grade
+Ram,15,A 
+shyam,16,B 
+Hari,15,C 
+
+python has a module called CSV to help us easily read and write these files
+
+step-by-step concepts
+1. importing the csv module
+import csv 
+
+2. writing to a csv file (row by row)
+import csv
+
+with open("students.csv","w", newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name","Age","Grade"])
+    writer.writerow(["Ram",15,"A"])
+    writer.writerow(["Shyam",16,"B"])
+
+use newline='' to avoid empty lines on windows.
+
+3. Reading a csv file
+import csv
+
+with open("student.csv","r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+output will be lists:
+["Name","Age","Grade"]
+["Ram",15,"A"]
+["Shyam",16,"B"]
+
+4. Writing multiple rows at once
+rows = [
+    ["Name","Age","Grade"],
+    ["Hari",15,"A"],
+    ["Gita",17,"B"]
+]
+
+with open("students.csv","w","newline='') as f:
+    writer= csv.writer(f)
+    writer.writerows(rows)
+
+Mini Task 1: Create a file people.csv and write the following data:
+Header: Name, Country
+Rows:
+Ram, Nepal
+John, USA
+Priya, India
+
+Mini Task 2: Read and display each row from people.csv
+Expected Output:
+['Name', 'Country']
+['Ram', 'Nepal']
+['John', 'USA']
+['Priya', 'India']
+
+Mini Task 3: Add more rows using writerow() in append mode ("a")
+
+
+challenge: simple contact book using CSV 
+create a contact book app that allows user to:
+1. add new contacts
+2. view all saved contacts
+3. Exit the program
