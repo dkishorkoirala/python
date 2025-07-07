@@ -1,0 +1,102 @@
+Day 30: Working with Json files
+
+what will we cover:
+1. What JSON is and why we use it
+2. How to read/write JSON files in python
+3. Difference between .json and .txt file handling
+4. json.dump() vs json.dumps()
+5. json.load() vs json.loads()
+6. mini tasks for hands-on practice
+7. one final challenge
+
+1. What is JSON?
+JSON = javascript Object Notation
+it's light weight format to store and exchange structured data.
+look like a python dictionary - but used across many languages
+
+ex json data:
+{
+    "name" : "Ram",
+    "age" : 22
+    "skills" : ["Python", "Django"],
+    "is_student" : true
+}
+
+2. Importing the module
+to use json in python, first import the module:
+
+import json
+
+3. Writing json to a file
+import json
+data = {
+    "name":"Ram",
+    "age":22,
+    "skills":["Python","Django"]
+}
+
+with open("data.json", "w") as f:
+    json.dump(data, f)  #writes json to file
+
+this saves the dictionary as a .json to file
+
+4. Reading json from a file
+
+import json
+
+with open("data.json","r") as f:
+    content = json.load(f)
+
+print(content["name"]) #output: Ram
+
+this reads the json file back into a python dictionary
+
+5. dump() vs dumps(), load() vs loads()
+
+method              purpose
+dump()              write python to a file
+dumps()             convert python to a JSON string
+load()              read json from a file
+loads()             convert json string to python
+
+ex:
+json_str = json.dumps(data) #dict -> string
+print(json_str)
+
+python_dict = json.loads(json_str)  #string -> dict
+print(python_dict["name"])
+
+mini task 1: save data to json file
+
+mini task 2: load and print json data
+task: Now load the data back from profile.json and print each field nicely.
+
+Mini Task 3: Add Multiple Profiles to JSON
+Goal:
+You’ll collect multiple user profiles and store them all in a single JSON file as a list of dictionaries.
+
+Task:
+Write a program that:
+1. Asks the user how many profiles they want to save.
+2. For each profile: Ask for name, age, country, and a list of skills (as comma-separated values).
+3. Save all profiles into a list.
+4. Write that list to a file called profiles.json.
+
+Challenge Project: Profile manager app
+Features:
+1. Add a new profile
+2. View all saved profiles
+3. Exit the app
+
+Each profile should contain:
+Name
+Age
+Country
+Skills (comma-separated input, stored as a list in JSON)
+
+Requirements:
+- Use json.load() and json.dump() properly.
+- Save the data to a file named profiles.json.
+- If the file doesn't exist, create it.
+- When saving, store all profiles in a list (not separate JSON objects).
+- Ensure proper formatting of skills.
