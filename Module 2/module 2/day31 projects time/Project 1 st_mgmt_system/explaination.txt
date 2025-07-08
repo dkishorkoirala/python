@@ -1,0 +1,15 @@
+Day 31: Mini project - part 1
+
+Project 1: student Management System(using JSON)
+
+what we'll learn:
+-how to read/write/update JSON data
+-menu-driven program logic
+-storing structured data (like student profiles) persistently
+
+goal: Build a basic student management app where we can:
+-add the student profiles(id, name , age, grade)
+-view all student records
+-search for a student by name
+-exit the app
+
