@@ -1,0 +1,69 @@
+Day 32: Module 2 Review- Intermediate python recap
+
+what will we cover today?
+
+- review key concepts learned in module 2(day 11 - 31)
+-refresh understanding of important topics
+-Test your knowledge with a quick quiz
+-prepare for smooth transition into module 3(oop)
+
+Core Topics we covered in Module 2:
+Topics                          Summary
+Lambda Functions                Anonymous functions with lambda keyword
+using return vs print           Functions returning vs printing results
+Variable scope                  Local vs global variables
+nested functions                Functions defined inside other function
+Closures                        Functions retaining access to enclosing scope variables
+Modules                         Importing and using external python files
+Error Handling                  try, except, else, finally blocks
+File Handling                   Reading, writing files, using modes(r,w,a, rb,etc)
+working wit CSV and JSON files  parsing and writing structured data
+mini project                    Student manager app
+
+Important Remainders:
+-always handle exceptions to make your program robust.
+-Use modules to organize and reuse your code.
+-Practice file handling for real-world data storage needs.
+-mini projects are key to cement learning
+
+-Quick quiz: Test Yourself!!
+1. What does lambda x: x * 2 do?
+2. What is the difference between return and print inside a function?
+3. Name two ways to handle errors in Python.
+4. What does the with statement do when working with files?
+5. How do you open a JSON file for reading in Python?
+6. What is the difference between r, w, and a file modes?
+
+1. What does lambda x: x * 2 do?
+Answer:
+It creates an anonymous function that takes an input x and returns the value of x multiplied by 2. For example, if you pass 3, it returns 6.
+
+2. What is the difference between return and print inside a function?
+Answer:
+return sends the output value back to where the function was called, allowing that value to be used further in the program.
+print only displays the output to the console and does not send any value back.
+Using return makes functions reusable and composable, while print is mainly for showing results.
+
+3. Name two ways to handle errors in Python.
+Answer:
+Using try-except blocks to catch and handle exceptions gracefully.
+Using else and finally blocks alongside try-except for additional control flow and cleanup.
+
+4. What does the with statement do when working with files?
+Answer:
+The with statement ensures that files are properly opened and automatically closed after the block of code finishes executing, even if errors occur. It helps manage resources safely and makes code cleaner.
+
+5. How do you open a JSON file for reading in Python?
+Answer:
+You import the json module and use json.load() within a with block to open and read the JSON file. Example:
+
+import json
+with open('file.json', 'r') as file:
+    data = json.load(file)
+
+
+6. What is the difference between r, w, and a file modes?
+Answer:
+r opens the file for reading only.
+w opens the file for writing and overwrites existing content.
+a opens the file for appending, adding data to the end without deleting existing content.
