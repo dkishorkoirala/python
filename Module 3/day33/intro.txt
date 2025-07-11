@@ -1,0 +1,68 @@
+Day 33: what is OOP? intro to class,
+Creating baisc Objects
+
+what will we will cover
+-understand what object-oriented programming(OOP) is
+-know what classes and objects are.
+-create our first class in python.
+-Instantiate and use basic objects.
+-understand why oop is important in real-world applications.
+
+1. What is object-oriented programming (OOP)?
+Object-Oriented Programmin (OOP) is a way to model real-world things
+in code by representing them as objects with attributes (data) and 
+methods (behavior).
+
+Real-World analogy:
+let's say we want to model dogs.
+Each dog has characteristics: name, breed, age -> These are attributes
+Each dog can do things: bark, run, sleep -> these are methods
+
+2. What is a class?
+A class is a blueprint for creating objects.
+You define the structure and behavior once, then use it to create many 
+individual objects.
+
+class Dog:
+    pass
+
+this defines a class named DOg, but it does nothing yet because of the 
+pass keyword.
+
+3. creating objects from a class
+To make real instances (objects) from the class:
+
+my_dog= Dog()
+print(my_dog)
+
+this creates an object my_dog based on the Dog class.
+
+4. Adding simple behavior(Methods)
+let's add a method so the dog can bark:
+
+class Dog:
+    def bark(self):
+        print("Woof! Woof!")
+
+my_dog = Dog()
+my_dog.bark()
+
+what is self?
+self refers to the current object calling the method.
+you must include it as the first parameter in every method inside a class
+
+mini task:
+task1: Create a car class
+-it should have a method drive() that prints "Vroom! Vroom!"
+
+task 2: Create a pen class
+-it should have a method write() that prints "Writing with ink..."
+
+challenge project: Build a talking robot
+
+objective:
+1. Create a class robot
+2. Add 2 methods:
+    say_hello() - prints"Hello, human!"
+    introduce() - print "I am your assistant robot."
+3. Create two robot objects and call both methods on each.
