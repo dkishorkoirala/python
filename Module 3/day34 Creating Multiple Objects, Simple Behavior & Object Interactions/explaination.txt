@@ -1,0 +1,81 @@
+Day 34: Creating Multiple Objects, Simple Behavior & Object Interactions
+
+what will we learn today:
+-create multiple objects from the same class
+-give each object its own identity and behavior
+-simulate interactions between objects
+-understand the difference between independent objects.
+
+1. Recap: what is an object?
+an object is an instance of a class - a real "thing" you can work with
+
+class Cat:
+    def sound(self):
+        print("meow")
+
+cat1 = Cat()
+cat2 = Cat()
+
+cat1.sound() # prints: meow
+cat2.sound() # prints: meow
+
+each object(cat1, cat2) is independent - you can call their methods separately
+
+2. Giving each object a name(custom identity)
+let's give objects a name by storing it as an attribute using self.
+
+class Dog:
+    def set_name(self, name):
+        self.name = name
+
+    def bark(self):
+        print(f"Woof! My name is {self.name}")
+
+dog1 = Dog()
+dog1.set_name("Tommy")
+
+d2 = Dog()
+d2.set_name("Buddy")
+
+dog1.bark() # prints: Woof! My name is Tommy
+d2.bark() # prints: Woof! My name is Buddy
+
+3. simulating interactions between two objects
+
+class Player:
+    def set_name(self, name):
+        self.name = name
+    
+    def greet(self, other_player):
+        print(f"{self.name} says hello to {other_player.name}")
+    
+
+p1 = Player()
+p1.set_name("Alice")
+
+p2 = Player()
+p2.set_name("Bob")
+
+p1.greet(p2)
+p2.greet(p1)
+
+how does this work?
+we give both players a name using a set_name()
+greet() method takes another object as an argument
+objects are interacting - just like in game or real-world apps!
+
+mini task:
+task 1: Create a cat class
+-add a method set_name()
+-add a method meow() that says "Meow, I'm <name>"
+
+task 2: create two cats and make them meow with their own names
+
+challenge project: object Duel system(No real fighting)
+Create a class wizard with:
+
+- a method set_name() to assign a name.
+- a method cast_spell(target) that prints: "<wizard_name> casts a spell on <target_name>"
+
+create two wizard objects and make them cast spell on each other.
+

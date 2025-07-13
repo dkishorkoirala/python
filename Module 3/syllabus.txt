@@ -1,0 +1,32 @@
+Day	Topic
+33	What is OOP? Intro to class, creating basic objects
+34	Creating multiple objects, simple behavior, object interactions
+35	Practice with multiple classes, object independence
+36	Instance attributes: setting values manually
+37	Instance methods: defining and calling methods with self
+38	Combining attributes and methods, real-world examples
+39	Using __init__() constructor to initialize objects
+40	Object lifecycle: creation, use, deletion
+41	Practice: modeling real-world objects with __init__()
+42	Class variables vs instance variables (theory + syntax)
+43	Use cases for class variables, shared counters
+44	Practice: compare and apply both types of variables
+45	Inheritance: basic parent-child relationship
+46	Overriding methods, extending parent functionality
+47	Using super() to access parent class methods
+48	Understanding polymorphism
+49	Method overriding in detail
+50	Polymorphism practice challenge
+51	Encapsulation: private/public attributes
+52	Using getters and setters in Python
+53	Real-world encapsulation example (e.g., user profile)
+54	Magic methods: __str__, __repr__, __len__ intro
+55	Customize class behavior with magic methods
+56	Practice: class with multiple useful magic methods
+57	OOP Project – Banking App: plan structure
+58	OOP Project – implement logic (deposit, withdraw, etc.)
+59	OOP Project – polish, test, add transaction history
+60	Challenge Project – Game/Portal: plan characters and actions
+61	Challenge Project – implement fight logic, health system
+62	Challenge Project – complete game, add scoring/level up
+63	Final Review of OOP Concepts + Reflection
