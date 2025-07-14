@@ -1,0 +1,95 @@
+Day 35: Practice with Multiple Classes & Object Independence
+
+what will we learn:
+-define and use multiple classes in the same program
+-understand that each class has its own structure and logic
+-prove that objects of different classes are independent.
+-make objects from one class interact with objects from another.
+
+1. Recap: what is an objects?
+an object is a self-contained unit based on class.
+objects created from different classes are completely separate.
+
+2. creating multiple classes
+class Dog:
+    def bark(self):
+        print("Woof!")
+
+class Cat:
+    def meow(self):
+        print("Meow!")
+
+we can create separate objects from each:
+dog1 = Dog()
+cat1 = Cat()
+
+dog1.bark() 
+cat1.meow() 
+
+these objects are independent and come from different blueprints
+
+3. add identity to both classes
+class Dog:
+    def set_name(self, name):
+        self.name = name
+
+    def bark(self):
+        print(f"{self.name} says: Woof!!")
+    
+class Cat:
+    def set_name(self, name):
+        self.name = name
+    
+    def meow(self):
+        print(f"{self.name} says: Meow!!")
+
+now we can test:
+d1 = Dog()
+d1.set_name("Fido")
+
+c1 = Cat()
+c1.set_name("Whiskers")
+
+d1.bark()
+c1.meow()
+
+4. Cross-class interaction
+
+class Chef:
+    def cook(self):
+        print("The chef is cooking...")
+    
+class Waiter:
+    def serve(self, chef):
+        print("waiter says: Serving food prepared by the chef!!")
+        chef.cook()
+
+c = Chef()
+w = Waiter()
+w.serve(c)
+
+this shows interaction between classes.
+
+mini task:
+task 1: create a teacher class with a student class
+-teacher has method teach() that prints "teaching python..."
+-student has method learn() that prints "Learning python..."
+
+task 2: make a student call learn() and teacher call teach() independently
+
+challenge project: Message system (cross-class communication)
+create:
+1. a Sender Class with:
+    set_name() to assign sender's name
+    send_message(receiver) to print:
+    "<sender_name> sends a message to <receiver_name>"
+
+2. A Receiver class with:
+
+    set_name() to assign receiver's name
+    read() method to print "<receiver_name> reads the message."
+
+then:
+create 1 sender and 2 receivers.
+have the sender send message to both receivers and each receiver read it.
+
