@@ -1,0 +1,64 @@
+Day 36: Instance Attributes — Setting Values Manually
+
+what will we learn today:
+-Understand what instance attributes are,
+-set and use instance attributes manually (outside __init__())
+-know how they make each object unique
+-use instance data to create object-specific behavior.
+
+1. What are Instance attributes?
+Instance attributes are variables that belong to a specific boject.
+They store onject-specific data.
+
+Each object gets its own separate copy of those attributes.
+
+2. Defining Attributes manually
+you can define attributes outside of the class methods, like this:
+
+class Dog:
+    def bark(self):
+        print(f"{self.name} says: woof!")
+
+d1=Dog()
+d1.name = "Fido"
+
+d2 = Dog()
+d2.name = "Buddy"
+
+d1.bark()
+d2.bark()
+
+this only works if you manually assign the name before calling
+bark()
+
+key concept: object Independence
+each object has its own data:
+
+print(d1.name) 
+print(d2.name)
+
+they don't share data. changing one doesn't affect the other
+
+why use this?
+-simple and flexible for small programs.
+-easy to experiment and test objects.
+-Helps us understand how attributes behave befor learning
+__init__().
+
+
+mini task:
+Task 1: create a book class
+-add a method show_info() that prints Title: <title>, author: <author>
+-set title and author manually for two book objects.
+
+task 2:  create a laptop class
+- add a method specs() that prints the brand and RAM size.
+set brand and RAM manually on two objects.
+
+challenge projects: student profiles
+create a sutdent class:
+-each student should have name, grade, and age,
+-add a method introduce() that prints:
+Hi, I'm <name>. I'm <age> years old and in grade <grade>.
+
+-create 2 student objects with different data and call introduce().
