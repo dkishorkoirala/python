@@ -1,0 +1,68 @@
+Day 37: Instance Methods – Defining and Calling Methods with self
+
+what we will learn today:
+
+- understand what an instance method is.
+- Define methods that belongs to objects.
+- use self to access an object's attributes inside a method.
+- make your objects behave in smart, dynamic ways!
+
+1. What is an instance method?
+An instance method is a function inside a class that:
+- can use the object's data (instance attributes)
+- is called using an object
+
+class Person:
+    def greet(self):
+        print("Hello!")
+
+to use this:
+p.person()
+p.greet()
+
+2. why self is required
+in every method inside a class, the first argument must be self.
+
+class person:
+    def greet(self):
+        print("Hi there!")
+    
+here: 
+greet() is a method.
+self is the current object calling the method.
+
+3. accessing attributes with self
+class Dog:
+    def bark(self):
+        print(f"{self.name} says: woof!")
+
+d = Dog()
+d.name = "Fido"
+
+d.bark()
+
+here:
+self.name refers to the name inside the current object.
+bark() becomes personalized per object!
+
+mini task:
+task1: create a player class
+add a method cheer() that prints:
+"let's go, <player_name>!"
+
+set the player_name manually, then call cheer().
+
+Task2: create a mobile class
+- add attributes: brand, price(set manually)
+-add method show() that prints:
+"Brand: <brand>, Price: $<price>"
+
+challenge project: Personal assistant bot
+
+create a bot class that:
+-has name and task as attributes (set manually)
+-has a method introduce() that prints:
+
+"I am <name>, and I will help you with <task>."
+
+create 2 bots with different roles and call introduce() on both.
