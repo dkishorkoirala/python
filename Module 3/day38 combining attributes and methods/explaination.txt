@@ -1,0 +1,81 @@
+Day 38: Combining Attributes and Methods (Real-World Examples)
+
+what will we learn today:
+
+1. Deepen understanding of how attributes and methods work together
+2. Learn how to design objects that behave like real-world things
+3. Practice combining attributes + methods in practical object models
+
+recap:
+- attributes hold data.state of an object (e.g name, age)
+- methods are actions that work on that data (e.g introduction(), greet())
+
+ex. 1 fan object
+class Fan:
+    def turn_on(self):
+        print("{Self.brand} Fan is now on at speed {self.speed}")
+
+fan1 = Fan()
+fan1.brand = "Philips"
+fan1.speed = 3
+
+fan1.turn_on()
+
+we combine:
+Data: brand, speed
+action: turn_on which uses both
+
+ex: 2 battery object
+class Battery:
+    def show_status(self):
+        print(f"{self.brand} battery is at {self.percentage}% charge" )
+
+b = Battery()
+b.brand = "Nubia"
+b.percentage = 50
+
+b.show_status
+
+Real-world simulation where one method uses multiple attributes for 
+intelligent output
+
+ex 3 : BankAccount simulation
+
+class BankAccount:
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"{self.name}'s new balance is Rs. {self.balance}")
+
+acc = BankAccount()
+acc.name = "Dibash"
+acc.balance = 5000
+
+acc.deposit(1000)
+this is how software like banking apps work internally.
+
+mini task:
+task 1: create a light object
+-attributes: brand, wattage
+-method: switch_on() -> prints "Brand x light of Y watts is ON"
+
+task 2: animal class
+-attributes: name, sound
+-method: make_sound() -> prints: "Dog barks" or "cat meows"
+
+
+task 3: pen class
+attributes: brand, color
+method : write() -> print: "writing in blue with Reynolds"
+
+Daily challenge project
+build a smart watch simulator
+
+class : SmartWatch
+attributes: 
+-brand
+-battery_percentage
+-step_count
+
+methods:
+-show_status() -> print brand, battery, steps
+-walk(steps) -> increase step count and decrease battery by 1% per 500 steps
