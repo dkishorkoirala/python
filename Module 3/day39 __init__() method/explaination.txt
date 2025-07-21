@@ -1,0 +1,87 @@
+Day 39:__init__() — the constructor method.
+
+what will we learn today:
+-what is the __init__() method?
+- why and when do we use it?
+- how does it initialize object data at creation?
+- Real-life examples using __init__().
+- multiple tasks and challenges to master it
+
+Part1 : what is __init__()?
+in python, when you create an object, you often want it to start with some
+data already set.
+
+This is where the __init__() method comes in - it's called automatically
+when the object is created.
+
+syntax:
+class ClassName:
+    def __init__(self, parameter1, parameter2):
+        self.attribute1 = parameter1
+        self.attribute2 = parameter2
+
+ex: 
+class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+
+s1 = Student("Hari", "A")
+print(s1.name)
+print(s1.grade)
+
+Note:
+self refers to the current object.
+you don't call __init__() yourself - python calls it when you create
+the object.
+
+part2: Practice examples
+Ex 1: using __init__() in a book class
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+    
+    def show_info(self):
+        print(f"Title: {self.title}, Author: {self.author}")
+
+b1 = Book("The Alchemist", "Paulo Coelho")
+b2 = Book("The Subtle Art of Not Giving a F*ck", "Mark Manson")
+
+b1.show_info()
+b2.show_info()
+
+Ex2: Laptop specs
+class Laptop:
+    def __init__(self, brand, ram):
+        self.brand = brand
+        self.ram = ram
+
+    def show_info(self):
+        print(f"Brand: {self.brand}, RAM: {self.ram}")
+
+l1 = Laptop("Dell", "16GB")
+l2 = Laptop("Asus", "8GB")
+
+l1.show_info()
+l2.show_info()
+
+mini tasks:
+task1: create a Car class using __init__()
+-attributes: brand, year
+-method: display()
+
+task2: create a user class
+attributes: Username, email
+Method: info() -> prints: "User {Username} can be contacted at {email}"
+
+challenge project:
+create a Wizard class using __init__()
+-attributes: name, power, level
+-method: cast_spell(target)
+output: "{name} casts {power} on {target}!"
+
+method: status()
+output: "Name: {name}, power: {power}, Level: {level}"
+
+then create 2 Wizard objects and have them interact!
