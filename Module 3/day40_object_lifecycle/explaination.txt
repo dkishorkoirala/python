@@ -1,0 +1,99 @@
+Day 40: Object Lifecycle(__init__ , __del__)
+
+what will we cover:
+
+- object lifecycle stages: Creation -> Usage -> Deletion
+- special Method: __del__()
+- when and why objects get distroyed
+- del keyword and garbage collection basics
+- practice examples with logs showing creation and destruction
+
+1. Object Creation
+when you create an object using a class, python:
+
+-allocates memory
+-calls the __init__() Method
+- stes up initial values
+
+class Sample:
+    def __init__(self):
+        print("Object created")
+
+s = Sample()
+
+this will print: Object created
+
+2. Object Usage
+after creation, you use the object:
+
+- call it methods
+- access or change attributes
+
+ex:
+s.name = "Ram"
+print(s.name)
+
+3. oBject Destruction
+when python is done using the object (no more references to it), it 
+automatically deletes it and calls the __del__() method if defined.
+
+ex: 
+class Sample:
+    def __init__(self):
+        print("Object created")
+    
+    def __del__(self):
+        print("Object destroyed")
+
+s = Sample()
+del s #manualy deletes
+
+output
+Object created
+Object destroyed
+
+think of __del__() as destructor  - it's your object's final goodbye!
+
+Python's Garbage collection
+
+Python uses automaic garbage collection, if no variable refers to an 
+object anymore, it gets cleaned up.
+
+def create_temp():
+    t = Sample()
+
+create_temp()
+#after the function ends, t is gone, so the object is destroyed
+
+ex: Track lifecycle
+class Person:
+    def __init__(self, name):
+        self.name = name
+        print(f"{self.name} is born")
+
+    def __del__(self):
+        print(f"{self.name} is gone .... ")
+
+p1 = Person("Hari")
+p2 = Person("Ram")
+
+del p1
+del p2
+
+why use __del__()?
+- to release external resources (files, DB connections)
+- to log when object are removed
+- rarely needed in basic programs, but useful in advanced ones
+
+
+mini-tasks: 
+1. Create a class Fruit with __init__() and __del__() logging creation and deletion
+2. create two Fruit objects and delete one using del
+3. put an object inside a funciton and observe __del__() after the 
+function ends
+
+challenge project:
+create a class connection that:
+-Logs "COnnected to server" when created
+-Logs "Disconnected" when deleted
+-Create multiple connection objects, then delete some and observe order of destruction
