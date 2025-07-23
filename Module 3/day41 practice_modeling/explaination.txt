@@ -1,0 +1,65 @@
+Day 41: Practice – Modeling Real-World Objects with __init__()
+
+what will we cover:
+
+creating real-world objects using __init__() for clean initialization
+combine attributes and behavior, and simulate realistic interactions
+
+Quick recap: __init__() constructor
+-this method runs automatically when an object is created
+-used to initialize object attributes
+
+class Book:
+    def __init__(self, title, author):  
+        self.title = title
+        self.author = author
+
+step by step example: bank account system
+
+
+class BankAccount:
+    def __init__(self, holder, balance):
+        self.balance = balance
+        self.holder = holder
+    
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"{self.holder} deposited ${amount}.\nNew balance: ${self.balance}")
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+            print(f"{self.holder} withdrew ${amount}.\nRemaining balance: ${self.balance}")
+        
+        else:
+            print(f"{self.holder} has insufficient balance!")
+    
+    def show_balance(self):
+        print(f"{self.holder} has ${self.balance}")
+
+usage:
+acc1 = BankAccount("John Doe", 1000)
+acc2 = BankAccount("Ram", 2000)
+
+acc1.deposit(500)
+acc2.withdraw(1000)
+acc1.show_balance()
+acc2.show_balance()
+
+Task 1: Design a laptop class
+create a class with:
+-attribute : brand, ram, storage
+-method: specs() to display details.
+
+Task2: create a movie class
+attribute: title, director, year
+method: details() -> show the movie info
+
+challenge: create a library and book system
+
+book class : title, author, pages
+library class: has a list of books
+    -add_book (book)
+    -remove_book(title)
+    -show_books() - print all book titles in the library
+
