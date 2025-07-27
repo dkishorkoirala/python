@@ -1,0 +1,139 @@
+Day 42: Class Variables vs Instance Variables 
+
+step-by-step explaination
+1. what are instance variables?
+these are variables that belong to a specific object(instance). Every
+other gets its own copy of instance variables.
+
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name                #instance variables
+        self.breed = breed              #instance variables
+
+d1 = Dog("Bruno","Labrador")
+d2 = Dog("Fido","Golden Retriever")
+
+print(d1.name)
+print(d2.name)
+
+Each dog object has its own name and breed.
+
+now, what is a class variable?
+a class variable is shared among all instances of the class
+
+think of it as a variable that belongs to the class itself, not to any one
+object.
+
+class Dog:
+    species = "Canine"              #class variable 
+
+    def __init__(self, name):
+        self.name = name            #instance variable
+
+d1 = Dog("Bruno")
+d2 = Dog("Fido")
+
+print(d1.species)
+print(d2.species)
+
+both d1 and d2 share the same species value - Canine
+
+if we change Dog. Species, it will reflect across all instances unless
+overridden individually
+
+Differences Summary Table:
+
+Feature         Instance variable           Class variable
+scope           per object                  shared by all objects
+defined in      __init__(commonly)          inside class(outside methods)
+memory          separate per object         one memory Location
+modified by     self.var                    ClassName.var
+
+Real-world analogy
+Imagine a classroom of students.
+
+-each student has their own name -> instance variable
+-but all students belong to the same school -> class variable
+
+
+code ex: class variables vs instance variables
+
+class Student:
+    school = "ABC high school"  #class variable
+
+    def __init__(self, name, grade):
+        self.name = name        #instance variable
+        self.grade = grade      #instance variable
+
+s1= Student("Ram", 10)
+s2 = student("Hari", 11)
+
+print(s1.name, s1.school)   # Ram ABC high school
+print(s2.name, s2.school)   # Hari ABC high school
+
+Student.school = "XYZ school"
+
+print(s1.school)        #XYZ school
+print(s2.school)        #XYZ school
+
+what happends if you override it?
+s1.school = "dEF school"
+print(s1.school)        #dEF school
+print(s2.school)        #XYZ school
+
+this creates a new instance variable called school inside s1, shadowing 
+the class variable
+
+recap (cheat sheet)
+self.var -> instance variable
+ClassName.var -> class variable
+class variable are good for constants, shared counters, default config
+
+Task 1: shared category
+
+create a product class with:
+class variable: category = "Electronics"
+instance variable: name and price
+
+then : 
+create 2 products
+print their name, price and category
+change the class variable to "Tech" and show the updated effect on
+both objects
+
+task2: Tracking how many students
+create a student class that:
+
+-has instance variables: name, grade
+-has a class variable: count which keeps track of how many students
+have been created
+
+print the Student.count after creating each object.
+
+expected behaviour
+student.count-> 0
+created 1st student -> count beacomes 1
+create 2nd student -> count becomes 2
+
+Task 3: Override the class variable
+use the product class from task 1
+- for one product object, assign a new value to the category( override the class variable)
+
+then print:
+product1.category
+product2.category
+product3.category
+
+show the difference between class-level and object-level scope
+
+challenge project:
+library Tracker - shared counter edition
+
+Modify your library and books classes to include:
+- a class variable in book -> total_books_created
+- this variable should increase every time a new book is created
+- add a method in the library class: show_total_books() to display this value
+
+book.total_books_created -> 0
+create 3 books -> total becomes 3
+lib.show_total_books() -> prints "Total Books created : 3"
