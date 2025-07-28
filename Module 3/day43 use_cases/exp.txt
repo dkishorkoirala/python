@@ -1,0 +1,94 @@
+Day 43: powerful use case of class variables: Shared data and counters across all objects
+
+What will we cover:
+- keeping count of objects (like Student.count)
+- storing shared values (like category = "Electronics")
+- creating things like ID generators, registries, or limits (e.g. max Students allowed)
+
+Recap (Just so we're aligned):
+class Product:
+    category = "Electronics"    #class variable (shared)
+
+    def __init__(self, name, price):
+        self.name = name               #instance variable (unique)
+        self.price = price
+
+category is shared - changing it via Product.category changes it for 
+all objects (unless overridden individually).
+
+why use Class Variables?
+Class variable are best for:
+-tracking global state
+-Having one shared copy of data
+-Enforcing limits or rules
+
+
+Example 1 : counting how many users have signed up
+class User:
+    count = 0 # class variable
+
+    def __init__(self, username):
+        self.username = username
+        User.count += 1
+
+u1 = User("Hari")
+u2 = User("Ram")
+print("Total users:", User.count) #2
+
+Each time you create a new user, the shared count increases.
+
+Example 2: ID Assignment System:
+
+class Employee:
+    next_id = 1001
+
+    def __init__(self, name):
+        self.name = name
+        self.emp_id = Employee.next_id
+        Employee.next_id += 1
+
+e1 = Employee("Hari")
+e2 = Employee("Ram")
+
+print(e1.name, e1.emp_id) # Hari 1001
+print(e2.name, e2.emp_id) # Ram 1002
+
+we used next_id to automatically assign a unique Employee ID- 
+that's a class variable use case!
+
+Mini task 1
+create a class Dog that:
+- has a class variable Total_dogs to count total dogs created.
+- each dog has a name
+
+test:
+
+d1= Dog("Tommy")
+d2 = Dog("Bruno")
+
+print(Dog.Total_dogs) # should be 2
+
+Mini task 2
+Create a class Tickets that:
+- has a class variable tickets_counter starting from 1
+- assign a unique ticket number to each object
+
+test: 
+t1 = Ticket()
+t2 = Ticket()
+print(t1.number)  # 1
+print(t2.number)  # 2
+
+challenge of the day:
+create a class student with:
+- A class variable max_students = 3
+- a class variable current_count = 0
+- when a new student is created, increase current_count
+- if current_count > max_students, don't allow creation and show
+"Cannot add more students"
+
+Example test:
+s1 = Student("Ram")
+s2 = Student("Sita")
+s3 = Student("Hari")
+s4 = Student("Gita")  # Should not be allowed
