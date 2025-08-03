@@ -1,0 +1,78 @@
+Day 43 Practice: Class variables vs instance variables 
+
+recap (very short)
+
+type                belongs to               stored in          accessed by
+instance variables  one object only         self.<name>         obj.name
+class variables     shared by all           ClassName.<name>     ClassName.name || obj.name
+
+mini task(5 practice tasks)
+
+task1: Count employees
+Create a class employee that track of how many total employees were 
+created using a class variable total_employee
+
+e1 = Employee("Kiran")
+e2 = Employee("Sita")
+e3 = Employee("Hari")
+print(Employee.total_employees)
+
+Task2: Ticket ID Generator
+Create a Ticket class where each ticket is assigned a unique ID using a 
+class variable ticket_id_counter.
+Each instance stores its own ID as instance variable id.
+
+t1 = Ticket()
+t2 = Ticket()
+t3 = Ticket()
+print(t1.id)   # 1
+print(t2.id)   # 2
+print(t3.id)   # 3
+
+Task 3: track All book titles (shared list)
+create a library class. Each book instance has title and author.
+All book titles are stored in a shared class variable list: all_titles.
+
+b1 = Library("Gita", "Vyasa")
+b2 = Library("Ramayana", "Valmiki")
+print(Library.all_titles) 
+
+Task4: Shared discount for all products
+create a products class with name, price, and a class variable discount=
+0.1
+Define a method get_final_price() that returns price after discount.
+
+p1 = Product("Laptop", 50000)
+print(p1.get_final_price())  # 45000.0
+
+Product.discount = 0.2       # Update discount
+print(p1.get_final_price()) 
+
+Task 5: create a cap on Students(like yesterday)
+only 3 Students allowed using a class variable. Print a warning if a fourth is added.
+
+s1 = Student("A")
+s2 = Student("B")
+s3 = Student("C")
+s4 = Student("D")
+
+
+Challenge Time
+Challenge: Bank Account with shared Interest Rate
+
+create a class BankAccount with:
+-instance variable: name, balance
+-class variable: interest_rate (eg. 0.05)
+-Method calculate_interest() that returns interest based on current balance
+-method Update_rate(new_rate) that updates interest for all accounts
+(modify class var)
+
+a1 = BankAccount("Ram", 100000)
+a2 = BankAccount("Sita", 200000)
+
+print(a1.calculate_interest())  # 5000
+print(a2.calculate_interest())  # 10000
+
+BankAccount.update_rate(0.1)
+print(a1.calculate_interest())  # 10000
+print(a2.calculate_interest()) 
