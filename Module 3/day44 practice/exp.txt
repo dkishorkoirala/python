@@ -1,4 +1,4 @@
-Day 43 Practice: Class variables vs instance variables 
+Day 44 Practice: Class variables vs instance variables 
 
 recap (very short)
 

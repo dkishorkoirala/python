@@ -1,0 +1,99 @@
+Day 45: Inheritance
+basic Parent-child relationship
+
+this is major concept in OOP
+
+what will we cover:
+what is inheritance?
+how to create a child class that inherits from a Parent class 
+Understan what gets inherited: attributes and methods
+Practice reusing code using inheritance
+
+concept: what is inheritance?
+
+inheritance allows a new class (child) to acquire the properties and 
+behaviours of another class (parent)
+
+this helps us:
+- Avoid code duplication
+- create hierarchies (like Animal-> Dog, or Vehicle -> Car)
+- write cleaner, extendable code
+
+basic Syntax:
+
+class Parent:
+    def speak(self):
+        print("I am the parent.")
+
+class Child(Parent):
+    pass
+
+
+c = Child()
+c.speak()
+
+The child class automatically gets everything from the parent class- 
+unless we override or extend it.
+
+Mini task1: Animal -> Dog
+
+class Animal:
+    def sound(self):
+        print("Some animal Sound")
+    
+class Dog(Animal):
+    pass
+
+d = Dog()
+d.sound()
+
+- try: add a new method bark() only to Dog, and call both sound()
+and bark() from an object of Dog
+
+Mini task 2: Vehicle -> Car
+create a base class Vehicle with:
+- A method start() -> print'vehicle starting'
+
+now create a Car class that inherits from Vehicle
+-add its own method drive() -> print "Car driving....."
+
+try: 
+-create a object of Car
+-call both start() and drive()
+
+
+mini task3: User-> AdminUser
+create a base class User :
+-takes username in __inti__
+-method display_user() -> print "User: <username>"
+
+now create a child class AdminUser that inherits from User:
+- add method show_permission() -> print "Has full access"
+
+try:
+-create an AdminUser("admin1") object
+-call both display_user() and show_permissions()
+
+Challenge 1: shape-> Circle
+
+create a parent class Shape:
+- method area() -> prints "calculating area..."
+
+Create a child class Circle:
+-takes radius in __inti__
+-override area() method to print actual circle area: 3.14 * r^2
+
+output example:
+calculating area...
+Circle area: 314.0
+
+Challenge 2: Person -> Employee
+parent class : Person
+- __inti__ -> name, age
+- method introduce() -> "My name is ... and I am ... years old"
+
+-child class: Employee
+    - adds employee_id in __inti__
+    - method show_id() -> "Employee ID: ..."
+
+-try calling both methods from an Employee object.
