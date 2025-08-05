@@ -1,0 +1,111 @@
+Day 46: Overriding Methods in inheritance
+
+what will we cover:
+- what is method Overriding?
+- why override parent methods?
+- how python decides which method to run
+- real- life examples where overriding is useful
+
+
+1. What is method Overriding?
+
+Method Overriding means:
+
+A child class defines a method with the same names as one in the parent class,
+there by replacing its behaviour.
+
+when you call the method from a child object, python uses the child class
+version, not the parent's.
+
+2. Basic Syntax:
+class Animal:
+    def sound(self):
+        print("some generic animal sound")
+
+class Dog(Animal):
+    def sound(self):  #overrides animal's sound()
+        print("Woof!")
+
+d = Dog()
+d.sound()
+
+Even though Dog inherits from Animal, it overrides the sound() method
+with its own.
+
+3. Why overriding Methods?
+reason1: Customize behaviour
+A child class may need to specialize or modify a method from its parent.
+
+Reason2: Polymorphism (which you'll learn soon)
+
+Allows different class to respond differently to the same method call.
+
+4. Real-life Analogy
+Imagine a parent class Printer:
+
+class Printer:
+    def print_document(self):
+        print("Printing in black and white")
+
+now a child class ColorPrinter overrides it:
+
+class ColorPrinter(Printer):
+    def print_document(self):
+        print("Printing in color")
+
+so even though both are printers, they print differently. That's overriding.
+
+
+5. Parent Vs. Child Method
+let's test both Methods
+
+p = Printer()
+p.print_document()
+
+cp = ColorPrinter()
+cp.print_document()
+
+
+Summary:
+concept             explanation
+override            child class redefined parent method
+
+purpose             customize behaviour in child class
+
+effect              Child method is called instead of parent's
+
+Mini task:
+task1: Basic override
+
+class Bird:
+    def fly(self):
+        print("Flying...")
+
+class Penguin(Bird):
+    def fly(self):
+        print("I can't fly!")
+
+try creating an object of Penguin and call .fly()
+
+task2: Animal example
+Create a class Animal with a method make_sound()
+then create two child classes: Cat, Dog - override make_sound() in both
+
+Expected output:
+Cat: Meow
+Dog: Woof
+
+challenge: vehicle override
+
+Create:
+vehicle  class wit method start() -> print 'Generic vehicle starting'
+
+child class Bike overrides start() -> print 'Bike roaring to life!'
+
+another child class Bus overrides start() -> print 'Bus engine starting...'
+
+then:
+-create objects for each
+-call their start() methods
+try doing the without using super() yet - that comes next.
+
