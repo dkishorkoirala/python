@@ -1,0 +1,108 @@
+Day 47: Using super() to access parent class methods
+
+What will we cover?
+-what super() does?
+-why and when to use super().
+-how it helps us extend functionality, not just replace it.
+-Real-world patterns where super() makes your code cleaner.
+
+1. The Problem super() solves
+
+a basic inheritance example:
+class Vehicle: 
+    def start(self):
+        print("Vehicle starting...")
+
+class Car(Vehicle):
+    def start(self):
+        print("Car starting...")
+
+c = Car()
+c.start()
+
+here, the start() method in Car overrides the one from vehicle.
+But what if we want to extend it instead of replacing it?
+
+2. Enter super()- The Hero of inheritance
+
+class Car(Vehicle):
+    def start(self):
+        super().start()
+        print("Car starting...")
+
+c= Car()
+c.start()
+
+output:
+Vehicle starting...
+Car starting...
+
+so instead of fully replacing the parent's method, super() let us reuse the logic from the parent,
+and add our own on top of it.
+
+3. Syntax and how super() works
+
+super.method_name()
+
+-it doesn't need self.
+-it automatically refers to the parent class of the current class
+-works even in multi-level inheritance chain
+
+Ex: logging + Behavior
+
+class Logger:
+    def log(self):
+        print("[LOG] somthing happened...")
+
+class Payment(Logger):
+    def log(self):
+        super().log()
+        print("Payment was processed.")
+
+p = Payment()
+p.log()
+
+output:
+[LOG] somthing happened...
+Payment was processed
+
+why Use super()?
+-Reuse existing code from the parent.
+-Avoid code duplication.
+-Keep Behavior consistent.
+-great for frameworks and multiple inheritance.
+
+mini-task1: Animal Speaking
+Create a parent class Animal with a speak() method:
+-Animal: print"some generic animal sound"
+
+create a child class lion:
+overrides speack() but call super().speak() first.
+then print "Lion: Roar!"
+
+Mini task2: Logging App
+create a parent class Logger:
+method: log_message() -> print '[Base] logging data...'
+
+create a child class FileLogger:
+overrides log_message() but call parent's method first.
+then print "Saving Log to file..."
+
+Challenge project: Email notification system
+
+step1: create a base class Notifier:
+method: notify() -> print "Sending basic notification..."
+
+step2: Create child class EmailNotifier:
+overrides notify() and uses super(). notify() first
+then print "Sending email notification..."
+
+step3: Create another child class SMSNotifier:
+-same as above, but prints "Sending SMS notification"
+
+expectied output:
+Sending basic notification...
+Sending Email Notification
+
+Sending basic notification...
+Sending SMS Notification
