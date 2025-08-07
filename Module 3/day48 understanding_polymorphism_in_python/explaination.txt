@@ -1,0 +1,149 @@
+Day 48: Understanding Polymorphism in Python
+
+what will we cover:
+1. what is Polymorphism?
+2. Why it matters in real-world code
+3. how to implement it using method overriding
+4. using Polymorphism in loops and functions
+5. real-life examples
+6. Practice task and challenges
+
+1. What is Polymorphism?
+Polymorphism = "many forms"
+
+in python oop, it means:
+
+the same method name can behave differently in different classes
+
+simple example:
+class Dog:
+    def speak(self):
+        print("Woof!")
+
+class Cat:
+    def speak(self):
+        print("Meow!")
+
+for animal in [Dog(), Cat()]:
+    animal.speak()
+
+Eventhough the method called is the same (speak()), each class defines 
+its own version of it.
+
+this is Polymorphism
+2. why use Polymorphism?
+
+it promotes flexibility and reusability code
+makes code cleaner and extendable
+helps you write code that works on many type of objects, not just one 
+
+3. method overriding (our main tool):
+
+Polymorphism in python is most often achieved by overriding methods in 
+child classes.
+
+class Shape:
+    def area(self):
+        pass
+class Circle(Shape):
+    def area(self):
+        print("Calculating area of Circle...")
+
+class Rectangle(Shape):
+    def area(self):
+        print("Calculating area of Rectangle...")
+
+for s in [Circle(), Rectangle()]:
+    s.area
+
+4. using Polymorphism in functions
+
+def describe(animal):
+    animal.speak()
+
+describe(Dog())
+describe(Cat())
+
+we don't care what type animal is, as long as it has a speak() method
+
+5. real-world example
+ex: Payment system
+
+class Payment:
+    def pay(self):
+        print("Processing payment...")
+
+class CreditCard(Payment):
+    def pay(self):
+        print("Paying with credit card.")
+
+class PayPal(Payment):
+    def pay(self):
+        print("Paying with PayPal.")
+
+for method in [CreditCard(), PayPal()]:
+    method.pay()
+
+ex:2 Drawing tools
+
+class Tool:
+    def use(self):
+        pass
+
+class Brush(Tool):
+    def use(self):
+        print("Painting with brush.")
+
+class Eraser(Tool):
+    def use(self):
+        print("Erasing with eraser.")
+
+def draw(tool):
+    tool.use()
+
+draw(Brush())
+draw(Eraser())
+
+
+mini practice task
+task1: 
+create two classes: InstagramPost and Tweet, both with a method post()
+that prints different messages.
+
+then call post() for both in a loop.
+
+task2:
+Define a function make_sound() that takes an object and calls its .sound()
+method.
+Create two class: Duck and Cow, each with their own .sound() implementation.
+
+call make_sound() with each.
+
+Task3: 
+create a base class Device and two subclasses: Printer, Scanner.
+Each should have a method .start() with different behavior.
+use a loop to call .start() on both.
+
+challenge time
+challenge1: Shape Area Display
+
+create a base class Shape with an empty method area().
+then make 3 subclasses:
+-Circle -> area = pi * r^2
+-Rectangle -> area = width * height
+-square = area = side ^ 2
+
+create a list of all 3 shapes (with sample dimentions), and print their area
+using Polymorphism
+
+challenge2: notification system
+Create a base class Notification, with a method send().
+then create 3 classes:
+-EmailNotification
+-SMSNotification
+-PushNotification
+
+each one overrides send() with their own message.
+write a function send-alert (notification) that works on any of them.
+then create a loop to send all types of notifications using send_alert().
+
