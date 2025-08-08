@@ -1,0 +1,114 @@
+Day 49: Method Overriding in Detail
+
+what will we cover:
+
+Today we'll go deeper into Method Overriding: 
+-why and when to override
+-The role of super() and customizing inherited behaviour
+-avoiding duplicate code with Method Overriding
+real world analogies and examples
+Multiple Overriding chains
+
+Concept: Method Overriding deep dive
+
+what is Method Overriding?
+
+when a child class defines a Method with the same name as a Method in 
+the parent class, it overrides the parent' version.
+
+class Animal:
+    def speak(self):
+        print("Some generic animal sound")
+
+class Dog(Animal):
+    def speak(self):  # Overrides Animal.speak
+        print("Woof!")
+
+why override methods?
+- To specialize behavior for the subclass
+- To extend the parent method using super().
+- to avoid modifying parent code (useful in large projects or libraries)
+
+super() - accessing parent methods
+you can extend the parent behavior instead of replacing it entirely.
+
+class Logger:
+    def log (self):
+        print("Logging basic info...")
+
+class FileLogger(Logger):
+    def log (self):
+        super().log()
+        print("Logging to file...")
+
+
+this keeps parent logic + child logic both running.
+
+Method resolution order(MRO)
+
+in multi-inheritance, python looks left to right in the class definition.
+
+class A:
+    def whoami(self):
+        print("A")
+    
+class B(A):
+    def whoami(self):
+        print("B")
+
+class C(B):
+    pass
+
+c = C()
+c.whoami()
+
+output: B
+
+Even though C doesn't define whoami, it inherits the overridden version from B 
+not A.
+
+Mini task1: Basic Overriding
+
+Create a base class Appliance with a method start().
+Create two subclasses: WashingMachine and MicroWave.
+each should override start() to print what it starts.
+
+Mini Task2: use super()
+
+create a class Vehicle with a method start_engine() that prints "Starting engine...".
+then, subclass it as Car, which:
+
+uses super().start_engine()
+then prints "Driving off!"
+
+Mini task3: Chain of inheritance
+Create 3 classes:
+
+- Device with method boot()
+-Laptop(Device) overrides boot() with super().boot() + "Laptop booted"
+-GamingLaptop(Laptop) overrides boot() and does the same
+
+create an instance of GamingLaptop and call .boot() - observe the method chain
+
+Challenge1: Notification System
+create the following classes:
+
+-Notifier: Notify() prints "Base Notification"
+-EmailNotifier(Notifier): overrides to print email message
+-SMSNotifier(Notifier): Overrides to print SMS message
+-AppNotifier(Notifier): Overrides but also uses super().notify() to 
+print both base and custom
+
+loop through instances of each and call. notify()
+
+challenge2: Payment Processing System
+create a class hierarchy:
+
+-Payment-> method process() print "Processing payment..."
+-CreditCardPayment overrides and prints "Processing credit card payment"
+-PaypalPayment Overrides and prints "Processing PayPal payment"
+-securePaypalPayment(PaypalPayment) uses super().process() and adds
+"Verifying user before Paypal Payment"
+
+create instances and call .process() on each.
+
