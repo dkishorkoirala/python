@@ -1,0 +1,39 @@
+Day 50: 	Polymorphism practice challenge
+
+mini task1: Method overriding with extra step
+create a base class camera with a Method click() that prints "taking a photo..."
+create a subclass SmartCamera that overrides click() to first call the base method using super()
+and then print "Applying AI filters..."
+create an instance of SmartCamera and call click()
+
+
+Mini Task 2: Multi-Level Overriding
+Create three classes:
+Appliance → method turn_on() prints "Turning on appliance..."
+Fan inherits from Appliance, overrides turn_on() to use super() and then print "Fan spinning..."
+SmartFan inherits from Fan, overrides turn_on() to use super() and then print "Voice control activated..."
+Create an instance of SmartFan and call turn_on().
+
+Mini Task 3: Polymorphic Greetings
+Create two classes:
+EnglishGreeter → method greet() prints "Hello!"
+SpanishGreeter → method greet() prints "¡Hola!"
+Loop through instances of both and call greet().
+
+
+Challenge 1: Employee Payroll System
+Create:
+Employee → method calculate_salary() prints "Base salary calculated"
+FullTimeEmployee → overrides to print "Full-time salary calculated"
+PartTimeEmployee → overrides to print "Part-time salary calculated"
+Contractor → overrides but also calls super().calculate_salary() before printing "Contractor bonus added"
+Loop through all employee types and call calculate_salary().
+
+
+Challenge 2: Transport Booking System
+Create:
+Transport → method book() prints "Booking transport..."
+Bus → overrides to print "Booking a bus ticket..."
+Train → overrides to print "Booking a train ticket..."
+Flight → overrides, calls super().book() first, then prints "Booking in-flight meals..."
+Loop through all and call book().
