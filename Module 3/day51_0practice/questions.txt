@@ -1,0 +1,32 @@
+Mini Task 1: Smart Home Devices
+
+Create a base class SmartDevice with method activate() printing "Activating device...".
+Subclass as SmartLight and SmartSpeaker.
+SmartLight.activate() → "Activating light..."
+SmartSpeaker.activate() → "Activating speaker..."
+Loop over both and call .activate().
+
+Mini Task 2: Super-powered Appliances
+Create a base class Appliance with method start() printing "Starting appliance...".
+Subclass WashingMachine and SmartWashingMachine.
+WashingMachine.start() should call super().start() then print "Washing clothes...".
+SmartWashingMachine.start() should call super().start() then print "Optimizing wash cycle...".
+
+Mini Task 3: 3-Level Inheritance
+Animal → method speak() → "Animal sound".
+Dog(Animal) → super().speak() then "Bark".
+SmartDog(Dog) → super().speak() then "Translating barks to human language".
+Create a SmartDog and call .speak().
+
+Challenge 1: Music Player System
+Base: MusicPlayer.play() → "Playing music...".
+MP3Player → overrides.
+StreamingPlayer → overrides and calls super().play().
+Loop through and call .play().
+
+Challenge 2: Delivery Service
+Base: Delivery.deliver() → "Delivering package...".
+BikeDelivery → overrides with "Delivering by bike".
+TruckDelivery → overrides with "Delivering by truck".
+DroneDelivery → uses super().deliver() then "Flying drone to location".
+Call .deliver() for each.

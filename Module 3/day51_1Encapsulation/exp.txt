@@ -1,0 +1,116 @@
+Day 51: Encapsulation -Private and Public Attributes
+
+what will we cover:
+1. Concept of Encapsulation in OOP
+2. Why data hiding is important
+3. How python implements private attributes using name mangling
+4. How to safely access and modify private data using getter and setter methods
+5. Real-world analogies to make it clear
+
+Lesson: Encapsulation - Protecting your object's Data 
+1. Whart is Encapsulation?
+Encapsulation means bundling the data ( attributes) and the methods that operate on 
+the data into a single unit or class- and controlling access to that data. it hides the
+internal state of an object from the outside world and only exposes what is necessary.
+
+Imagine a smartphone: You can use apps and make calls, but you don't see or touch
+the internal circuits. the details are hidden to protect the device and keep it working
+well.
+
+Similarly, in programming, Encapsulation hides an object's internal data, so no one can
+change it accidentally or in a way that breaks the program.
+
+2. Public vs private attributes in python
+By default, python attributes are public, which means they can be accessed and 
+modified from anywhere:
+
+class Car:
+    def __init__(self):
+        self.color = "red" # public attributes
+
+anyone can do:
+my_car.color = "blue"
+print(my_car.color) #prints 'blue'
+
+But sometimes you want some attributes to be private, meaning they should not be 
+accessed or changed directly from outside class.
+
+Python uses a name mangling trick to make attributes private by prefixing their name
+with double underscore __ 
+
+class Car:
+    def __init__(self):
+        self.__engine_number = 'XYZ123" # private attribute
+
+This makes the attribute harder to access directly because python internally renames
+it to _car__engine_number. 
+
+3. why is private data important?
+Private data protects the internal state of your object. For example:
+
+- prevent users from setting invalid or dangerous values
+- control changes via validation logic 
+- Avoid accidental overwrites
+
+4. Accessing private Attributes
+Direct access is discouraged, but still possible using the mangled name:
+
+car = Car()
+print(car._Car__engine_number) #accessing the private attribute
+
+but this breaks the encapsulation principle.
+
+5. Getters and setters- controlled access
+to safely access and modify private attributes, we use getter and setter methods.
+
+ex: 
+class UserProfile:
+    def __init__(self, username, password):
+        self.username = username
+        self.__password = password
+
+    def get_password(self):
+        return self.__password
+
+    def set_password(self, new_password):
+        if len(new_password) >= 6:
+            self.__password = new_password
+            print("Password updated successfully.")
+        else:
+            print("Error: Password must be at least 6 characters.")
+
+
+6. Real world analogy
+think of your password on a website. you can't just read or write it directly from 
+outside- the website only allows you to set a new password after checking it meets
+rules, and never reveals the actual password openly. This protects your data.
+
+summary:
+- encapsulation = hiding internal data to protect it
+- use __ prfix to make attributes private in python
+- access private data safely via getters and setters
+- this keeps your program robust and secure
+
+Mini Tasks (Expected Output Only)
+Task 1: Create a class with one public and one private attribute. Print both.
+Expected Output:
+Public attribute: I am visible
+Cannot access private attribute directly: AttributeError
+
+Task 2: Access the private attribute using name mangling and print its value.
+Expected Output:
+Accessed private attribute: I am private
+
+Daily Challenge (Expected Output Only)
+Create UserProfile class with private username and password. Implement methods
+to get username, get password, and set password with minimum length validation.
+Show outputs for:
+- Successfully updating the password
+- Failing to update due to short password
+- Display current password
+
+Expected Output:
+Username: Dibash
+Password updated successfully.
+Error: Password must be at least 6 characters.
+Current password: mysecretpass
