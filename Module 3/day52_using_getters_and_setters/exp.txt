@@ -1,0 +1,84 @@
+Day 52: Using Getters and Setters in Python
+
+what will we cover today:
+- what getters and setters are
+- why we use them instead of directly accessing attributes
+- how to implement them using normal methods
+- how to implement them using @property decorator (pythonic way)
+- real world analogy to make it stick
+
+1. what are getters and setters?
+ in oop, getters are methods that retrieve  (get) the value of a private attribute, and
+setter are methods that modify (Set) the value of a private attribute
+
+2. Why use them instead of Direct access?
+- to validate changes before they happen( eg. password must be at least 6 characters)
+- to protect important data from unwanted changes
+- To control how data is read or formatted
+- to make changes in the future without breaking code that uses your class
+
+3. Implementing Getters and setters with methods
+
+ex: 
+class Person:
+    def __init__(self, name):
+        self.__name = name  # private attribute
+
+    def get_name(self):     #getter
+        return self.__name
+
+    def set_name(self, new_name):   #setter
+        if new_name,strip():
+            self.__name = new_name
+            print("Name updated successfully")
+        else:
+            print("Error: Name cannot be empty")
+
+
+4. The Pythonic way - @property
+python gives us a cleaner syntax using the @property decorator
+
+ex: 
+class Person:
+    def __init__(self, name):
+        self.__name = name  # private attribute
+
+    @property
+    def name(self):   # getter
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):   # setter
+        if new_name.strip():
+            self.__name = new_name
+            print("Name updated successfully")
+        else:
+            print("Error: Name cannot be empty")
+
+now you can do :
+
+person = Person("Dibash")
+print(person.name)  
+
+person.name = "Ram"
+
+5. Real-world analogy
+Think of your email app:
+- getter: reading your inbox messages -- you get information without altering it 
+- setter: changing your email password -- you must pass security checks before it's accepted,
+
+mini tasks;
+Task 1: Create a class with a private marks attribute. Use getter and setter 
+methods (not decorators) to:
+- Display marks
+- Update marks only if between 0 and 100
+
+Task 2: Create the same marks example but using @property and @setter decorators.
+
+Daily Challenge
+Create a BankAccount class with:
+- Private attribute __balance
+- Getter method to check balance
+- Setter method to deposit money (must be > 0)
+- Setter method to withdraw money (must be <= balance)
+- Using @property and @setter for both balance and operations
