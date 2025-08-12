@@ -1,0 +1,72 @@
+Day 53: Real-world Encapsulation Example (User Profile)
+
+what will we cover:
+- how encapsulation applies in a realistic User Profile system
+- using private attributes for sensitive info(email, password)
+- using getters and setters to control access and validation
+- hiding sensitive info when displaying user details
+
+Encapsulation means hiding internal data so outside code can't touch it directly, but  can 
+interact safely through methods.
+
+in a user profile, you don't want anyone to access or change the password or email without 
+rules. so you make them private (__password, __email) and exposer safer getters/setters with checks.
+
+for ex: 
+- set email only if it contains "@"
+- set password only if it's long enough
+This prevents invalid data or accidental corruption.
+
+Mini task:
+task 1:  Create a class UserProfile with private __email
+set email using setter only if it contains @ 
+print success or error message accordingly
+
+Expected output:
+Email updated successfully.
+Error: Invalid email format.
+
+task 2: Extend UserProfile with private __password
+password setter must enforce length >= 6 characters.
+print success or error
+
+Expected output:
+Password updated successfully.
+Error: Password must be at least 6 characters.
+
+task3: Add a display_info() method to print email and password masked as "****".
+
+Expected output:
+Email: user@example.com | Password: ******
+
+task4: Add a method check_password(input_pass) returning true if matches stored 
+password else False.
+
+Expected output:
+Password match: True
+Password match: False
+
+task5: add a method update_email(new_email) that uses the setter internally and 
+returns success/error message.
+try updating with valid and invalid emails.
+
+Expected output:
+Email updated successfully.
+Error: Invalid email format.
+
+Challenge: online AccountManager
+
+Create an Account class with:
+- Private __username, __password, and __login_status (bool)
+- Getter for username
+- Setter for password: minimum 8 chars, at least 1 digit
+- login(password_attempt) method sets __login_status True if password matches, else prints error
+- logout() sets __login_status False
+- show_status() prints "Logged in" or "Logged out"
+
+Expected output:
+Password updated successfully.
+Error: Password must be at least 8 characters and contain a number.
+Login successful!
+Logged in
+Logged out
