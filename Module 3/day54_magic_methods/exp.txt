@@ -1,0 +1,110 @@
+Day 54: Magic Methods – __str__, __repr__, __len__
+
+what will we cover:
+- understand what magic methods (also clled dunder methods) are and why they exist in python
+- learn the difference between
+    - __str__() -> human-friendly string representation
+    - __repr__() -> developer/debug-friendly string representation
+    - __len__() -> how to define custom length behavior for your objects.
+
+- see real world examples of using these methods
+- practice with 3- 5 tasks + 1 hands-on challenge to fully master it
+
+1. Concept : what are magic methods?
+- magic methods are special methods in python that start and end with double underscores(__like_this__)
+- they let you customize how your objects behave with built-in functions
+and operators.
+ex:
+- len (my_object) calls my_object.__len__()
+- print(my_object) calls my_object.__str__()
+
+think of magic methods as hooks python uses to talk to your objects.
+
+2. __str__() - Human-friendly output
+- this method defines what should be returned when you call str(object) or use print(object).
+- It should be readable and user-friendly.
+ex:
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
+book1 = Book("The Alchemist", "Paulo Coelho")
+print(book1)
+
+3. __repr__() - debug- friendly output
+- this is for developers.
+- called when you use repr(object) or just type the object in an interactive shell.
+- should ideally return a string that could be used to recreate the object
+
+ex: 
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __repr__(self):
+        return f"Book(title='{self.title}', author='{self.author}')"
+
+book1 = Book("The Alchemist", "Paulo Coelho")
+print(repr(book1))
+
+4. __len__() - custom length behavior 
+- lets you define what len(object) should return
+- commonly used for container-like objects.
+
+ex: 
+class Library:
+    def __init__(self, books):
+        self.books = books
+    
+    def __len__(self):
+        return len(self.books)
+
+library = Library(["The Alchemist", "The Lord of the Rings"])
+print(len(library))
+
+5. Best practices:
+- always keep __str__() short and user-friendly
+- make __repr__() precise and unambiguous
+- if unsure, make __repr__() and __str__() the same.
+- if your object represents a collection, implement __len__()
+
+
+6. Today's hands-on practice:\
+Task 1 – Friendly Greeting
+create a person class with :
+- __str__() returning 'Person: <name>'
+- __repr__() returning 'Person(name=<name>)'
+
+Task 2 – Product Representation
+Create a Product class that:
+- Has name and price.
+- __str__() → "Product: Laptop - $800"
+- __repr__() → "Product(name='Laptop', price=800)"
+
+Task 3 – Playlist Length
+Create a Playlist class:
+- Stores a list of song names.
+- Implement __len__() so len(playlist) returns the number of songs.
+
+Task 4 – Combined Magic
+Create a Book class with:
+- __str__() → "Book: <title>"
+- __repr__() → "Book(title='<title>', author='<author>')"
+- __len__() → number of characters in the title.
+
+Task 5 – Debug vs User
+Test the difference between print(obj) and repr(obj) for your classes.
+
+7. Challenge Project – Custom Shopping Cart
+Goal: Build a ShoppingCart class that:
+- Stores a list of Product objects (from Task 2).
+- __len__() returns number of products.
+- __str__() returns "Shopping Cart with X items".
+- __repr__() returns "ShoppingCart(products=[...])".
+- Add method add_product(product) to add items.
+- Add method total_price() to sum all prices.
