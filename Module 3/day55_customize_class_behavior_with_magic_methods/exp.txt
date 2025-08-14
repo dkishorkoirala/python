@@ -1,0 +1,123 @@
+Day55: Customize Class Behavior with magic methods
+
+what will we cover:
+- waht magic methods are and why they're called "dunder" methods
+- how to Customize how your objects behave with built-in operators
+- implementing arithmetic ( +, -, * etc) for custom Classes.
+- implementing comparisons (==, <, > etc)
+- making your objects act like built-in types.
+
+by the end, you'll be writing classes that can:
+- be added together.
+- compared naturally
+- printed in a friendly format
+
+1. What are magic methods?
+- magic methods = special methods in python with double underscores (hence dunder.)
+- they define how your objects behave with built-in operations like printing, adding, comparing,
+indexing, etc.
+
+examples or magic methods:
+- __init__ - constructor (runs when object is created)
+- __str__ - string representation (for human)
+- __repr__ -official string representaiton (for developer)
+- __add__ -called when you use the + operator.
+- __len__ - called when you use len() on your object.
+
+2. Customizing arithmetic
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __sub__ (self, other):
+        return Point(self.x - other.x, self.y - other.y)
+
+    def __mul__(self, other):
+        return Point(self.x * other.x, self.y * other.y)
+    
+    def __str__(self):
+        return f"Point({self.x}, {self.y})"
+
+
+p1 = Point(1, 2)
+p2 = Point(4, 1)
+print(p1 + p2)
+print(p1 - p2)
+print(p1 * p2)
+
+here: 
+- p1 + p2 calls p1.__add__(p2)
+- p1 * p2 calls p1.__mul__(p2)
+
+3. Customizing comparisons
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    
+    def __eq__(self, other):
+        return self.price == other.price
+    
+    def __lt__(self, other):
+        return self.price < other.price
+    
+    def __gt__(self, other):
+        return self.price > other.price
+
+    def __str__(self):
+        return f'{self.name} - ${self.price}'
+
+p1 = Product("Laptop", 50000)
+p2 = Product("Mobile", 30000)
+
+print(p1 == p2)
+print(p1 < p2)
+print(p1 > p2)
+
+now Python knows how to compare products naturally by price.
+
+4. Making your class work with built-in functions
+
+class Team:
+    def __init__(self, member):
+        self.member = member
+
+    def __len__(self):
+        return len(self.member)
+
+    def __getitem__(self, index):
+        return self.member[index]
+    
+    def __iter__(self):
+        return iter(self.member)
+
+team= Team(["Hari", "Ram", "Shyam"])
+
+print(len(team))
+print(team[0])
+for member in team:
+    print(member)
+
+
+mini task:
+task1: creating a Rectangle class that supports:
+- adding two rectangles (sum of widths and height)
+- multiplying a rectangle by an integer (scale both width and height)
+- printing it nicely with __str__
+
+task2: create a Book class that:
+- compares book by number of pages ( __eq__, __lt__, __gt__)
+- works with len(book) to return number of pages.
+
+challenge project: Bank Account with operator overloading
+requirements:
+1. + operator should merge two accounts (Sum thier balances)
+2. - operator should allow transferring money between accounts.
+3. ==, <, > should compare accounts by balance
+4. str() should print: "Account(holder_name): $balance".
+
