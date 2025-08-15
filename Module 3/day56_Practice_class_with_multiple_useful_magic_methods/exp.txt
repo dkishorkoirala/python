@@ -1,0 +1,136 @@
+Day 56: Practice – Class with Multiple Useful Magic Methods
+
+what will we cover?
+- Understand how to customize operators for your class (+, *, etc)
+- learn how to make your class work with the in keyword(__contains__)
+- understand type checking with isinstance() inside magic Methods
+- Build one realistic class that combines multiple magic methods.
+- get multiple mini tasks and challenges to strenthen oop skills
+
+1. Quick Recap: What are magic methods?
+Magic methods (a.k.a. dunder methods because they start and end with double underscores) let us 
+customize how python's built-in operators and functions behave with our custom objects.
+
+ex:
+len([1,2,3]) #calls list.__len__()
+
+if we define __len__() in our class, we can control what len() returns.
+
+2. Operator overloading with magic methods
+2.1 The __add__() methods - customizing the + operator
+if we want object1+ object2 to do something meaningful for our objects, define __add__():
+ex: 
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def __add__ (self, other):
+        if isinstance(other, BankAccount):
+            return BankAccount(self.balance + other.balance)
+        return NotImplemented
+
+    def __str__(self):
+        return f"BankAccount balance: {self.balance}"
+
+a1 = BankAccount(1000)
+a2 = BankAccount(2000)
+
+a3 = a1 + a2
+print(a3)
+
+2.2 The __mul__() method - customizing the * operator
+
+class StingRepeater:
+    def __init__(self, text):
+        self.text = text
+
+    def __mul__(self, times):
+        if isinstance(times, int):
+            return StingRepeater(self.text * times)
+        return NotImplemented
+    
+
+    def __str__(self):
+        return self.text
+
+msg = StingRepeater("Hello ")
+print(msg * 3)
+
+2.3 the __contains__() method - for in keyword
+
+if you define __contains__() in your class, you can customize in behavior.
+
+class Classroom:
+    def __init__(self, students):
+        self.students = students
+
+    def __contains__(self, student):
+        return name in self.students
+
+room = Classroom(["Ram", "Hari", "Gita"])
+print("Ram" in room)
+print("Shyam" in room)
+
+3. Using isinstance() inside magic methods
+we often use isinstance() to make sure we're combining objects of the right type.
+
+if isinstance(other, BankAccount):
+    #safe to add balance
+
+
+without this check, python may allow invalid combinations and cause errors.
+
+4. Full Example- combining multiple magic methods
+lets build a ShoppingCart class:
+
+class ShoppingCart:
+    def __init__(self, items=None):
+        self.items = items if items else []
+
+    def __str__(self):
+        return f"ShoppingCart({self.items})"
+
+    def __len__(self):
+        return len(self.items)
+
+    def __contains__(self, item):
+        return item in self.items
+
+    def __add__(self, other):
+        if isinstance(other, ShoppingCart):
+            return ShoppingCart(self.items + other.items)
+        return NotImplemented
+
+cart1 = ShoppingCart(["apple", "banana"])
+cart2 = ShoppingCart(["milk"])
+cart3 = cart1 + cart2
+
+print(cart3)              # ShoppingCart(['apple', 'banana', 'milk'])
+print(len(cart3))         # 3
+print("milk" in cart3)    # True
+
+
+5. Mini tasks:
+task1: create a Library class where:
+- len(Library) returns number of books
+- "book_name" in library checks if a book exists
+- library1 + library2 merge books from both libraries
+
+task2: 
+create a Vector class where:
+- v1 + v2 adds their coordinates
+- v1 * number scales the Vector by a number
+
+6. challenges:
+challenge1: 
+make a Playlist class where:
+- len(playlist) -> number of songs
+- "song" in playlist -> check if song exists
+- playlist1 + playlist2 -> merge playlists
+- playlist * 2 repeats all songs twice
+
+challenge2:
+make a ScoreBoard class where:
+- score1 + score2 adds points together
+- socre1 > score2 compares points
+- len(scoreboard) returns number of players
