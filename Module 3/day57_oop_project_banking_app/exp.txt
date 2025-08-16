@@ -1,0 +1,62 @@
+Day 57: OOP Project – Banking App (Plan Structure)
+
+what will we cover:
+- understanding what a Banking app means in programming terms.
+- beak it into classes, attributes, and methods.
+- design the Project structure (blueprint) without jumping to coding yet.
+- discuss future extensions (transaction history, authentication, interest, etc..)
+
+Project Idea: Banking App
+we'll simulate a bank system where users can:
+1. Create accounts
+2. Deposit money
+3. Withdraw money
+4. Check balance
+5. Transfer money between accounts (optional for later)
+6. Keep a transaction history (optional for later)
+
+step 1: Identify classes
+we need at least one main class:
+class BankAccount
+attributes(data):
+- account_number: (unique ID for each account)
+- holder_name(account holder)
+- balance (current money)
+- transactions (list to track deposits/ Withdrawals)
+
+method(behavior):
+- deposit(amount): add money 
+- Withdraw(amount): subtract money if balance is enough
+- check_balance() :show balance
+- transfer(amount, other_account): send money between accounts
+- __str__() : represent account info nicely
+
+step2: decide features
+to keep it simple, our MVP(Minimum Viable Product) includes:
+- create account with starting balance
+- Deposit
+- Withdraw
+- check balance
+
+leter we'll extend with:
+- transfers
+- transaction history
+- interest calculations
+
+step 3: Example usage flow
+#create account
+acc1 = BankAccount(101, "Ram", 1000)
+acc2 = BankAccount(102, "Sita", 500)
+
+#deposit money
+acc1.deposit(500)
+
+#withdraw money
+acc2.withdraw(200)
+
+#check balance
+print(acc1.check_balance())
+print(acc2.check_balance())
+
+mini task today:
+plan the structure in your own words

@@ -1,0 +1,35 @@
+when the program is executed:
+
+menu appears:
+1. Create a new account
+2. perform transaction
+3. Exit
+
+for option 1:
+user need to tell their name:
+and we will assign new account number taking initial of the name eg. Dibash -> D101
+and we will propmt user do you wanna deposit some money?
+if yes adds to balance
+else 
+Exit
+print(your account has been created with name , balance and ID please don't forget your id )
+
+for option2:
+we will promot user to enter account number
+and if match 
+    present menu
+    1. Deposit
+    2. Withdraw
+    3. Check balance
+    4. show transactions
+    5. Exit
+
+and for each we will prompt user to enter amount and as requested we will perform transaction
+
+so for this we need two class one for account and one for transaction
+
+for transaction we will need account number and amount
+
+for account we will need name, balance and account number
+
+to perform any transaction we will need account number and amount
