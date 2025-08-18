@@ -1,0 +1,13 @@
+Day 58: Banking App – Implement Logic (Deposit, Withdraw, etc.)
+
+what will we cover today?
+- write the skeleton code for our Banking App
+- Implement the Account class (create account, deposit , Withdraw, check balance)
+- implement the transaction class (record deposit and Withdrawals).
+- add a menu system for user interaction.
+
+step1: skeleton code (basic structure)
+step 2 : implementing account methods
+step 3: Menu functions
+
+task run the program step by step with atleast 2 accounts, perform all transactions and verify
