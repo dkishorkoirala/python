@@ -1,0 +1,47 @@
+| Day | Topic / Focus                                                      |
+| --- | ------------------------------------------------------------------ |Numpy
+| 67  | What is NumPy? Installing & Intro to Arrays                        |
+| 68  | Creating Arrays (`array`, `arange`, `linspace`, `zeros`, `ones`)   |
+| 69  | Array Properties (`shape`, `dtype`, `ndim`, `size`)                |
+| 70  | Array Indexing (1D, 2D, Negative Indexing)                         |
+| 71  | Array Slicing (`start:end:step`, multidimensional slicing)         |
+| 72  | Advanced Indexing (boolean indexing, fancy indexing)               |
+| 73  | Array Math Operations (element-wise operations)                    |
+| 74  | Universal Functions (ufuncs like `sqrt`, `exp`, `log`)             |
+| 75  | Statistics in NumPy (`mean`, `median`, `std`, `sum`, `max`, `min`) |
+| 76  | What is Pandas? Intro to `Series`                                  |Pandas
+| 77  | Operations on `Series` (indexing, slicing, applying functions)     |
+| 78  | Handling Missing Data in Series                                    |
+| 79  | Intro to `DataFrame` (creating from dicts, lists, NumPy arrays)    |
+| 80  | Exploring DataFrames (`head`, `tail`, `info`, `describe`)          |
+| 81  | Selecting Rows & Columns (basic indexing)                          |
+| 82  | `.loc` for label-based selection                                   |
+| 83  | `.iloc` for integer-based selection                                |
+| 84  | Conditional Selection with `loc` & `iloc`                          |
+| 85  | Adding New Columns                                                 |
+| 86  | Modifying Existing Columns                                         |
+| 87  | Dropping Columns & Rows                                            |
+| 88  | GroupBy Basics                                                     |
+| 89  | Aggregation Functions (`mean`, `sum`, `count`, etc.)               |
+| 90  | Multi-level GroupBy                                                |
+| 91  | Identifying Missing Data (`isnull`, `notnull`)                     |
+| 92  | Filling Missing Data (`fillna`, forward/backward fill)             |
+| 93  | Dropping Missing Data (`dropna`, thresholds)                       |
+| 94  | Merging DataFrames (`merge`)                                       |
+| 95  | Joining DataFrames (`join`)                                        |
+| 96  | Concatenating DataFrames (`concat`, `append`)                      |
+| 97  | Sorting Data (`sort_values`, `sort_index`)                         |
+| 98  | Filtering Rows with Conditions                                     |
+| 99  | Combining Sorting & Filtering in Practice                          |
+| 100 | Reading CSV files (`read_csv`)                                     |
+| 101 | Reading Excel files (`read_excel`)                                 |
+| 102 | Exporting Data (`to_csv`, `to_excel`)                              |
+| 103 | Cleaning Real Datasets – Step 1: Inspect & Understand Data         |
+| 104 | Cleaning Real Datasets – Step 2: Handle Missing/Invalid Data       |
+| 105 | Cleaning Real Datasets – Step 3: Transform & Finalize              |
+| 106 | Project: COVID Tracker – Load & Inspect Data                       | Project
+| 107 | Project: COVID Tracker – Analyze Cases, Recoveries, Deaths         |
+| 108 | Project: COVID Tracker – Visualize & Summarize                     |
+| 109 | Project: Student Analyzer – Load & Inspect Dataset                 |
+| 110 | Project: Student Analyzer – Perform Aggregations & Insights        |
+| 111 | Project: Student Analyzer – Build Final Reports                    |

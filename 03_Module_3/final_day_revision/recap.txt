@@ -1,0 +1,125 @@
+Module 3 Final day: (Day 61)
+
+what will we cover:
+- A big picture recap of everything we learned in module 3
+- clear connections between oop concepts (how they fit together)
+- real world analogies to solidify memory
+- a reflection task
+- small review exercise to check mastery
+
+OOP recap (simple flow)
+1. Class and object (the blueprint and the house)
+- a class is like a blueprint
+- an object is like a house built from that blueprint
+
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+d1 = Dog("Buddy")
+d2 = Dog("Max")
+
+
+2. Instance Attributes & methods (the house features)
+- Attributes-> things the object has like name, age, color
+- Methods-> things the object can do like bark, run, sleep
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def bark(self):
+        print(f"{self.name} barks!")
+
+3. class variable vs instance variable(shared vs unique)
+- instance variable-> unique to each object
+- class variable -> shared by all objects
+
+ex. 
+class Dog:
+    species = "Canine"
+
+    def __init__(self, name):
+        self.name = name
+
+
+4. inheritance (Parent -> child)
+- a child class inherits features from the parent.
+- helps reuse code and avoid duplicaiton
+
+ex. 
+class Animal:
+    def speak(self):
+        return "Some sound"
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+5. Polymorphism (many forms)
+- Different classes can use the same method name but behave differently
+
+ex. 
+for animal in [Dog(), Cat()]:
+    print(animal.speak()) # output woof! Meow
+
+6. Encapsulation (hiding secrets)
+- use private variables (_var or __var) to restrict access
+- control access with getters and setters
+
+ex.
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+    
+    def get_balance(self):
+        return self.__balance
+    
+    def deposit(self, amount):
+        self.__balance += amount
+
+7. Magic Methods(special Powers)
+- starts and end with __ (dunder methods)
+- ex. __str__, __len__, __repr__...
+
+ex. 
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"Dog named {self.name}"
+
+Reflection task:
+1. What is a class and an object?
+-> A class is a blueprint for creating objects (it defines attributes and behaviors).
+An object is an instance of a class (a real entity created from the class)
+
+2. why is inheritance useful?
+-> Inheritance allows a new class (child) to reuse and extend the properties and 
+methods of another class (parent).
+It reduces code duplication and makes programs easier to maintain.
+
+3. How does Encapsulation improve safety?
+-> Encapsulation hides the internal details of an object and controls access through getters and setters.
+It prevents direct modification of sensitive data and enforces data validation.
+
+4. Which OOP feature did you find most interesting? why?
+-> Polymorphism- different classes can use the same method name but behave differently
+
+mini review tasks
+task1: Quick class
+create a class Book with attributes title, author, and a method info() that prints
+book details
+
+task2 : Inheritance
+create a base class vehicle with a method move()
+then make a subclass car and override move() method with "Car is driving"
+
+task3: Encapsulation
+make a class wallet with a private variable __money
+-add a method add_money(amount) to increate it.
+- add a method get_money() to see balance
+
+
+
