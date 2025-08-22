@@ -1,0 +1,77 @@
+Day 62: Numpy Basics - What is Numpy & Arrays
+
+what we'll cover:
+- why numpy is so powerful compared to normal python lists
+- installing and importing Numpy
+- creating our first Numpy array.
+- Key differences between Python lists and Numpy Arrays
+
+concept: What is Numpy?
+Numpy (Numerical Python) is a python library built for fast Numerical computations.
+- Think of NumPy array as super-efficient python lists.
+- They are used for machine learning, AI, data analysis, scientific computing.
+- They can handle large datasets and perform calculations hundreds of times faster than normal lists.
+
+NumPy is the foundation for:
+- Pandas (Data analysis)
+- TensorFlow & PyTorch (Deep learning)
+- SciPy & Scikti-learn (scientific computing and machine learning)
+
+Python List vs Numpy array
+
+ex: python lists
+my_list = [1,2,3,4,5]
+print(my_list * 2)
+
+#output : [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+ex: Numpy array
+
+import numpy as np 
+
+my_array = np.array([1,2,3,4,5])
+print(my_array * 2)
+
+# output: [2 4 6 8 10]
+
+key differences:
+list: repeat elements
+Array: perform mathematical operations element-wise
+
+** installing and importing NumPy
+
+if not installed:
+pip install numpy
+
+in python, always import like this:
+import numpy as np
+
+(everyone in the python world uses np as the short form!)
+
+## Creating our first Numpy array
+
+import numpy as np
+
+my_array = np.array([10,20,30,40,50])
+
+print(my_array)     # [10 20 30 40 50]
+print(type(my_array)) # <class 'numpy.ndarray'>
+
+Notice: NumPy arrays are of type numpy.ndarray
+(nd= n-dimensional, meaning they can be 1D, 2D, 3D, etc)
+
+Mini tasks
+1. Create a NumPy array from the list [5, 10, 15, 20,25] and print it.
+2. check the type of that object (sould be numpy.ndarray)
+3. Multiply every element of [1,2,3,4,5] by 3 using:
+    - a normal python list ( with a loop or list comprehension).
+    - A NumPy array. Compare results.
+
+challenge Day:
+problem: 
+write a program that:
+1. Takes a list [2, 4, 6, 8, 10].
+2. Converts it into a Numpy array.
+3. Multiplies the entire array by 5 in one line.
+4. Prints both the original list and the new NumPy array result.
+
