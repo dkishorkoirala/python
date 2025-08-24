@@ -1,0 +1,87 @@
+Day 63 – Creating Arrays in NumPy
+
+what we will cover:
+1. np.array() - Creating arrays from python lists/tuples
+2. np.arange()- creting number sequences (like python's range)
+3. np.linespace() - creating evenly spaced numbers in a range
+4. np.zeros() - array filled with zeros
+5. np.ones() - array filled with ones
+6. Practice problems
+
+step1: np.array() - from python list to numpy array
+in python, we usually store data in lists:
+py_lists = [1,2,3,4,5]
+
+but numpy needs arrays for fast numerical operations.
+we convert using np.array():
+
+import numpy as np
+
+np_array = np.array([1,2,3,4,5])
+print(np_array)
+print(type(np_array))
+
+output:
+[1 2 3 4 5]
+<class 'numpy.ndarray'>
+
+notice how it prints without commas-> [1 2 3 4 5]
+this is NumPy's style to represent arrays compactly.
+
+step2: np.arange()
+it works like python's range() but gives a NumPy array.
+
+arr = np.arange(0,10,2) #start = 0, stop = 10, step = 2
+
+print(arr)
+
+output:
+[0 2 4 6 8]
+
+step3: np.linspace()
+if you want evenly spaced numbers between two values:
+arr = np.linespace(0,1,5) #from 0 to 1, with 5 values
+print(arr)
+
+output:
+[0.   0.25 0.5  0.75 1.  ]
+
+key difference from arange():
+arange() uses step size
+linespace() uses number of values
+
+step 4: np.zero()
+creates arrays filled with zeros:
+
+arr = np.zeros((3,4)) # 3 rows, 4 columns
+print(arr)
+
+output:
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+step 5: np.ones()
+similar, but filled with ones:
+
+arr = np.ones((2,3))   # 2 rows, 3 columns
+
+print(arr)
+
+output:
+[[1. 1. 1.]
+ [1. 1. 1.]]
+
+
+mini tasks:
+1. Create a NumPy array from the list [10, 20, 30, 40].
+2. Generate numbers from 5 to 50 with a step of 5 using arange.
+3. Create 7 evenly spaced numbers between 0 and 14 using linspace.
+4. Make a 5×5 array of zeros.
+5. Make a 4×2 array of ones.
+
+challenges:
+1. Create a sequence of even numbers from 2 to 100 using arange.
+2. Generate 50 evenly spaced values between -5 and 5 using linspace.
+3. Create a 3×3 matrix filled with ones, then multiply it by 5 (so all elements become 5).
+4. Combine arange and reshape (we’ll learn reshape tomorrow) to create a 3×3 matrix with numbers 1 to 9.
