@@ -1,0 +1,82 @@
+Day 64: Reshaping & Flattening Arrays
+
+what will we cover:
+- what reshaping means in NumPy
+- rules for reshaping (when it works, when it fails)
+- using .reshape()
+- automatic dimension calculation with -1
+- flattening arrays with .flatten() and .ravel()
+
+concept1 : what is reshaping?
+think of an array as just a sequence of numbers in memory.
+Reshaping doesn't change the data, it only changes how NumPy views it.
+
+ex:
+import numpy as np 
+
+arr = np.arange(1,13)
+print(arr)
+
+reshaped = arr.reshape(3,4)
+print(reshaped)
+
+output:
+[ 1  2  3  4  5  6  7  8  9 10 11 12]
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+
+concept2: rules for reshaping
+1. total elements must match.
+example: 12 numbers can become 3x4 or 2x 6 but not 5x5
+2. data is not copied (most of the time).
+NumPy just rearranges the "view".
+
+Concept3: Automatic dimension with -1
+if you don't know one of the dimensions, use -1 NumPy will calculate it for you.
+
+arr = np.arange(1,13)
+reshaped = arr.reshape(2, -1) # NumPy will figure out cols.
+print(reshaped)
+
+output:
+[[ 1  2  3  4  5  6]
+ [ 7  8  9 10 11 12]]
+
+Concept4: flattening arrays
+1. flattening = converting a multi-dimensional array into 1D
+2. ravel() returns a view, flatten() returns a copy
+
+ex.
+arr = np.array([[1,2,3],[4,5,6]])
+flat1 = arr.flatten()  #returns a *copy*
+flat2 = arr.ravel()     # returns a *view* (faster, memory efficient)
+
+print(flat1)
+print(flat2)
+
+output:
+[1 2 3 4 5 6]
+[1 2 3 4 5 6]
+
+Difference between flatten and ravel:
+- flatten() -> copy of data (safe, independent)
+- ravel() -> view of data (changes reflect back to original sometimes).
+
+
+
+Mini Tasks
+Task 1
+Create a 1D array of numbers 1–16 and reshape it into a 4×4 matrix.
+
+Task 2
+Create a 1D array of 20 numbers and reshape it into 5×-1 (let NumPy decide the columns).
+
+Task 3
+Create a 3×3 matrix using arange(1,10). Flatten it into a 1D array using both flatten() and ravel().
+
+Challenge Project
+Create a 2D array (shape 6×6) containing numbers 1–36.
+- Reshape it into 3×-1.
+- Flatten it using both methods.
+- Verify: If you modify one element of the raveled version, does the original change? What about flatten()?
