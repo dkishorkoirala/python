@@ -1,0 +1,63 @@
+Day 65: Array Indexing & Slicing
+
+what will we cover:
+- accessing individual elements in NumPy arrays
+- Basic slicing with ":"
+- defferents from python lists
+- 2darray indexing (rows & column)
+- mini tasks and challenges
+
+1. Accessing elelments in numpy arrays
+Numpy arrays work a lot like python lists, but with extra powers.
+
+ex:
+import numpy as np 
+
+arr = np.array([10,20,30,40, 50])
+print(arr[0])  #first element
+print(arr[-1])  #last element
+
+2. slicing 1D arrays
+we use the colon ":" just like in lists:
+- arr[start:end] -> includes start, excludes end
+- arr[:end] -> from begining till end -1
+- arr[start:] -> from start till end
+
+ex:
+print(arr[1:4]) #[20 30 40]
+print(arr[:3])  #[10 20 30]
+print(arr[2:])  #[30 40 50]
+
+3. Indexing in 2D arrays
+think of a 2D array like rows & columns
+syntax: arr[row, col]
+
+ex: 
+mat = np.array([[1,2,3],
+                [4,5,6],
+                [7,8,9]])
+
+print(mat[0,0])  #element at 1st row, 1st col -> 1
+print(mat[1,2])  #element at 2nd row, 3rd col -> 6
+print(mat[-1,-1]) #element at last row, last col -> 9
+
+4. slicing in 2D arrays
+ex:
+print(mat[0:2, 1:3])  #rows 0 & 1, cols 1 & 2
+#[[2 3]
+# [5 6]]
+
+ex:2
+print(mat[:,1]) #all rows, column 1-> [2 5 8]
+print(mat[1,:]) #1st row,  all column -> [4 5 6]
+
+#mini tasks 
+1. create a 1D array of numbers 10 to 50. slice out elements from index 5 to 10
+2. from a 2D 4x4 array(1 to 16), print middle 2x2 block
+3. Extract the last row of a 3x3 array.
+
+challenges:
+-create a 5x5 matrix with numbers 1-25 do the following:
+    slice out the first column
+    slice out the last row
+    slice out the middle 3x3 submatrix.
