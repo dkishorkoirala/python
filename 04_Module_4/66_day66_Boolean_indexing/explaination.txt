@@ -1,0 +1,64 @@
+Day 66 – Boolean Indexing in NumPy
+
+what will we cover today?
+- what is boolean indexing?
+- how to create boolean masks (true/ false arrays)
+- filtering arrays using conditions
+- combining conditions (& ,|, ~ )
+- real- world style examples
+
+concept: Boolean Indexing
+in numpy, we can filter data using boolean conditions
+Instead of manually looping, numpy allows vectorized filtering with conditions
+
+ex:
+import numpy as np 
+
+arr = np.array([10, 20, 30, 40, 50])
+
+#create a condition (boolean mask)
+mask = arr > 25
+print(mask)
+
+#applying the mask to filter
+print(arr[mask]) #[30 40 50]
+
+so, arr > 25 created a boolean array and then we used it to select only those values
+
+combining conditions
+sometimes we want multiple conditions
+
+ex:
+arr = np.arange(1,11) #1 to 10
+
+#numbers greater than 3 and less than 8
+print(arr[(arr>3) & (arr<8)]) #[4 5 6 7]
+
+#number less than 4 or greater than 8
+print(arr[arr < 4 | arr > 8]) #[1 2 3 9 10]
+
+# NOT condition
+print(arr[~(arr % 2 == 0)]) #odd numbers
+
+Note: 
+- & -> AND
+- | -> OR
+- ~ -> NOT
+- Parentheses are required for conditions
+
+Mini Tasks:
+Task1: 
+create an array from 1 to 20
+print only the numbers that are divisible by 3
+
+task2:
+from the array [15, 22, 8, 19, 31, 42, 7], print only the even numbers greater than 10
+
+task3:
+generate a 4x4 matrix of number 1-16
+extract all elements that are greater than 5 and less than 12
+
+challenge:
+Generate an array of 50 random integers between 1 and 100
+- extract all numbers divisible by both 2 and 15
+- extract all numbers greater than 70 or less than 20
