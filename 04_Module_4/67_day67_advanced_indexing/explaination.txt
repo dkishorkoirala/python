@@ -1,0 +1,73 @@
+Day 67: Advanced indexing (Boolean indexing, Fancy indexing)
+
+what will we cover:
+1. Boolean indexing
+    - select elements using conditions (<, >, ==, etc)
+    - combine multiple conditions with & (and), | (or), ~ (not)
+2. Fancy indexing
+    - access multiple arbitrary positions at once using lists/arrays of indices.
+    - compare with normal slicing.
+3. hands- on practice with small arrays..
+4. Daily tasks & challenge project to rainforce the concepts.
+
+step1: Boolean indexing
+Boolean indexing means we filter an array based on True/False conditions.
+
+ex:
+import numpy as np 
+
+arr = np.array([10, 20, 30, 40, 50])
+
+condition: value greater than 18
+mask = arr > 18
+print(mask) # [False False  True  True  True]
+
+print(arr[mask]) # [30 40 50]
+
+explanation:
+- arr > 18 returns a boolean array
+- passing it inside arr [ ...] gives only those values where condition is True.
+
+we can combine conditions:
+print(arr[(arr > 18) & (arr < 40)]) #[30 39]
+print(arr[(arr % 2 == 0 ) | (arr < 15)]) #[10 20 30 40]
+
+step 2: Fancy indexing
+fancy indexing means selecting specific positions using a list/array of indices
+
+ex:
+arr = np.array([100,200,300,400,500])
+
+#select positions 0,2,4
+print(arr[[0,2,4]]) #[100 300 500]
+
+#repeated indices allowed
+print(arr[[1,1,3]])  # [200 200 400]
+
+we can also use fancy indexing in 2D arrays:
+
+arr2d = np.array([[10,20,30],
+                 [40,50,60],
+                 [70,80,90]])
+
+#select (0,1) ,(1,2), (2,0)
+print(arr2d[[0,1,2],[1,2,0]]) #[20 60 70]
+
+mini tasks
+1. Create a NumPy array of numbers 1–20.
+    - Extract all numbers greater than 10 and even.
+
+2. Create a 1D array of [5, 10, 15, 20, 25, 30].
+    - Select elements at positions 0, 2, 4 using fancy indexing.
+
+3. Create a 3x3 array with values 1–9.
+    - Use fancy indexing to extract the diagonal elements [1, 5, 9].
+
+#Challenge Project
+1. Generate an array of 50 random integers between 1 and 100.
+    - Extract numbers divisible by both 2 and 5.
+    - Extract numbers that are either < 20 or > 80.
+
+2. Create a 4x4 array (values 1–16).
+    - Use fancy indexing to select corners only → [1, 4, 13, 16].
+    - Use boolean indexing to extract only odd numbers.
