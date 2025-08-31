@@ -1,0 +1,73 @@
+Day 68: Element-wise Operations in NumPy
+
+what will we cover:
+1. Arithmetic operations on arrays (element by element)
+2. COmparison Operations (>, <, == , etc) with arrays
+3. Broadcasting basics - how NumPy handles operations between arrays of different shapes.
+4. Practical mini tasks for each concepts
+5. A challenge project to wrap it up.
+
+Concept1: Arithmetic operations
+unlike python lists, numpy arrays support direct math operations element-wise.
+
+import numpy as np 
+
+a = np.array ([1,2,3,4])
+b = np.array ([10,20,30,40])
+
+print(a+b) # addition
+print(a-b) # subtraction
+print(a * b) # multiplication
+print(a / b) # division
+print(b % a) # modulus
+print (a ** b) # exponentiation
+
+Each element in a is operated with the corresponding element in b.
+
+concept 2: Comparison operations
+numpy can compare arrays element by element
+
+x = np.array([1,2,3,4])
+y = np.array([2,2,2,2])
+
+print(x>y) #greater
+print(x==y) #equal
+print(x<y) #smaller
+print(x!=y) #not equal
+
+this result is a boolean array (useful for filtering later).
+
+Concept 3: Broadcasting
+What if arrays don't have the same shape?
+Numpy uses broadcasting rules:
+- if shapes differ, Numpy tries to stretch (broadcast) the smaller one 
+
+example 1: scalar + array
+arr = np.array([1,2,3,4])
+print(arr + 10) #adds 10 to every element
+
+example 2: 2D with 1D
+mat = np.array([[1,2,3],[4,5,6]])
+vec = np.array([10,20,30])
+
+print(mat + vec) #adds vec to each row
+
+-> Broadcasting avoids writing loops, keeps code fast & clean.
+
+Mini Tasks
+
+1. Create two arrays [2, 4, 6, 8] and [1, 3, 5, 7]. Perform all arithmetic operations (+, -, *, /, %, **).
+2. Compare the two arrays element-wise using all comparison operators.
+3. Take a matrix [[1,2,3],[4,5,6]] and a vector [1,1,1]. Use broadcasting to subtract the vector from each row.
+4. Multiply a 1D array [1,2,3] with a scalar 5 using broadcasting.
+
+Challenge Project
+1. Create a 3x3 matrix with values from 1 to 9.
+    Add 10 to all elements.
+    Multiply the matrix with [1, 2, 3] using broadcasting.
+    Check which elements are greater than 15.
+    Replace those elements with 0.
+(This will combine arithmetic, comparison, and broadcasting into one mini-project.)
+
+Note: Almost everything in NumPy uses element-wise operations + broadcasting.
+mastering this makes complex operations feel easy.

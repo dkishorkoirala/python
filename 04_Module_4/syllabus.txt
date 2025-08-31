@@ -1,50 +1,66 @@
-| Day          | Topic / Focus                                                      |
-| ------------ | ------------------------------------------------------------------ |
-| **NumPy**    |                                                                    |
-| 62           | What is NumPy? Installing & Intro to Arrays                        |
-| 63           | Creating Arrays (`array`, `arange`, `linspace`, `zeros`, `ones`)   |
-| 64           | Array Properties (`shape`, `dtype`, `ndim`, `size`)                |
-| 65           | Array Indexing (1D, 2D, Negative Indexing)                         |
-| 66           | Array Slicing (`start:end:step`, multidimensional slicing)         |
-| 67           | Advanced Indexing (boolean indexing, fancy indexing)               |
-| 68           | Array Math Operations (element-wise operations)                    |
-| 69           | Universal Functions (ufuncs like `sqrt`, `exp`, `log`)             |
-| 70           | Statistics in NumPy (`mean`, `median`, `std`, `sum`, `max`, `min`) |
-| **Pandas**   |                                                                    |
-| 71           | What is Pandas? Intro to `Series`                                  |
-| 72           | Operations on `Series` (indexing, slicing, applying functions)     |
-| 73           | Handling Missing Data in Series                                    |
-| 74           | Intro to `DataFrame` (creating from dicts, lists, NumPy arrays)    |
-| 75           | Exploring DataFrames (`head`, `tail`, `info`, `describe`)          |
-| 76           | Selecting Rows & Columns (basic indexing)                          |
-| 77           | `.loc` for label-based selection                                   |
-| 78           | `.iloc` for integer-based selection                                |
-| 79           | Conditional Selection with `loc` & `iloc`                          |
-| 80           | Adding New Columns                                                 |
-| 81           | Modifying Existing Columns                                         |
-| 82           | Dropping Columns & Rows                                            |
-| 83           | GroupBy Basics                                                     |
-| 84           | Aggregation Functions (`mean`, `sum`, `count`, etc.)               |
-| 85           | Multi-level GroupBy                                                |
-| 86           | Identifying Missing Data (`isnull`, `notnull`)                     |
-| 87           | Filling Missing Data (`fillna`, forward/backward fill)             |
-| 88           | Dropping Missing Data (`dropna`, thresholds)                       |
-| 89           | Merging DataFrames (`merge`)                                       |
-| 90           | Joining DataFrames (`join`)                                        |
-| 91           | Concatenating DataFrames (`concat`, `append`)                      |
-| 92           | Sorting Data (`sort_values`, `sort_index`)                         |
-| 93           | Filtering Rows with Conditions                                     |
-| 94           | Combining Sorting & Filtering in Practice                          |
-| 95           | Reading CSV files (`read_csv`)                                     |
-| 96           | Reading Excel files (`read_excel`)                                 |
-| 97           | Exporting Data (`to_csv`, `to_excel`)                              |
-| 98           | Cleaning Real Datasets – Step 1: Inspect & Understand Data         |
-| 99           | Cleaning Real Datasets – Step 2: Handle Missing/Invalid Data       |
-| 100          | Cleaning Real Datasets – Step 3: Transform & Finalize              |
-| **Projects** |                                                                    |
-| 101          | Project: COVID Tracker – Load & Inspect Data                       |
-| 102          | Project: COVID Tracker – Analyze Cases, Recoveries, Deaths         |
-| 103          | Project: COVID Tracker – Visualize & Summarize                     |
-| 104          | Project: Student Analyzer – Load & Inspect Dataset                 |
-| 105          | Project: Student Analyzer – Perform Aggregations & Insights        |
-| 106          | Project: Student Analyzer – Build Final Reports                    |
+| Day | Topic                                                                    |
+| --- | ------------------------------------------------------------------------ | NUMPY
+| 61  | What is NumPy? Why use it? Installation & Import                         |
+| 62  | Creating Arrays (from lists, ranges, arange, linspace)                   |
+| 63  | Array Attributes (shape, size, ndim, dtype, itemsize, nbytes)            |
+| 64  | Reshaping Arrays (reshape, flatten, ravel, resize)                       |
+| 65  | Array Indexing Basics (1D, 2D, negative indexing, slicing)               |
+| 66  | Slicing with Steps, Subarrays, Copy vs View                              |
+| 67  | Advanced Indexing (boolean, fancy indexing)                              |
+| 68  | Element-wise Operations (arithmetic, comparison, broadcasting)           |
+| 69  | Universal Functions (ufuncs: np.add, np.subtract, np.exp, np.sqrt, etc.) |
+| 70  | Aggregations (sum, mean, min, max, std, var, argmin, argmax)             |
+| 71  | Axis-Based Operations (row-wise, col-wise calculations)                  |
+| 72  | Broadcasting in Detail (scalars, vectors, higher dimensions)             |
+| 73  | Random Module Basics (np.random.randint, rand, randn, seed)              |
+| 74  | Random Sampling & Distributions (uniform, normal, binomial)              |
+| 75  | Sorting & Searching (np.sort, argsort, where, searchsorted)              |
+| 76  | Stacking & Splitting Arrays (hstack, vstack, split, vsplit, hsplit)      |
+| 77  | Linear Algebra Basics (dot, matmul, transpose)                           |
+| 78  | Linear Algebra Advanced (inverse, determinant, eigenvalues)              |
+| 79  | Matrix Operations (identity, diagonal, trace, rank)                      |
+| 80  | Working with Missing/Invalid Data (np.nan, isnan, isfinite, fill)        |
+| 81  | File I/O with NumPy (loadtxt, savetxt, genfromtxt, np.save, np.load)     |
+| 82  | Structured Arrays & dtypes (custom records, fields)                      |
+| 83  | Performance Tips (vectorization, avoid loops, memory efficiency)         |
+| 84  | Practical Project: Weather Data Analysis (NumPy only)                    |
+| 85  | Practical Project: Image Manipulation with NumPy                         |
+| 86  | Review & Mixed Challenges (full coverage check)                          |
+| 87  | Final NumPy Mini Project (Stock Price Analysis / Matrix Simulation)      |
+| 88  | Transition to Pandas – why Pandas builds on NumPy                        |
+
+Pandas
+| Day | Topic                                                              |
+| --- | ------------------------------------------------------------------ |
+| 89  | What is Pandas? Series vs DataFrame                                |
+| 90  | Creating Series (from lists, dicts, numpy arrays)                  |
+| 91  | Series Operations (indexing, slicing, vectorized ops)              |
+| 92  | DataFrame Basics (creation, from dict, from CSV/Excel, from NumPy) |
+| 93  | Inspecting Data (head, tail, info, describe, shape, dtypes)        |
+| 94  | Indexing & Selection (`loc`, `iloc`, `at`, `iat`)                  |
+| 95  | Boolean Indexing & Filtering Rows                                  |
+| 96  | Adding, Removing Columns & Rows                                    |
+| 97  | Handling Missing Data (isna, dropna, fillna)                       |
+| 98  | Data Cleaning (rename cols, replace values, map, apply)            |
+| 99  | Sorting Data (sort\_values, sort\_index)                           |
+| 100 | Aggregations & Statistics (mean, median, groupby basics)           |
+| 101 | GroupBy in Depth (multiple agg functions, transform, filter)       |
+| 102 | Pivot Tables & Crosstab                                            |
+| 103 | Combining DataFrames (concat, append, merge, join)                 |
+| 104 | Reshaping Data (stack, unstack, melt, pivot)                       |
+| 105 | Working with Time Series (datetime, resample, shift, rolling)      |
+| 106 | String Operations (vectorized string methods)                      |
+| 107 | Categorical Data (astype category, category methods)               |
+| 108 | Window Functions (rolling, expanding, ewm)                         |
+| 109 | MultiIndex (hierarchical indexing basics)                          |
+| 110 | Advanced MultiIndex Operations (stack, swaplevel, xs)              |
+| 111 | File I/O with Pandas (CSV, Excel, JSON, SQL, HDF5)                 |
+| 112 | Plotting with Pandas (basic plots, histograms, boxplots)           |
+| 113 | Performance Optimization (dtypes, vectorization, chunksize)        |
+| 114 | Real-World Data Cleaning Project (messy CSV data)                  |
+| 115 | EDA Project (Exploratory Data Analysis on dataset)                 |
+| 116 | Data Aggregation & Grouping Project                                |
+| 117 | Time Series Forecasting Mini Project                               |
+| 118 | Final Pandas Project: Data Analysis Report                         |
+| 119 | NumPy + Pandas Combined Mini Challenges                            |
+| 120 | Grand Project: Data Pipeline (Load → Clean → Analyze → Save)       |
