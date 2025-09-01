@@ -1,0 +1,90 @@
+Day 69 – Universal Functions (ufuncs) in NumPy
+
+what will we cover:
+- what are ufuncts in NumPy
+- element-wise operations using ufuncs
+- categories of ufuncs
+    - arithmetic (np.add, np.subtract, np.multiply, np.divide)
+    - power & remainder (np.power, np.mod, np.remainder)
+    - trigonometric (np.sin, np.cos, np.tan)
+    - exponential & logarithmic (np.exp, np.log, np.log10)
+- why ufuncs are faster than loops
+- using out parameter for in-place results
+- applying conditions with where in ufuncs
+
+## what are ufuncs?
+- ufuncs = Universal Functions
+- they are vectorized functions in NumPy that operate element-wise on arrays
+- Built in C under the hood -> much faster than Python loops
+- work on scalars, vectors, and matrices seamlessly
+
+ex:
+import numpy as np
+
+arr = np.arrays([1,2,3,4])
+
+#instead of writing loops, just use:
+print(np.add(arr, 5)) # add 5 to each element
+print(np.sqrt(arr)) # square root of each element
+
+## categories of ufuncs
+1. Arithmetic ufuncs
+
+arr1 = np.array([10,20,30])
+arr2 = np.array([1,2,3])
+
+print(np.add(arr1, arr2)) # addition [11 22 33]
+print(np.subtract(arr1,arr2)) # subtraction [9 18 27]
+print(np.multiply(arr1,arr2)) # multiplication [10 40 90]
+print(np.divide(arr1,arr2)) # division [10. 10. 10.]
+
+
+2. power & remainder 
+print(np.power(arr2, 3))  #exponential [1 8 27]
+print(np.mod(arr1, arr2)) # remainder [0 0 0]
+
+3. trigonometric 
+
+angles = np.array([0,np.pi/2, np.pi])
+print(np.sin(angles))  # [0. 1. 0.]
+print(np.cos(angles))  # [1. 0. -1.]
+
+4. exponential & logarithmic
+
+nums = np.array([1, np.e, np.e**2])
+print(np.exp(nums)) #exponential
+print(np.log(nums)) #natural log
+print(np.log10(nums)) #base 10 log
+
+5. Out parameter
+saves results directly into an existing array (memory-efficient)
+
+a = np.array([1,2,3])
+b = np.empty_like(a)
+np.multiply(a,10, out = b) #stores directly in b 
+print(b) # [10 20 30]
+
+6. where parameter
+apply conditions inside ufunc.
+
+arr = np.array([5,10,15,20])
+result = np.where(arr > 10, arr,0) # keeps values greater than 10 else 0
+print(result) # [0 0 15 20]
+
+mini tasks:
+1. Create an array [1,2,3,4,5] and use ufuncs to:
+- add 100
+- take square root
+- raise each to power 3
+- take sine values
+2. Use np.log and np.exp to verify this:
+    log(exp(x)) = x
+3. Use where parameter : replace all odd numbers with -1, keep even numbers as they are.
+
+challenge:
+-Generate a 1D array of 20 numbers from 1->20
+-perform the following with ufuncs only (no loops):
+1. multiply each number by 2
+2. take log base 10 of each
+3. replace values less than 1 with 0
+4. store the results into a new array using out parameter
