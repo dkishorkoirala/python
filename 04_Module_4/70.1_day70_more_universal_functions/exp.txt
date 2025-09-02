@@ -1,0 +1,69 @@
+Day 70: More Universal Functions (Ufuncs – Advanced)
+
+what will we cover:
+- more powerful ufunc operations beyound add/multiply
+- mathematical and trigonometric ufunc(sin, cos, exp, sqrt, etc)
+- aggregation ufuncs (sum, prod, sumsum, etc)
+- logical ufuncs (greater, less, equal, etc)
+- Boolean masking with ufuncs 
+- multiple output with modf
+
+we will explore how NumPy turns math into vectorized array operations without loops
+
+concept1: math & trigonometric ufuncs
+NumPy has many built-in math functions:
+
+import numpy as np 
+
+arr = np.array([0, np.pi/2, np.pi])
+
+print("sin:",np.sin(arr))
+print("cos:",np.cos(arr))
+print("tan:",np.tan(arr))
+
+print("exp:",np.exp(arr))  #e^x
+print("sqrt:",np.sqrt(arr))
+
+works element-wise without writing loops
+
+concept2: aggregation ufuncs
+these reduce an array to a single value or cumulative values:
+
+arr = np.arange(1,6)
+
+print("sum:",np.sum(arr))
+print("product:",np.prod(arr))
+print("cumulative sum:",np.cumsum(arr))
+print("cumulative product:",np.cumprod(arr))
+
+concept3: logical Ufuncs
+these check conditions across arrays:
+
+a = np.array([1,2,3,4])
+b =np.array([2,2,3,5])
+
+print("Greater:", np.greater(a,b))
+print("Equal:",np.equal(a,b))
+print("Logical AND:", np.logical_and(a>2,b>2))
+
+concept 4: Multiple outputs with modf
+some ufuncs return two arrays at once.
+
+arr = np.array([1.5, 2.7, -3.2])
+frac, whole = np.modf(arr)
+print("Fractional parts:", frac)
+print("Whole parts:", whole)
+
+mini tasks:
+1. Create an array of angles [0, pi/6, pi/4, pi/3, pi/2] and compute sin, cos and tan
+2. take numbers 1-10, compute their cumulative product
+3. Compare two arrays element-wise using greater and equal.
+4. Use modf on [3.14, 7.89, -4.56] and print fractional & whole parts separately.
+
+Challenge project:
+generate a 2D array (3x5) with values 1-15.
+perform the following using ufuncs only:
+1. take the square root of all elements.
+2. Find the cumulative sum across the flattened array.
+3. check which values are greater than 5(boolean mask).
+4. use modf ti split the square roots into fractional and whole parts.

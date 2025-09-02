@@ -1,0 +1,92 @@
+Day 70: Aggregations (sum, mean, min, max, std, var, argmin, argmax)
+
+what will we cover:
+
+- np.sum() -> sum of elements
+- np.mean() -> average value
+- np.min(), np.max() -> smallest and largest value
+- np.std(), np.var() -> standard deviation & variance
+- np.argmin(), np.argmax()-> indices of min & max values
+- aggregation along axes (rows vs. columns in 2D arrays)
+
+Concept: Aggregations in numpy
+aggregation = condensing a large dataset into a single (or smaller set of ) values
+for example:
+- instead of looking at all student scores, we calculate the average
+- instead of scanning the entire dataset, we just want the max value and its index
+
+NumPy makes this super efficient
+ex:
+
+1. Basic Aggregations
+
+import numpy as np
+
+arr = np.array([1,2,3,4,5])
+
+print("Sum", np.sum(arr)) #15
+print("Mean", np.mean(arr))  #3.0
+print("Min", np.min(arr))   #1
+print("Max", np.max(arr))   #5
+print("Std:", np.std(arr))  #1.414213...
+print ("Var:", np.var(arr)) #2.0
+
+
+2. argmin & argmax (indices of min & max)
+
+arr = np.array([10,20,5, 40, 15])
+
+print("Index of min:", np.argmin(arr)) #2
+print("Index of max:", np.argmax(arr)) #3
+
+-> useful for finding positions instead of values.
+
+
+3. Aggregations in 2D arrays
+
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print("Sum of all element",np.sum(matrix)) #45
+print("sum along rows:", np.sum(matrix, axis= 1)) #[ 6 15 24]
+print("sum along columns:", np.sum(matrix, axis= 0)) #[12 15 18]
+
+- axis = 0 -> operate down columns
+- axis = 1 -> operate down rows
+
+mini tasks:
+task 1: 
+create an array of numbers from 1 to 10. .find its:
+- sum
+- mean
+- standard deviation
+
+task2: 
+Given array, arr = np.array([12, 7, 19, 3, 25, 8])
+find:
+- the minimum value and its index
+- the maximum value and its index 
+
+task3: 
+given 2D array:
+arr = np.array([[5, 10, 15],
+                [20, 25, 30],
+                [35, 40, 45]])
+find:
+- column-wise mean
+- row-wise sum
+
+challenge:
+we are given a 2D NumPy array representing marks of 5 sutdents in 4 subjects:
+marks = np.array([
+    [78, 85, 92, 88],
+    [60, 72, 80, 75],
+    [90, 95, 85, 100],
+    [50, 65, 70, 60],
+    [88, 78, 84, 92]
+])
+
+find:
+1. The average marks of each student
+2. the average marks in each subject.
+3. The highest mark scored in the entire class and which student scored it.
+4. The subject with the lowest average score.
