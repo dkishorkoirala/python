@@ -1,0 +1,85 @@
+Day 71 – Axis-Based Operations (row-wise, col-wise calculations)
+
+what will we cover:
+- what does "axis" mean in numpy?
+- difference between axis=0 and axis=1
+- performing row-wise and column-wise calculations (sum, mean, etc)
+- real-world intuition with examples
+- practice task + final challenge
+
+1. what is an axis?
+- think of a NumPy array like a table (matrix):
+      col0 col1 col2
+Row0    1   2   3
+Row1    4   5   6
+Row2    7   8   9
+
+- axis = 0 -> column-wise (down the rows)
+   - moves vertically | 
+   - so operations are applied column by column 
+
+- axis = 1 -> row-wise (across the columns)
+   - moves horizontally ---
+   - so operations are applied row by row
+
+another way to remember
+- axis = 0 -> collapse rows, keep columns
+- axis = 1 -> collapse columns, keep rows
+
+example in code:
+
+import numpy as np 
+
+arr = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print("Original array:\n", arr)
+print("Column-wise sum:\n", np.sum(arr, axis = 0))
+print("Row-wise sum:\n", np.sum(arr, axis = 1))
+print("Column-wise mean:\n", np.mean(arr, axis = 0))
+print("Row-wise mean:\n", np.mean(arr, axis = 1))
+
+3. Real life example(student marks)
+imagine rows = student, columns = subjects
+
+marks = np.array([
+    [78, 85, 92],
+    [60, 72, 80],
+    [90, 95, 100]
+])
+print("Row-wise(student avg):\n", np.mean(marks, axis = 1))
+print("Column-wise(Subject avg):\n", np.mean(marks, axis = 0))
+
+Mini tasks:
+task1: 
+create a 3x4 array of numbers from 1 to 12
+- find row-wise sum
+- find column-wise mean
+
+task2:
+given:
+arr = np.array([[2, 7, 3],
+                [5, 1, 9],
+                [8, 6, 4]])
+
+- find row-wise min values
+- find column-wise max values
+
+task3:
+generate 4x5 random array between 1-50
+- compute row-wise standard deviation (std)
+- compute column-wise variance (var)
+
+challenge project:
+we have a dataset representing sales (rows=months, columns = products):
+sales = np.array([
+    [200, 300, 250, 400],
+    [150, 220, 300, 310],
+    [400, 500, 450, 600],
+    [100, 150, 200, 180]
+])
+
+find:
+1. Total sales per product (column-wise sum)
+2. Average sales per month (row-wise mean)
+3. Which product had the maximum overall sales?
+4. Which month had the lowest total sales?
