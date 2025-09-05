@@ -1,0 +1,64 @@
+Day 73: Random Module Basics (np.random)
+
+what will we cover:
+- np.random.randint() -> random integers
+- np.random.rand() -> random floats(0-1)
+- np.random.randn() -> random samples from normal distribution
+- np.random.seed() -> reproducibility
+
+Concept 
+1. Random integers
+Generate integers in a given range.
+
+np.random.randint(low=1, high = 10, size = 5)
+#ex. output: [3 8 2 7 5]
+
+- low: starting (inclusive)
+- high: ending (exclusive)
+- size: number of elements
+
+2. Random floats with rand
+
+np.random.rand(2,3)
+# output:
+#[[0.55359393 0.75767478 0.00549899]
+# [0.05885354 0.26907184 0.34355794]]
+gives random floats in range [0.0, 1.0] of shape (2,3)
+
+3. Random normal Distribution with randn 
+
+np.random.randn(5)
+# [ 0.90961971 -1.51868696 -0.54899757  0.38263328 -1.3605719 ]
+
+Generates numbers from a normal distribution (mean =0, std =1) useful for simulations and ML
+
+4. Seeding for reproducibility
+by default, random numbers change every run.
+to fix the sequence, use:
+
+np.random.seed(42)
+print(np.random.randint(1,10,5))
+
+Every time you run with the same seed, you'll get the same random numbers.
+
+Mini tasks:
+task1: 
+Generate 10 random integers between 50 and 100
+
+task2:
+create a 3x3 matrix with random floats between 0 and 1
+
+task3: 
+generate 5 random values from the normal distribution using randn.
+
+task4: 
+set a seed (123) and generate the same random array twice.
+
+challenge project:
+Dice simulator
+
+Simulate rolling a dice 1000 times.
+1. Generate 1000 random integers between 1 and 6.
+2. count how many times each face appeared
+3. PRint the results in a dictionary format like:
+{1: 164, 2: 168, 3: 162, 4: 162, 5: 163, 6: 166}
