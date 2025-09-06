@@ -1,0 +1,76 @@
+Day 74: Random Sampling && Distributions (uniform, normal, binomial)
+
+what will we cover:
+- what is random Sampling in NumPy
+- understanding different probability Distributions
+- generating random numbers from:
+    - uniform distribution
+    - normal distribution
+    - binomial distribution
+- practical mini tasks + challenge project
+
+Concept1: Random sampling in NumPy
+in NumPy, the np.random module allows us to draw random numbers from different probability 
+distributions.
+
+why?
+- useful in simulations, machine learning, statistics, and probability experiments.
+- for example: rolling dice, exam scores distributions, simulating coin toss, etc.
+
+Concept2: Uniform distribution
+- every value in a given interval has an equal probability
+- example: choosing a random number between 0 and 1
+- formula in NumPy:
+np.random.uniform(low, high, size)
+
+ex: 
+np.random.uniform(0,10,5) # 5 random numbers between 0 and 10
+
+Concept3: Normal(gaussian) distribution
+- the most famous distribution
+- shaped like a bell curve
+- many real-world things follow this distribution:
+    - height of people
+    - exam scores
+    - MEasurement errors
+- formula in NumPy:
+np.random.normal(loc=mean, scale=std_dev, size= n)
+- loc = mean (center of distribution)
+- scale = standard deviation(spread/width of bell curve)
+
+ex:
+np.random.normal(50,10,5) #5 vales with mean = 50, std =10
+
+concept4: Binomial distribution
+- related to coin tosses(success/failure)
+- Think: "How many success in n trials with probability p?"
+- formula in NumPy:
+np.random.binomial(n,p,size)
+n = number of trials
+p = probability of success
+
+np.random.binomial(10,0.5,5) #5 experiments, each-with 10 coin tosses
+
+mini task:
+task1:
+Generate 5 random floats between 5 and 15 using uniform distribution
+
+task2:
+Generate 10 random numbers from a normal distribution with mean = 100 and std = 20
+
+task3: 
+simulate 8 coin tosses (p:0.5) and repeat the experiment 10 times using binomial distribution
+
+task4:
+set a seed(42) and generate 5 values from normal distribution with mean = 0 and std = 1, then repeat to 
+confirm reproducibility
+
+challenge project:Coin toss experiment
+-simulate tossing a fair coin (p:0.5) 1000 times using binomial distribution
+1. count how many heads (successes) appeared
+2. print the result
+3. repeat the same experiment with a biased coin (p:0.7 for heads). compare results.
+
+expected output:
+Fair coin heads count: 487
+Biased coin heads count: 694
