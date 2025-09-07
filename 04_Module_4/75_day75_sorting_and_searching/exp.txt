@@ -1,0 +1,84 @@
+Day 75: Sorting & Searching in NumPy
+
+what will we cover:
+- np.sort() -> simple sorting(row-wise, col-wise, whole array)
+- np.argsort() -> get indices of sorted elements
+- np.where() -> find positions of elements that match a condition
+- np.searchsorted() -> efficient search in sorted arrays
+
+1. Sorting with np.sort() 
+import numpy as np 
+
+arr = np.array([155,3,9,20,7])
+print("Original array:\n", arr)
+
+#sorted array
+print("Sorted array:\n", np.sort(arr))
+
+#sort 2D (row-wise by default)
+mat = np.array([[8,2,6],[3,9,11]])
+print("Original matrix:\n", mat)
+print("Row-wise sort\n:", np.sort(mat, axis =1))
+print("Column-wise sort\n:", np.sort(mat, axis =0))
+
+np.sort() returns a new array (doesnot modify original)
+
+2. Getting sorted indices with np.argsort()
+arr = np.array([50,10,30,20])
+print("Original array:\n", arr)
+print("Sorted indices:\n", np.argsort(arr))
+
+# using indices to reorder
+print("sorted via indices:", arr[np.argsort(arr)])
+
+useful when you want to rearrange another array based on sorting order.
+
+3. searching with np.where()
+
+arr = np.array([10,20,30,40,50])
+print("Where arr > 25:", np.where(arr>25)) #indices
+print("Value >25:", arr[np.where(arr>25)])
+
+-> very handy for filtering data.
+
+4. searching with np.searchsorted()
+np.searchsorted() finds the insertion index of an element in a sorted array.
+
+arr = np.array([10,20,30,40,50])
+print("Array:", arr)
+
+print("Insert 25 at:",np.searchsorted(arr, 25))
+print("Insert 35 at:", np.searchsorted(arr, 35))
+-> great for binary search inside sorted data.
+
+Task1:
+create an array [12,5,8,15,3] -> print sorted version and original indices using argsort.
+
+Task 2:
+Make a 2D array [[5,2,8], [1,7,3]].
+- sort row-wise and column-wise
+
+taske 3:
+From arr = [11,22,33,44,55], use np.where() to find:
+- indices of numbers greater than 30.
+- the values themselves.
+
+Task4:
+for sorted array [10,20,30,40], use searchsorted() to find where 25 and 25 would be inserted.
+
+challenge project:
+we have marks of students in 4 subjects:
+marks = np.array([
+    [78, 85, 92, 88],
+    [56, 74, 80, 70],
+    [89, 94, 90, 96],
+    [45, 60, 55, 50]
+])
+
+find:
+1. sort marks of each student(row-wise sort).
+2. sort marks subject wise (column-wise sort)
+3. find which students scored above 90 in any subject (use where)
+4. suppose the passing marks is 60, use where to find indices of failed marks.
+5. if we want to insert a new mark 75 into the sorted marks of subject 1, find the insertion index using
+searchsorted()
