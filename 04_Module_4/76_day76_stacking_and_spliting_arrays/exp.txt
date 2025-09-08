@@ -1,0 +1,86 @@
+Day 76: Stacking & Splitting Arrays
+
+what will we cover:
+- The difference between stacking and Splitting 
+- functions: np.hstack(), np.vstack()
+- functions: np.split(), np.hsplit(), np.vsplit()
+- practical examples combining arrays horizontally & vertically
+- Splitting arrays into equal-sized chunks or custom sections
+
+1. What is Stacking?
+Stacking means joining arrays together along an axis
+- horizontal stacking (hstack)-> joins arrays side by side (along columns).
+- vertical stacking (vstack)-> joins arrays on top of each other (along rows).
+
+Think of it like arranging lego blocks:
+- hstack = place blocks left and right.
+- vstack = place blocks on top of each other.
+
+ex:
+import numpy as np
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+print("horizontal stack:", np.hstack((a,b)))
+print("vertical stack:\n", np.vstack((a,b)))
+
+output:
+horizontal stack: [1 2 3 4 5 6]
+vertical stack: 
+[[1 2 3]
+ [4 5 6]]
+
+2. what is spliting?
+Splitting means breaking arrays into smaller sub-arrays.
+
+- np.split() -> general splitting along any axis.
+- np.hsplit() -> horizontal split (columns)
+- np.vsplit()-> vertical split (rows)
+
+think of it like cutting a chocolate bar into smaller pieces.
+
+ex:
+x = np.array([[1,2,3,4],[5,6,7,8]])
+
+#split into 2 equal parts (by columns)
+print("hsplit:\n", np.hsplit(x,2))
+
+#split into 2 equal parts (by rows)
+print("vsplit:\n",np.vsplit(x,2))
+
+output
+hsplit:
+ [array([[1, 2],
+       [5, 6]]), array([[3, 4],
+       [7, 8]])]
+vsplit:
+ [array([[1, 2, 3, 4]]), array([[5, 6, 7, 8]])]
+
+Mini tasks:
+Task1:
+create two arrays:
+a = [1,2,3]
+b = [4,5,6]
+
+- horizontally stack them
+- vertically stack them
+
+Task2:
+Make a 2D array:
+x = [[1,2,3,4],[5,6,7,8]]
+
+- split it into 2 parts columns-wise(hsplit)
+- split it into 2 parts rows-wise(vsplit)
+
+Task 3:
+create a 1D array of numbers from 0 to 15
+- split it into 4 equal sub-arrays using np.split()
+
+Challenge Project:
+Matrix organizer:
+1. create a 6x4 matrix filled with numbers from 1 to 24
+2. Split it into 3 equal parts row-wise (each part should be 2×4).
+3. Split it into 2 equal parts column-wise (each part should be 6×2).
+4. Then, vertically stack the first two row parts back together.
+5. Finally, horizontally stack the two column parts back together.
