@@ -1,0 +1,110 @@
+Day 77: Linear algebra basics (dot, matmul, transpose)
+
+what will we cover:
+- what is linear algebra in simple words?
+- vector dot product (np.dot)
+- matrix multiplication (np.matmul) and how it differs from element-wise multiplication
+- transpose of a matrix (.T or np.transpose)
+- real-world connections: projections, similarity, and data transformation
+
+1. Linear algebra in simple words
+Linear algebra is about vectors and matrices (tables of numbers) and how they interact.
+- vectors= lists of numbers(like coordinates, features, etc.)
+- matrices = grid of numbers (like images, datasets, transformations)
+
+why important? because machine learning = lots of vector/matrix math (dot products, multiplication,
+transformations).
+
+2. Dot product (np.dot)
+The dot product is a way to combine two vectors-> produces a single number (Scalar)
+formula:
+[a1, a2, a3] . [b1, b2, b3] = a1*b1 +a2*b2 + a3*b3 
+
+ex:
+import numpy as np 
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+dot = np.dot(a,b)
+print("Dot product:", dot)
+
+#output
+Dot product: 32 # (1*4 + 2*5 + 3*6)
+
+- geometric meaning: dot product tells how similar two vectors are (cosine similarity basics)
+
+3. Matrix multiplication (np.matmul or @)
+- unlike element-wise multiplication (*), matrix multiplication follows linear algebra rules.
+- row of first matrix x column of second matrix
+
+A = np.array([[1, 2],
+              [3, 4]])
+
+B = np.array([[5, 6],
+              [7, 8]])
+
+print("Matrix multiplication:\n", np.matmul(A, B))
+
+# output
+[[19 22]
+ [43 50]]
+
+
+why?
+- first row [1,2] x first column [5,7] = 1*5 + 2*7 = 19
+- and so on...
+
+4. transpose of a matrix (.T)
+Transpose flips a matrix over its diagonal -> rows become column and column become rows 
+
+ex:
+c = np.array([1,2,3], [4,5,6])
+print("Original matrix:\n", c)
+print("Transpose:\n", c.T)
+
+Original:
+ [[1 2 3]
+  [4 5 6]]
+
+Transpose:
+ [[1 4]
+  [2 5]
+  [3 6]]
+
+
+mini tasks
+task 1:
+take vectos: 
+a = [2, 3, 4]
+b = [1, 0, -1]
+- compute their dot products using np.dot
+
+task 2:
+take matrix:
+X = [[1, 2],
+     [3, 4]]
+Y = [[2, 0],
+     [1, 2]]
+
+- perform matrix multiplication (np.matmul)
+- compare with element wise multiplication (X*Y) to see the difference.
+
+Task 3:
+make 3x2 matrix:
+[[1, 2],
+ [3, 4],
+ [5, 6]]
+
+- find the transpose.
+- multiply it with its transpose (matmul)
+
+challenge project: Movie recommendation similarity
+1. suppose you have 3 users and their rating (1-5) for 4 movies
+ratings = [[5, 4, 0, 1],
+           [4, 0, 0, 1],
+           [1, 1, 0, 5]]
+
+2. compute the dot product between user1 and user2, user1 and user3
+3. which user is most similar to user1?
+4. Bonus: use transpose to view movies as vectors and compare movie similarity instead.
