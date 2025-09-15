@@ -1,0 +1,75 @@
+Day 78: Linear Algebra advanced
+
+What will we cover:
+1. Determinant of a matrix-> scalar that tells "how much space is scaled" by the matrix 
+2. Inverse of a matrix -> the matrix that "undoes" the effect of the original
+3. Eigenvalues and eigenvectors -> the "directions" that remain unchanged under transformation
+(super important in PCA, ML, and physics)
+
+1. Determinant
+- for a 2x2 matrix
+det [[a, b], [c, d]] = ad-bc
+if det = 0 -> matrix is singular (no inverse.)
+if det != 0 -> matrix is invertible.
+
+in numpy 
+import numpy as np 
+
+a= np.array([[1,2], [3,4]])
+det = np.linalg.det(a)
+
+print("Determinant:", det)
+
+2. Inverse
+- inverse of A is A^-1
+- if A x A^-1 = I (identity matrix), then A is invertible
+- not every matrix has an inverse (only if determinant != 0)
+
+in numpy
+A_inv = np.linalg.inv(A)
+print("Inverse:\n", A_inv)
+
+#check
+print("A x A_inv :\n", np.dot(A, A_inv))
+
+3. Eigenvalues & eigenvectors
+- for a square matix A:
+    A .v = lambda . v
+where, v = eigenvector (direction that doesn't change)
+       lambda = eigenvalue (scale factor)
+
+in numpy,
+eigenvalues, eigenvectors = np.linalg.eig(A)
+print("Eigenvalues:\n", eigenvalues)
+print("Eigenvectors:\n", eigenvectors)
+
+Mini task:
+Task1:
+take
+B = [[1,2],[7,4]]
+- find its determinant
+- find its inverse
+- multiply BxB^-1 to confirm identity
+
+task 2:
+take 
+c = [[3,-2],[1,0]]
+- find its determinant
+- find eigenvalues & Eigenvectors
+
+task 3:
+take 3x3 matrix
+D = [[4,2,1], [0,3,-1],[2,0,1]]
+
+- compute determinant
+- check if invertible (del != 0 -> invertible)
+- if invertible, compute inverse
+
+challenge project:
+1. create a 2x2 transformation matrix:
+T = np.array ([2,1], [1,3])
+
+2. compute its eigenvalue & eigenvectors
+3. generate 5 random 2d vectors (point)
+4. multiply them by T to see transformed points
+5. Compare: DO vectors aligned with eigenvectors change direction or only scale?
