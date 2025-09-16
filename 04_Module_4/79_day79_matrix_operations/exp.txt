@@ -1,0 +1,101 @@
+Day 79: Matrix Operations
+
+What will we cover:
+1. Identity Matrix : what it is and why it matters.
+2. Diagonal Matrix: Definition and usage.
+3. Trace of a Matrix: How to compute it and what it tells us.
+4. Rank of a Matrix: what rank means in linear algebra and why it's powerful.
+- practice tasks.
+- A final challenge problem.
+
+1. Identity matrix
+- A square matrix where all Diagonal elements are 1, and all off-Diagonal elements are 0.
+
+I = [[1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1]]
+
+- Property:
+    - Multiplying any matrix by I leaves it unchanged.
+    - A x I = I x A = A.
+
+code:
+import numpy as np
+
+I = np.identity(3)
+print("3x3 Identity martix:\n", I)
+
+A = np.array([[1,2],[3,4]])
+I2 = np.identity(2)
+
+print("\nMatrix A:\n", A)
+print("\nA x I2:\n", A @ I2) #same as A 
+
+2. Diagonal Matrix
+- A  matrix with all non-Diagonal elements = 0.
+
+D = [[5,0,0],
+     [0,7,0],
+     [0,0,2]]
+
+- Diagonal matrices are useful in simplifying matrix operations.
+
+code:
+D = np.diag([5,7,2])
+print("Diagonal Matrix:\n", D)
+print("\nExtracted Diagonal elements:\n", np.diag(D))
+
+3. Trace of a Matrix
+- the sum of diagonal elements of a square matrix.
+trace(A) = i∑​aii​
+
+- property:
+    - Trace is invariant under transpose (trace(A)= trace(A^T))
+    - in linear algebra, trace has connections with eigenvalues (sum of eigenvalues = trace)
+
+code:
+A = np.array([[3,4,5],[1,2,7],[6,8,9]])
+
+print("Matrix A:\n", A)
+print("\nTrace of A:\n", np.trace(A))
+
+4. Rank of a Matrix
+- Rank = number of linearly independent rows/columns
+- intutively: It tells how much "information" is in the matrix.
+    - Full rank -> no redundancy
+    - Lower rank -> some rows/columns are combinations of others.
+
+code:
+A = np.array([[2,4],[1,2]])
+
+print("Matrix A:\n",A)
+print("\nRank of A:", np.linalg.martix_rank(A))
+
+- here, rank = 1 beacuse the second row is just half of the first -> not independent.
+
+Mini tasks:
+Task1: 
+create a 4x4 identity matrix and multiply it with a custom 4x4 matrix. Verify that the result 
+is the same as the original matrix.
+
+Task2:
+Extract the diagonal elements of the matrix and compute its trace:
+B = [[4,1,0],
+     [0,5,2],
+     [7,0,6]]
+
+Task3:
+Find the rank of 
+C = [[2,3],[4,6]]
+
+Challenge project:
+Given a matrix
+
+M = [[1,2,3],
+     [4,5,6],
+     [7,8,9]]
+
+1. find the trace
+2. find its rank.
+3. create a diagonal martix using the diagonal elements of M.
+4. Multiply M with that diagonal matrix.
