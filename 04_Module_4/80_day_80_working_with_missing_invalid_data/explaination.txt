@@ -1,0 +1,77 @@
+Day 80: working wit missig/invalid Data
+
+what will we cover:
+1. Understanding NaN (Not a Number)
+2. Checking for NaN with np.nan()
+3. Checking for finite/valid values with np.isfinite()
+4. Replacing/filling missing values (np.nan_to_num(), manual fill).
+5. Mini tasks for hands-on practice
+6. Challenging project-Cleaning messy data 
+
+Step: 1 What is NaN?
+- NaN = "Not a Number"
+- it is used to represent missing or undefined values.
+- Example: divisison 0/0 -> gives NaN
+
+in numpy,
+import numpy as np
+print(np.nan) #output nan 
+print(type(np.nan)) #output <class 'float'>
+
+yes! NaN is actually a float value in numpy
+
+setp 2: Detecting NaN
+we can use np.isnan():
+arr = np.array([1,2, np.nan , 4])
+print(np.isnan(arr)) #output [False False  True False]
+
+This gives a Boolean mask showing where NaN exists.
+
+Step 3: Checking Validity
+- sometimes arrays may contain infinity(np.inf or -np.inf).
+- we use np.infinite() to check if values are finite(not inf, not NaN)
+
+example:
+arr = np.array([1, np.nan, np.inf, -np.inf, 5])
+print(np.isfinite(arr)) #output [ True False False False  True]
+
+step 4: Replacing missing data
+we uually want to fill or replace NaN values:
+1. np.nan_to_num() -> replaces NaN with 0 by default
+
+arr = np.array([1, np.nan, 3])
+print(np.nan_to_num(arr)) #output [1. 0. 3.]
+
+2. Or manual filling with masking:
+arr[np.isnan(arr)] = 99
+print(arr) #output [1. 99. 3.] replaced NaNs wit 99
+
+mini tasks:
+Task1
+create an array:
+arr = [1,2,np.nan, 4, np.nan]
+- detect NaNs using np.isnan()
+- count how many NaNs exist.
+
+task2
+take
+arr = [1, np.inf, 2, -np.inf, np.nan, 5]
+- use np.isfinite() to find valid numbers.
+- extract only the finite numbers.
+
+task 3
+arr = [10, 20, np.nan, 40, 50, np.nan]
+- replace NaN with the mean of the valid numbers.
+
+challenge project: cleaning messy data
+you given a dataset with missing and invalid values:
+data = np.array([
+    [1,   2,   np.nan],
+    [4, np.nan,  6],
+    [7,   8,  np.inf]
+])
+
+1. detect where data is NaN or inf 
+2. Replace NaN with the mean of that column
+3. replace inf with the max value of that column
+4. Print the cleaned dataset.
