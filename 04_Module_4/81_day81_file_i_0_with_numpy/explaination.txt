@@ -1,0 +1,67 @@
+Day 81: File I/O with NumPy
+
+what will we cover:
+1. Saving & loading text files
+    - np.savetxt()
+    - np.loadtxt()
+2. Handling messy text files
+    - np.genfromtxt() (can handle missing values, delimiter, etc...)
+3. Saving & loading binary NumPy arrays
+    - np.save() (saves in nu.npy format)
+    - np.load() (loads .npy files back)
+
+
+1. np.savetxt() and np.loadtxt()
+- use these for text-based files (like .txt or .csv)
+
+import numpy as np 
+
+arr = np.array([[1,2,3],[4,5,6]])
+
+np.savetxt("Data.txt", arr)
+
+np.savetxt("Data.csv", arr, delimiter=",", fmt ="%d")
+
+loaded = np.loadtxt("Data.csv", delimiter=",")
+print(loaded)
+
+2. np.genfromtxt()
+- smarter than np.loadtxt() -> can handle missing values.
+
+data = np.genfromtxt("data_with_missing.csv", delimiter=",", filling_values=0)
+print(data)
+
+- if a value is missing, it replace it with 0 (or whatever you set with filling_values)
+- filling_values works for truely missing entries,
+- if our files has explicit "nan", we need np.isnan() cleaning after loading.
+
+3. np.save() and np.load()
+- these work with numpy's own binary format -> .npy files
+- they are faster & smaller than text files.
+
+arr = np.array([10,20,30,40,50])
+
+np.save("array.npy", arr)
+
+loaded = np.load("array.npy")
+print(loaded)
+
+mini task:
+task 1
+create an array and save it as numbers.csv (comma separated values) and load it back and print
+
+task 2
+make a 2D array with some np.nan values, save it as messy.csv. then load it using np.genfromtxt() 
+with filling_values = -1 
+
+task 3
+create a big array (1000 numbers). save it using np.save() in binary format. load it back and check
+if it matches the original.
+
+challenge project:
+1. Generate a 2D array of random sensor readings (rows = time steps, columns = sensors).
+2. save readings in both:
+    - .csv (with np.savetxt)
+    - .npy (with np.save)
+3. load both files and verify they give the same data.
+
